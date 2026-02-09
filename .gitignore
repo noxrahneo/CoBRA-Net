@@ -1,0 +1,12 @@
+# Files i dont need in the repo
+data/
+markdowns/
+HumanBreast10X-main/
+to_read/
+results/
+
+# System/editor
+.vscode/
+.DS_Store
+
+Last update: 2026.02.09
