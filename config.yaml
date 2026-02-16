@@ -1,0 +1,26 @@
+# CoBRA-Net minimal config (starter)
+paths:
+  data_dir: data
+  results_dir: results
+  logs_dir: logs
+
+samples: []
+
+qc:
+  min_genes_per_cell: 200
+  max_genes_per_cell: null
+  max_mt_pct: 20
+  min_cells_per_gene: 3
+
+normalization:
+  target_sum: 10000
+  n_hvg: 2000
+  method: log1p
+
+network:
+  correlation_method: spearman
+  wgcna_soft_power_range: [1, 20]
+
+runtime:
+  random_seed: 42
+  n_jobs: 1
