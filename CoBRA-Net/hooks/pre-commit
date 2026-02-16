@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Update the "Last updated" line in README.md to today's date.
+readme="README.md"
+if [[ -f "$readme" ]]; then
+  today="$(date +"%B %d, %Y")"
+  if grep -q "^\*\*Last updated\*\*:" "$readme"; then
+    sed -i "s/^\*\*Last updated\*\*:.*/**Last updated**: ${today}/" "$readme"
+  else
+    printf "\n**Last updated**: %s\n" "$today" >> "$readme"
+  fi
+
+  git add "$readme"
+fi
