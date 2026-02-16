@@ -43,3 +43,5 @@ git config core.hooksPath hooks
 Current hooks:
 
 - `pre-commit`: updates the **Last updated** date in README.md.
+
+I might add more hooks if needed
