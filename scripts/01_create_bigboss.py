@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""01_create_bigboss.py: building the BigBoss inventory from metadata and raw file names."""
+"""01_create_bigboss.py: building the BigBoss inventory from metadata (SampleStats.txt + Table EV4) and raw file names."""
 
 from __future__ import annotations
 
@@ -11,86 +11,105 @@ import pandas as pd
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Build the BigBoss inventory from metadata and raw file names."
+        description="Build the BigBoss inventory from metadata (SampleStats.txt + Table EV4) and raw file names."
     )
     parser.add_argument(
         "--data-dir", default="data/GSE161529_RAW", help="Path to raw data folder with matrix/barcodes files."
     )
     parser.add_argument(
-        "--metadata", default="data/HumanBreast10X-main/Tables/SampleStats.txt", help="Path to SamplesStats.txt from the paper repo."
+        "--sample-stats", default="data/HumanBreast10X-main/Tables/SampleStats.txt", help="Path to SampleStats.txt from the paper repo."
+    )
+    parser.add_argument(
+        "--table-ev4", default="data/embj2020107333-sup-0006-tableev4.csv", help="Path to the Table EV4."
     )
     parser.add_argument(
         "--output", default="results/bigboss.csv", help="Output CSV path"
     )
     return parser.parse_args()
 
-def print_unique_titles (meta_path: Path) -> None:
-    #quick check at the raw titles
-    sample_stats = pd.read_csv(meta_path, sep="\t")
-    titles = sorted(
-        sample_stats["Title"].dropna().unique().tolist()
-    )
-    print(f"Unique title values({len(titles)}):")
-    for t in titles:
-        print(f"  - {t}")
+def load_and_validate_metadata(sample_stats_path: Path, table_ev4_path: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
+    #load both sources
+    sample_stats = pd.read_csv(sample_stats_path, sep="\t")
+    table_ev4 = pd.read_csv(table_ev4_path, skiprows=2)  #skip first two rows
     
-
-def classify_sample_type(title: str) -> str: 
-    title_lower = title.lower()
+    #validate sample names mathc in order
+    print("Validating sample names")
+    stats_names = sample_stats["SampleName"].tolist()
+    ev4_names = table_ev4["Sample Name"].tolist()
     
-    if "normal" in title_lower:
-        return "normal"
-    if "brca1 pre-neoplastic" in title_lower:
-        return "BRACA1_PreNeoplastic"
-    if "triple negative brca1" in title_lower:
-        return "TripleNegative_BRCA1"
-    if "triple negative" in title_lower:
-        return "TripleNegative"
-    if "her2+" in title_lower:
-        return "HER2_Positive"
-    if "er+" in title_lower or "pr+" in title_lower:
-        return "ER_Positive"
+    if len(stats_names) != len(ev4_names):
+        raise ValueError(f"Sample name count mismatch: {len(stats_names)} in SampleStats vs {len(ev4_names)} in Table EV4")
+    
+    #check for each mathc
+    mismatches = []
+    for i, (s, e) in enumerate(zip(stats_names, ev4_names)):
+        if s != e:
+            mismatches.append((i, s, e))
+    
+    if mismatches:
+        print(f"Found {len(mismatches)} sample name mismatches:")
+        for i, s, e in mismatches:
+            print(f"  Row {i}: SampleStats='{s}' vs TableEV4='{e}'")
+        if len(mismatches) > 5:
+            print(f"  ... and {len(mismatches) - 5} more")
+    
+    else:       print("All sample names match between SampleStats and Table EV4.")
+    
+    return sample_stats, table_ev4
+    
+def merge_metadata(sample_stats: pd.DataFrame, table_ev4: pd.DataFrame) -> pd.DataFrame:
+    #merge on SampleName (avoid dublicating cell/gene counts)
+    #drop dublicate columns from table_ev4
+    
+    ev4_clean = table_ev4.drop(columns=["Number of Cells", "Number of Cells After Filtrating", "Number of Genes Detected"], errors="ignore",)
+    merged = pd.merge(sample_stats, ev4_clean, left_on="SampleName", right_on="Sample Name", how="left")
+    
+    return merged
+     
+def add_file_paths(bigboss: pd.DataFrame, data_dir: Path) -> pd.DataFrame:
+    #find matrix/barcode files by GEO_ID
+    rows_with_files = []
+    for _, row in bigboss.iterrows():
+        geo_id = row["GEO_ID"]
+        
+        mtx_files = list(data_dir.glob(f"{geo_id}*matrix.mtx.gz"))
+        bc_files = list(data_dir.glob(f"{geo_id}*barcodes.tsv.gz"))
+        
+        #add a row for each matching file pair
+        for mtx, bc in zip(mtx_files, bc_files):
+            new_row = row.copy()
+            new_row["MatrixFile"] = mtx.name
+            new_row["BarcodesFile"] = bc.name
+            rows_with_files.append(new_row)
+    
+    return pd.DataFrame(rows_with_files)
     
 def main() -> int:
     args = parse_args()
     repo_root = Path(__file__).resolve().parents[1]
     data_dir = (repo_root / args.data_dir).resolve()
-    meta_path = (repo_root / args.metadata).resolve()
+    sample_stats_path = (repo_root / args.sample_stats).resolve()
+    table_ev4_path = (repo_root / args.table_ev4).resolve()
     out_path = (repo_root / args.output).resolve()
     
-    #load metadata from the paper
-    meta = pd.read_csv(meta_path, sep="\t")
+    #validate file exists
+    for path, name in [
+        (sample_stats_path, "Sample Stats.txt"),
+        (table_ev4_path, "Table EV4"),
+        (data_dir, "Data Directory"),
+    ]:
+        if not path.exists():
+            print(f"Error: {name} not found at {path}")
+            return 1
     
-    #match files by GEO_ID
-    rows = []
-    for _, row in meta.iterrows():
-        geo_id = row["GEO_ID"]
-        
-        #find matching files in the data dir
-        mtx_files = list(data_dir.glob(f"{geo_id}*matrix.mtx.gz"))
-        bc_files = list(data_dir.glob(f"{geo_id}*barcodes.tsv.gz"))
-        
-        for mtx, bc in zip(mtx_files, bc_files):
-            rows.append(
-                {
-                    "GEO_ID": geo_id,
-                    "MatrixFile": mtx.name,
-                    "BarcodesFile": bc.name,
-                    "SampleName": row["SampleName"],
-                    "Title": row["Title"],
-                    "CellNumAfter": row["CellNumAfter"],
-                    "GenesDetected": row["GenesDetected"],
-                    "CellNum": row["CellNum"],
-                    "Mito": row["Mito"],
-                    "GeneLower": row["GeneLower"],
-                    "GeneUpper": row["GeneUpper"],
-                    "LibSize": row["LibSize"],
-                }
-            )
-    bigboss = pd.DataFrame(rows)
+    print (f"Loading metadata from both sources")
+    sample_stats, table_ev4 = load_and_validate_metadata(sample_stats_path, table_ev4_path)
     
-    #add sample type
-    bigboss["SampleType"] = bigboss["Title"].apply(classify_sample_type)
+    print (f"Merging metadata")
+    bigboss = merge_metadata(sample_stats, table_ev4)
+    
+    print("Adding file paths from raw data")
+    bigboss = add_file_paths(bigboss, data_dir)
     
     #save
     out_path.parent.mkdir(parents=True, exist_ok=True)
