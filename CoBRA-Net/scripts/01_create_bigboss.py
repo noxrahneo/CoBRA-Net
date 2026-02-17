@@ -31,8 +31,12 @@ def load_and_validate_metadata(sample_stats_path: Path, table_ev4_path: Path) ->
     #load both sources
     sample_stats = pd.read_csv(sample_stats_path, sep="\t")
     table_ev4 = pd.read_csv(table_ev4_path, skiprows=2)  #skip first two rows
+    table_ev4 = table_ev4.dropna(how="all") #removes completely empty lines
+    table_ev4 = table_ev4[table_ev4["Sample Name"].notna()].copy() #removes rows where sample name is missing (e.g., note/footer rows)
+    table_ev4["Sample Name"] = table_ev4["Sample Name"].astype(str).str.strip() #on both name columns: converts to text and removes hidden spaces like "N-0092-total " so "N-0092-total" matches correctly
+    sample_stats["SampleName"] = sample_stats["SampleName"].astype(str).str.strip() #same strip on sample_stats["SampleName"]: ensures both sources are normalized before row-by-row validation
     
-    #validate sample names mathc in order
+    #validate sample names match in order
     print("Validating sample names")
     stats_names = sample_stats["SampleName"].tolist()
     ev4_names = table_ev4["Sample Name"].tolist()
@@ -40,28 +44,33 @@ def load_and_validate_metadata(sample_stats_path: Path, table_ev4_path: Path) ->
     if len(stats_names) != len(ev4_names):
         raise ValueError(f"Sample name count mismatch: {len(stats_names)} in SampleStats vs {len(ev4_names)} in Table EV4")
     
-    #check for each mathc
+    #check for each match
     mismatches = []
     for i, (s, e) in enumerate(zip(stats_names, ev4_names)):
         if s != e:
             mismatches.append((i, s, e))
     
     if mismatches:
-        print(f"Found {len(mismatches)} sample name mismatches:")
-        for i, s, e in mismatches:
-            print(f"  Row {i}: SampleStats='{s}' vs TableEV4='{e}'")
+        preview = "\n".join(
+            [f"  Row {i}: SampleStats='{s}' vs TableEV4='{e}'" for i, s, e in mismatches[:5]]
+        )
+        more = ""
         if len(mismatches) > 5:
-            print(f"  ... and {len(mismatches) - 5} more")
-    
-    else:       print("All sample names match between SampleStats and Table EV4.")
+            more = f"\n  ... and {len(mismatches) - 5} more"
+        raise ValueError(f"Found {len(mismatches)} sample name mismatches:\n{preview}{more}")
+
+    print("All sample names match between SampleStats and Table EV4.")
     
     return sample_stats, table_ev4
     
 def merge_metadata(sample_stats: pd.DataFrame, table_ev4: pd.DataFrame) -> pd.DataFrame:
-    #merge on SampleName (avoid dublicating cell/gene counts)
-    #drop dublicate columns from table_ev4
+    #merge on SampleName (avoid duplicating cell/gene counts)
+    #drop duplicate columns from table_ev4
     
-    ev4_clean = table_ev4.drop(columns=["Number of Cells", "Number of Cells After Filtrating", "Number of Genes Detected"], errors="ignore",)
+    ev4_clean = table_ev4.drop(
+        columns=["Number of Cells", "Number of Cells After Filtering", "Number of Genes Detected"],
+        errors="ignore",
+    )
     merged = pd.merge(sample_stats, ev4_clean, left_on="SampleName", right_on="Sample Name", how="left")
     
     return merged
@@ -72,8 +81,11 @@ def add_file_paths(bigboss: pd.DataFrame, data_dir: Path) -> pd.DataFrame:
     for _, row in bigboss.iterrows():
         geo_id = row["GEO_ID"]
         
-        mtx_files = list(data_dir.glob(f"{geo_id}*matrix.mtx.gz"))
-        bc_files = list(data_dir.glob(f"{geo_id}*barcodes.tsv.gz"))
+        mtx_files = sorted(data_dir.glob(f"{geo_id}_*-matrix.mtx.gz"))
+        bc_files = sorted(data_dir.glob(f"{geo_id}_*-barcodes.tsv.gz"))
+
+        if not mtx_files or not bc_files:
+            continue
         
         #add a row for each matching file pair
         for mtx, bc in zip(mtx_files, bc_files):
@@ -110,6 +122,10 @@ def main() -> int:
     
     print("Adding file paths from raw data")
     bigboss = add_file_paths(bigboss, data_dir)
+
+    if bigboss.empty:
+        print("Error: no matching matrix/barcodes files found for metadata rows")
+        return 1
     
     #save
     out_path.parent.mkdir(parents=True, exist_ok=True)
