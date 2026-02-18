@@ -31,10 +31,12 @@ def load_and_validate_metadata(sample_stats_path: Path, table_ev4_path: Path) ->
     #load both sources
     sample_stats = pd.read_csv(sample_stats_path, sep="\t")
     table_ev4 = pd.read_csv(table_ev4_path, skiprows=2)  #skip first two rows
-    table_ev4 = table_ev4.dropna(how="all") #removes completely empty lines
-    table_ev4 = table_ev4[table_ev4["Sample Name"].notna()].copy() #removes rows where sample name is missing (e.g., note/footer rows)
-    table_ev4["Sample Name"] = table_ev4["Sample Name"].astype(str).str.strip() #on both name columns: converts to text and removes hidden spaces like "N-0092-total " so "N-0092-total" matches correctly
-    sample_stats["SampleName"] = sample_stats["SampleName"].astype(str).str.strip() #same strip on sample_stats["SampleName"]: ensures both sources are normalized before row-by-row validation
+    table_ev4.columns = table_ev4.columns.str.strip()
+    table_ev4 = table_ev4.dropna(how="all")
+    table_ev4 = table_ev4[table_ev4["Sample Name"].notna()].copy()
+    table_ev4["Sample Name"] = table_ev4["Sample Name"].astype(str).str.strip()
+    sample_stats["SampleName"] = sample_stats["SampleName"].astype(str).str.strip()
+    table_ev4 = table_ev4[~table_ev4["Sample Name"].str.contains(r"\s", regex=True)].copy()
     
     #validate sample names match in order
     print("Validating sample names")
@@ -95,6 +97,42 @@ def add_file_paths(bigboss: pd.DataFrame, data_dir: Path) -> pd.DataFrame:
             rows_with_files.append(new_row)
     
     return pd.DataFrame(rows_with_files)
+
+def format_output_columns(bigboss: pd.DataFrame) -> pd.DataFrame:
+    #remove duplicate and unneeded columns
+    bigboss = bigboss.drop(columns=["Title", "Sample Name", "Patient"], errors="ignore")
+
+    #final readable order
+    final_order = [
+        "MatrixFile",
+        "BarcodesFile",
+        "GEO_ID",
+        "SampleName",
+        "Description",
+        "Source",
+        "Condition",
+        "Gender",
+        "Parity",
+        "Menopause",
+        "CellNum",
+        "CellNumAfter",
+        "Mito",
+        "GeneLower",
+        "GeneUpper",
+        "LibSize",
+        "GenesDetected",
+    ]
+
+    #ensure missing columns still exist (as empty) so output schema is stable
+    for col in final_order:
+        if col not in bigboss.columns:
+            bigboss[col] = pd.NA
+
+    #normalize missing values in key phenotype columns
+    for col in ["Parity", "Menopause"]:
+        bigboss[col] = bigboss[col].replace(r"^\s*$", pd.NA, regex=True).fillna("NA")
+
+    return bigboss[final_order]
     
 def main() -> int:
     args = parse_args()
@@ -126,6 +164,9 @@ def main() -> int:
     if bigboss.empty:
         print("Error: no matching matrix/barcodes files found for metadata rows")
         return 1
+
+    print("Formatting output columns")
+    bigboss = format_output_columns(bigboss)
     
     #save
     out_path.parent.mkdir(parents=True, exist_ok=True)
