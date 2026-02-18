@@ -51,3 +51,13 @@ python3 scripts/02_chopper.py
 
 - `results/bigboss.csv` from `01_create_bigboss.py`
 - `results/bigboss_chopped.csv` from `02_chopper.py`
+
+## RtoPython Workflow Pointer
+
+The current R-to-Python thesis workflow is in `scripts/RtoPython/`:
+
+1. `pre_qc_from_r.py`
+2. `filtering_cells.py`
+3. `post_qc_from_r.py`
+
+See `scripts/RtoPython/README.md` for commands and outputs.
