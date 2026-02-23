@@ -1,2 +1,6 @@
 __pycache__/
 *.pyc
+
+# Local heavy artifacts (not for GitHub)
+data/
+results/**
