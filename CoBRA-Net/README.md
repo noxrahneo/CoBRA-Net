@@ -32,6 +32,24 @@ This repository is the organized workspace for my thesis final version. It will 
 	https://www.sc-best-practices.org/introduction/analysis_tools.html
 - Future additions may include garbage-collection helpers and expanded tooling.
 
+## Current RtoPython Pipeline
+
+Current active R-to-Python workflow (condition-aware):
+
+1. Pre-QC on raw matrices.
+2. Filtering using sample-specific thresholds.
+3. Post-QC on filtered outputs + pre/post comparison.
+
+From repo root:
+
+```bash
+python3 scripts/RtoPython/pre_qc_from_r.py --condition "ER+ tumor"
+python3 scripts/RtoPython/filtering_cells.py --condition "ER+ tumor"
+python3 scripts/RtoPython/post_qc_from_r.py --condition "ER+ tumor"
+```
+
+See `scripts/RtoPython/README.md` for details and outputs.
+
 ## Automation
 
 This repo includes a `hooks/` folder to share git hook scripts. To enable them locally:
