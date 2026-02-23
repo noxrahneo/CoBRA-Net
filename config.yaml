@@ -2,6 +2,7 @@
 paths:
   data_dir: data
   results_dir: results
+  results_stages_dir: results/stages
   logs_dir: logs
 
 samples: []
@@ -20,6 +21,7 @@ normalization:
 network:
   correlation_method: spearman
   wgcna_soft_power_range: [1, 20]
+  output_dir: results/stages/07_network
 
 runtime:
   random_seed: 42
