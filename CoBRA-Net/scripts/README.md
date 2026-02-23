@@ -56,8 +56,32 @@ python3 scripts/02_chopper.py
 
 The current R-to-Python thesis workflow is in `scripts/RtoPython/`:
 
-1. `pre_qc_from_r.py`
-2. `filtering_cells.py`
-3. `post_qc_from_r.py`
+1. `01_pre_qc_from_r.py`
+2. `02_filtering_cells.py`
+3. `03_post_qc_from_r.py`
+4. `04_per_sample_preprocess.py`
+5. `05_validate_preprocess.py`
+6. `06_integrate_per_condition.py`
+7. `07_plot_integrated_results.py`
+8. `08_plot_integrated_panels.py`
+9. `09_annotate_clusters.py`
 
 See `scripts/RtoPython/README.md` for commands and outputs.
+
+## Analysis Utilities
+
+Non-translation analysis utilities live in `scripts/analysis/`:
+
+- `04_marker_heatmaps.py`
+- `05_composition_tests.py`
+- `06_kegg_enrichment.py`
+- `90_build_thesis_pack.py`
+- `00_migrate_results_to_stages.py`
+- `warehouse.py`
+
+These utilities now read/write staged outputs under `results/stages/` by
+default.
+
+Migration:
+- `python3 scripts/analysis/00_migrate_results_to_stages.py --mode copy`
+- Optional dry run: `python3 scripts/analysis/00_migrate_results_to_stages.py --mode copy --dry-run`
