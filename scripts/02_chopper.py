@@ -72,7 +72,7 @@ def main() -> int:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     chopped.to_csv(out_path, index=False)
 
-    print_summary(df, chopped)
+    print_summary(df, chopped)  
     print(f"\nSaved: {out_path}")
     return 0
 
