@@ -36,19 +36,51 @@ This repository is the organized workspace for my thesis final version. It will 
 
 Current active R-to-Python workflow (condition-aware):
 
-1. Pre-QC on raw matrices.
-2. Filtering using sample-specific thresholds.
-3. Post-QC on filtered outputs + pre/post comparison.
+1. `01_pre_qc_from_r.py`
+2. `02_filtering_cells.py`
+3. `03_post_qc_from_r.py`
+4. `04_per_sample_preprocess.py`
+5. `05_validate_preprocess.py`
+6. `06_integrate_per_condition.py`
+7. `07_plot_integrated_results.py`
+8. `08_plot_integrated_panels.py`
+9. `09_annotate_clusters.py`
 
 From repo root:
 
 ```bash
-python3 scripts/RtoPython/pre_qc_from_r.py --condition "ER+ tumor"
-python3 scripts/RtoPython/filtering_cells.py --condition "ER+ tumor"
-python3 scripts/RtoPython/post_qc_from_r.py --condition "ER+ tumor"
+python3 scripts/RtoPython/01_pre_qc_from_r.py --condition "ER+ tumor"
+python3 scripts/RtoPython/02_filtering_cells.py --condition "ER+ tumor"
+python3 scripts/RtoPython/03_post_qc_from_r.py --condition "ER+ tumor"
 ```
 
-See `scripts/RtoPython/README.md` for details and outputs.
+See `scripts/RtoPython/README.md` for details and staged outputs.
+
+## Post-annotation analyses (all conditions)
+
+From repo root:
+
+```bash
+python3 -m pip install --user gseapy statsmodels
+python3 scripts/analysis/04_marker_heatmaps.py --condition all --group-col cell_type_annot
+python3 scripts/analysis/05_composition_tests.py --condition all --group-col cell_type_annot --sample-col SampleName
+python3 scripts/analysis/06_kegg_enrichment.py --condition all
+```
+
+Outputs:
+- Marker heatmaps: `results/stages/04_annotation/<Condition>/figures/*marker_heatmap*.png`
+- Composition test: `results/stages/05_composition/`
+- KEGG enrichment: `results/stages/06_kegg/`
+	- includes filtered interpretation tables: `*_kegg_interpretation.csv`
+
+Provenance logs:
+- Each stage writes a `warehouse.csv` in its output folder
+	(`results/stages/04_annotation/`, `results/stages/05_composition/`,
+	`results/stages/06_kegg/`, `results/stages/90_reports/thesis_pack/`).
+
+Staged results:
+- Non-destructive migration script: `python3 scripts/analysis/00_migrate_results_to_stages.py --mode copy`
+- Staged layout index: `results/stages/README.md`
 
 ## Automation
 
