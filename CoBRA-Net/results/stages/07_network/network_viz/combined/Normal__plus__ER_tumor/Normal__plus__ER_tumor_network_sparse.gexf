@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-03-03">
+    <creator>NetworkX 3.4.2</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <nodes>
+      <node id="MT-ATP6" label="MT-ATP6" />
+      <node id="MT-ND4" label="MT-ND4" />
+      <node id="MYL9" label="MYL9" />
+      <node id="TAGLN" label="TAGLN" />
+      <node id="MT-CO2" label="MT-CO2" />
+      <node id="MT-CO3" label="MT-CO3" />
+      <node id="CALD1" label="CALD1" />
+      <node id="DNAJB1" label="DNAJB1" />
+      <node id="HSPA1A" label="HSPA1A" />
+      <node id="KRT18" label="KRT18" />
+      <node id="KRT19" label="KRT19" />
+      <node id="KRT8" label="KRT8" />
+      <node id="HSPA1B" label="HSPA1B" />
+      <node id="MT-ND3" label="MT-ND3" />
+      <node id="ELF3" label="ELF3" />
+      <node id="FXYD3" label="FXYD3" />
+      <node id="TACSTD2" label="TACSTD2" />
+      <node id="ERBIN" label="ERBIN" />
+      <node id="REV1" label="REV1" />
+      <node id="CLDN4" label="CLDN4" />
+      <node id="JUNB" label="JUNB" />
+      <node id="ZFP36" label="ZFP36" />
+      <node id="CD74" label="CD74" />
+      <node id="HLA-DRA" label="HLA-DRA" />
+      <node id="MT-CO1" label="MT-CO1" />
+      <node id="FOS" label="FOS" />
+      <node id="JUN" label="JUN" />
+      <node id="ANKRD10" label="ANKRD10" />
+      <node id="ARMCX3" label="ARMCX3" />
+      <node id="GATA3" label="GATA3" />
+      <node id="KRT7" label="KRT7" />
+      <node id="CLDN3" label="CLDN3" />
+      <node id="ATP13A3" label="ATP13A3" />
+      <node id="RAB21" label="RAB21" />
+      <node id="CD24" label="CD24" />
+      <node id="AZGP1" label="AZGP1" />
+      <node id="HLA-DPB1" label="HLA-DPB1" />
+      <node id="EP300" label="EP300" />
+      <node id="ADAM17" label="ADAM17" />
+      <node id="IAH1" label="IAH1" />
+      <node id="BMPR2" label="BMPR2" />
+      <node id="HIP1" label="HIP1" />
+    </nodes>
+    <edges>
+      <edge source="MT-ATP6" target="MT-ND4" id="0" weight="0.2753879129886627" />
+      <edge source="MT-ATP6" target="MT-ND3" id="1" weight="0.24139918386936188" />
+      <edge source="MT-ATP6" target="MT-CO3" id="2" weight="0.12055574357509613" />
+      <edge source="MT-ND4" target="MT-CO3" id="3" weight="0.150832399725914" />
+      <edge source="MT-ND4" target="MT-CO1" id="4" weight="0.14311571419239044" />
+      <edge source="MT-ND4" target="MT-CO2" id="5" weight="0.11537516117095947" />
+      <edge source="MYL9" target="TAGLN" id="6" weight="0.2735406458377838" />
+      <edge source="MYL9" target="CALD1" id="7" weight="0.1356826275587082" />
+      <edge source="TAGLN" target="CALD1" id="8" weight="0.26078325510025024" />
+      <edge source="MT-CO2" target="MT-CO3" id="9" weight="0.263727068901062" />
+      <edge source="MT-CO2" target="MT-CO1" id="10" weight="0.13896946609020233" />
+      <edge source="MT-CO3" target="MT-CO1" id="11" weight="0.1754516214132309" />
+      <edge source="DNAJB1" target="HSPA1A" id="12" weight="0.2596176266670227" />
+      <edge source="DNAJB1" target="HSPA1B" id="13" weight="0.1443891078233719" />
+      <edge source="HSPA1A" target="HSPA1B" id="14" weight="0.24140490591526031" />
+      <edge source="KRT18" target="KRT19" id="15" weight="0.2527998089790344" />
+      <edge source="KRT18" target="KRT8" id="16" weight="0.24634422361850739" />
+      <edge source="KRT19" target="KRT8" id="17" weight="0.20988287031650543" />
+      <edge source="KRT19" target="CD24" id="18" weight="0.1253078132867813" />
+      <edge source="KRT19" target="AZGP1" id="19" weight="0.12384866178035736" />
+      <edge source="KRT8" target="GATA3" id="20" weight="0.13958360254764557" />
+      <edge source="KRT8" target="KRT7" id="21" weight="0.1354496031999588" />
+      <edge source="KRT8" target="FXYD3" id="22" weight="0.11748585850000381" />
+      <edge source="ELF3" target="FXYD3" id="23" weight="0.22866190969944" />
+      <edge source="ELF3" target="TACSTD2" id="24" weight="0.22256720066070557" />
+      <edge source="ELF3" target="CLDN4" id="25" weight="0.19948869943618774" />
+      <edge source="ELF3" target="CLDN3" id="26" weight="0.13037031888961792" />
+      <edge source="FXYD3" target="TACSTD2" id="27" weight="0.1654718518257141" />
+      <edge source="FXYD3" target="CLDN4" id="28" weight="0.1296500861644745" />
+      <edge source="FXYD3" target="AZGP1" id="29" weight="0.12220167368650436" />
+      <edge source="FXYD3" target="KRT7" id="30" weight="0.10353540629148483" />
+      <edge source="TACSTD2" target="CLDN4" id="31" weight="0.13828045129776" />
+      <edge source="TACSTD2" target="KRT7" id="32" weight="0.10820861160755157" />
+      <edge source="ERBIN" target="REV1" id="33" weight="0.2082074135541916" />
+      <edge source="ERBIN" target="EP300" id="34" weight="0.1076887845993042" />
+      <edge source="JUNB" target="ZFP36" id="35" weight="0.1952410340309143" />
+      <edge source="CD74" target="HLA-DRA" id="36" weight="0.19420874118804932" />
+      <edge source="HLA-DRA" target="HLA-DPB1" id="37" weight="0.11186053603887558" />
+      <edge source="FOS" target="JUN" id="38" weight="0.14222271740436554" />
+      <edge source="ANKRD10" target="ARMCX3" id="39" weight="0.14133219420909882" />
+      <edge source="ATP13A3" target="RAB21" id="40" weight="0.12749788165092468" />
+      <edge source="ADAM17" target="IAH1" id="41" weight="0.10454399883747101" />
+      <edge source="BMPR2" target="HIP1" id="42" weight="0.10233184695243835" />
+    </edges>
+  </graph>
+</gexf>

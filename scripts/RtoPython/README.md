@@ -25,8 +25,31 @@ Translated scripts in execution order:
 - `07_plot_integrated_results.py`
 - `08_plot_integrated_panels.py`
 - `09_annotate_clusters.py`
+- `10_annotate_clusters_minimal.py` (optional lightweight annotation)
+
+Annotation output modes currently used:
+- Full thesis-style outputs (figures + supplementary CSVs):
+	- `results/stages/04_annotation_rdata/`
+- Minimal fast outputs:
+	- `results/stages/04_annotation_minimal/`
 
 ## Quick run (all conditions)
+
+Before downstream analyses, freeze manual annotation curation (integrated-only thesis run):
+
+```bash
+python3 scripts/analysis/07_freeze_annotation.py export --condition all
+# optional helper: auto-curate using score margin + marker overlap
+python3 scripts/analysis/07b_autocurate_annotation.py --condition all
+# edit curated files per condition:
+# results/stages/04_annotation/<Condition>/<Condition>_cluster_to_celltype_mapping_curated.csv
+python3 scripts/analysis/07_freeze_annotation.py apply --condition all --freeze-tag thesis_v1
+```
+
+Frozen outputs:
+- `results/stages/04_annotation/<Condition>/<Condition>_cluster_to_celltype_mapping_frozen.csv`
+- `results/stages/04_annotation/<Condition>/<Condition>_annotated_frozen.h5ad`
+- `results/stages/04_annotation/<Condition>/<Condition>_annotation_freeze_summary.csv`
 
 From repository root, run the post-annotation analyses in this order:
 
@@ -36,6 +59,10 @@ python3 scripts/analysis/04_marker_heatmaps.py --condition all --group-col cell_
 python3 scripts/analysis/05_composition_tests.py --condition all --group-col cell_type_annot --sample-col SampleName
 python3 scripts/analysis/06_kegg_enrichment.py --condition all
 ```
+
+Notes:
+- `05_composition_tests.py` now auto-resolves annotation input and prefers `results/stages/04_annotation_rdata/` when present.
+- Use `--input-dir` to force a specific annotation root for any downstream script.
 
 Optional cluster-level variant:
 
@@ -291,25 +318,52 @@ Purpose:
 - Score signatures and infer cluster -> cell-type labels.
 - Export mapping tables and regenerated UMAPs colored by annotation.
 
+Implementation notes (current):
+- `09_annotate_clusters.py` is now a slim orchestration script.
+- Signature loading, alias collapsing, and redundancy pruning are handled in `annotation_signature_utils.py`.
+- Legacy h5ad compatibility repair/read logic is handled in `h5ad_compat.py`.
+
 Inputs:
 - `results/stages/03_integration/integrated/<Condition>/<Condition>_integrated.h5ad`
-- Optional signature file (default):
+- Optional immune signature file (default):
 	- `data/HumanBreast10X-main/Signatures/ImmuneMarkers2.txt`
+- Optional lineage RData signatures (default enabled):
+	- `data/HumanBreast10X-main/Signatures/Human-PosSigGenes.RData`
+- Optional PAM50 subtype signatures (default disabled unless `--include-pam50`):
+	- `data/HumanBreast10X-main/Signatures/PAM50.txt`
 
 Outputs:
-- `results/stages/04_annotation/<Condition>/<Condition>_annotated.h5ad`
-- `results/stages/04_annotation/<Condition>/<Condition>_cluster_markers_top.csv`
-- `results/stages/04_annotation/<Condition>/<Condition>_cluster_signature_scores.csv`
-- `results/stages/04_annotation/<Condition>/<Condition>_cluster_to_celltype_mapping.csv`
-- `results/stages/04_annotation/<Condition>/<Condition>_signature_gene_coverage.csv`
+- Output root is configurable via `--output-dir`.
+- Default path examples (when `--output-dir results/stages/04_annotation`):
+	- `results/stages/04_annotation/<Condition>/<Condition>_annotated.h5ad`
+	- `results/stages/04_annotation/<Condition>/<Condition>_cluster_markers_top.csv`
+	- `results/stages/04_annotation/<Condition>/<Condition>_cluster_signature_scores.csv`
+	- `results/stages/04_annotation/<Condition>/<Condition>_cluster_to_celltype_mapping.csv`
+	- `results/stages/04_annotation/<Condition>/<Condition>_cluster_to_major_compartment_mapping.csv`
+	- `results/stages/04_annotation/<Condition>/<Condition>_cluster_to_epithelial_lineage_mapping.csv`
+	- `results/stages/04_annotation/<Condition>/<Condition>_signature_gene_coverage.csv`
 - Optional confusion report:
 	- `results/stages/04_annotation/<Condition>/<Condition>_confusion_previous_vs_annot.csv`
 - Annotation summary:
-	- one condition: `results/stages/04_annotation/<Condition>/<Condition>_annotation_summary.csv`
-	- all conditions: `results/stages/04_annotation/annotation_summary.csv`
+	- one condition: `<output-dir>/<Condition>/<Condition>_annotation_summary.csv`
+	- all conditions: `<output-dir>/annotation_summary.csv`
 - Annotated UMAP figures:
-	- `results/stages/04_annotation/<Condition>/figures/<Condition>_umap_cell_type_annot.png`
-	- `results/stages/04_annotation/<Condition>/figures/<Condition>_umap_leiden.png`
+	- `<output-dir>/<Condition>/figures/<Condition>_umap_cell_type_annot.png`
+	- `<output-dir>/<Condition>/figures/<Condition>_umap_major_compartment.png`
+	- `<output-dir>/<Condition>/figures/<Condition>_umap_epithelial_lineage.png`
+	- `<output-dir>/<Condition>/figures/<Condition>_umap_leiden.png`
+- Optional t-SNE figures (`--compute-tsne`):
+	- `<output-dir>/<Condition>/figures/<Condition>_tsne_cell_type_annot.png`
+	- `<output-dir>/<Condition>/figures/<Condition>_tsne_major_compartment.png`
+	- `<output-dir>/<Condition>/figures/<Condition>_tsne_epithelial_lineage.png`
+	- `<output-dir>/<Condition>/figures/<Condition>_tsne_leiden.png`
+
+Labeling convention:
+- Keep fine labels when marker/signature evidence is clear (for example `Endothelial`, `Fibroblast`, `Myeloid`).
+- Use 2-layer annotation for thesis clarity:
+	- coarse: `major_compartment` (`Epithelial`, `Stromal_like`, `Uncertain`)
+	- detailed: `cell_type_annot` plus epithelial refinement `epithelial_lineage` (`Basal`, `LP`, `ML`, `Non_epithelial`, `Uncertain`)
+- `Uncertain` is assigned on low confidence using score margin and marker-overlap thresholds.
 
 Run:
 - List available condition folders:
@@ -318,8 +372,40 @@ Run:
 	- `python scripts/RtoPython/09_annotate_clusters.py --condition Normal`
 - Run all conditions:
 	- `python scripts/RtoPython/09_annotate_clusters.py --condition all`
+- Run with publication lineage signatures from RData (recommended):
+	- `python scripts/RtoPython/09_annotate_clusters.py --condition all --lineage-rdata data/HumanBreast10X-main/Signatures/Human-PosSigGenes.RData`
+- Full thesis-style run (all conditions, rich outputs in `04_annotation_rdata`):
+	- `python scripts/RtoPython/09_annotate_clusters.py --condition all --n-top-markers 100 --lineage-rdata data/HumanBreast10X-main/Signatures/Human-PosSigGenes.RData --output-dir results/stages/04_annotation_rdata --compute-tsne --tsne-perplexity 30 --tsne-learning-rate 200 --tsne-seed 2018`
+- Also include PAM50 subtype signatures:
+	- `python scripts/RtoPython/09_annotate_clusters.py --condition all --include-pam50`
+- Keep alias-collapsing/pruning enabled (default) to avoid duplicated overlapping label sets.
+- Tune uncertainty fallback if needed:
+	- `python scripts/RtoPython/09_annotate_clusters.py --condition Normal --uncertain-margin-threshold 0.10 --uncertain-min-overlap 1`
+- Generate article-style t-SNE outputs:
+	- `python scripts/RtoPython/09_annotate_clusters.py --condition Normal --compute-tsne --tsne-perplexity 30 --tsne-learning-rate 200`
 - With previous labels for confusion report:
 	- `python scripts/RtoPython/09_annotate_clusters.py --condition Normal --previous-label-col cell_type`
+
+### `10_annotate_clusters_minimal.py`
+
+Purpose:
+- Minimal cluster annotation for quick all-condition execution.
+- Scores signatures and maps clusters to top-scoring cell-type labels.
+- Produces compact tables and annotated objects without extended figure generation.
+
+Outputs:
+- `results/stages/04_annotation_minimal/<Condition>/<Condition>_annotated.h5ad`
+- `results/stages/04_annotation_minimal/<Condition>/<Condition>_cluster_to_celltype_mapping.csv`
+- `results/stages/04_annotation_minimal/<Condition>/<Condition>_annotation_summary.csv`
+- Combined summary: `results/stages/04_annotation_minimal/annotation_summary.csv`
+
+Run:
+- List available condition folders:
+	- `python scripts/RtoPython/10_annotate_clusters_minimal.py --list-conditions`
+- Run one condition:
+	- `python scripts/RtoPython/10_annotate_clusters_minimal.py --condition Normal`
+- Run all conditions:
+	- `python scripts/RtoPython/10_annotate_clusters_minimal.py --condition all --lineage-rdata data/HumanBreast10X-main/Signatures/Human-PosSigGenes.RData`
 
 ### `04_marker_heatmaps.py`
 
@@ -348,6 +434,15 @@ Run:
 	- `python scripts/analysis/04_marker_heatmaps.py --condition Normal`
 - Build heatmap by clusters instead of cell-type labels:
 	- `python scripts/analysis/04_marker_heatmaps.py --condition all --group-col leiden`
+- Build heatmap from custom gene set file (instead of top markers):
+	- `python scripts/analysis/04_marker_heatmaps.py --condition Normal --gene-set-file data/HumanBreast10X-main/Signatures/PAM50.txt --gene-col Gene --gene-set-name pam50`
+- Build PAM50 heatmaps for cancer + pre-neoplastic conditions:
+	- `for c in ER_tumor HER2_tumor Triple_negative_tumor Triple_negative_BRCA1_tumor Normal_BRCA1_-_pre-neoplastic; do python scripts/analysis/04_marker_heatmaps.py --condition "$c" --input-dir results/stages/04_annotation_rdata --group-col cell_type_annot --gene-set-file data/HumanBreast10X-main/Signatures/PAM50.txt --gene-col Gene --gene-set-name pam50; done`
+
+Additional outputs when using `--gene-set-file`:
+- `results/stages/04_annotation/<Condition>/<Condition>_<gene_set_name>_heatmap_expression.csv`
+- `results/stages/04_annotation/<Condition>/<Condition>_<gene_set_name>_heatmap_zscore.csv`
+- `results/stages/04_annotation/<Condition>/figures/<Condition>_<gene_set_name>_heatmap_<group_col>.png`
 
 ### `05_composition_tests.py`
 

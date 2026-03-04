@@ -1,0 +1,430 @@
+condition,source_conditions,selected_power,community_id,n_nodes,n_internal_edges,mean_internal_edge_weight,top_hub_genes,top_hub_1,top_hub_2,top_hub_3
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,1,75,195,0.15871896885144404,LHFPL6 | C1S | AEBP1,LHFPL6,C1S,AEBP1
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,2,46,101,0.15798255321708055,GTF2B | SPTY2D1 | SNRNP200,GTF2B,SPTY2D1,SNRNP200
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,3,45,67,0.1460535320550648,VAMP4 | TRPM7 | UBQLN2,VAMP4,TRPM7,UBQLN2
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,4,29,97,0.19275695976522778,KRT7 | ELF3 | EPCAM,KRT7,ELF3,EPCAM
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,5,23,26,0.13477696994176275,CYBRD1 | NFIA | NR2F2,CYBRD1,NFIA,NR2F2
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,6,21,29,0.15648611763427997,USP38 | CYB5D2 | RRAGB,USP38,CYB5D2,RRAGB
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,7,12,17,0.14326830427436266,NDUFAF7 | SNIP1 | RIPK1,NDUFAF7,SNIP1,RIPK1
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,8,11,14,0.1648820069219385,CEP95 | JADE1 | TCF7,CEP95,JADE1,TCF7
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,9,9,9,0.12784077227115626,TGFBR2 | TPP1 | TACC1,TGFBR2,TPP1,TACC1
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,10,9,8,0.13387866690754888,DUSP1 | FOS | FOSB,DUSP1,FOS,FOSB
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,11,8,7,0.1560628350291933,ATG14 | NFAT5 | NBL1,ATG14,NFAT5,NBL1
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,12,7,8,0.17141832225024697,PPP2R5C | CDC42SE2 | RNF166,PPP2R5C,CDC42SE2,RNF166
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,13,7,9,0.1533257241050402,CKS2 | ANP32E | PCNA,CKS2,ANP32E,PCNA
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,14,7,8,0.14988857135176656,MALT1 | PIP4K2A | TTC39C,MALT1,PIP4K2A,TTC39C
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,15,7,8,0.20808344893157482,B2M | ISG15 | HLA-B,B2M,ISG15,HLA-B
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,16,6,5,0.1378152579069137,CSKMT | AL645728.1 | PAQR3,CSKMT,AL645728.1,PAQR3
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,17,6,5,0.1365880519151687,FN1 | SERPING1 | ABCA1,FN1,SERPING1,ABCA1
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,18,5,7,0.24249605621610368,MT-CO3 | MT-ND4 | MT-CO2,MT-CO3,MT-ND4,MT-CO2
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,19,5,8,0.23158640787005424,CEP290 | TSC2 | ANKRD49,CEP290,TSC2,ANKRD49
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,20,5,6,0.20576711868246397,HLA-DRA | HLA-DRB1 | HLA-DPB1,HLA-DRA,HLA-DRB1,HLA-DPB1
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,21,4,3,0.13245398054520283,PTAR1 | CEP68 | LRRC75A,PTAR1,CEP68,LRRC75A
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,22,4,3,0.15971069037914273,DDX19A | SACS | MED27,DDX19A,SACS,MED27
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,23,3,2,0.20499349385499954,KIN | RNF168 | ERVK3-1,KIN,RNF168,ERVK3-1
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,24,3,2,0.21098900586366648,KLF9 | BAG3 | ITPRIP,KLF9,BAG3,ITPRIP
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,25,3,2,0.17920730262994766,ADAL | ICE2 | CDK5RAP1,ADAL,ICE2,CDK5RAP1
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,26,3,2,0.1869034096598625,KLHL28 | CCDC93 | NPIPB5,KLHL28,CCDC93,NPIPB5
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,27,3,2,0.17234405875205988,MAFB | IER3 | SELENOP,MAFB,IER3,SELENOP
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,28,3,2,0.12390094622969625,FOXN3 | VSIR | NR3C1,FOXN3,VSIR,NR3C1
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,29,3,2,0.12106222286820409,CAV2 | PDLIM1 | CRIP2,CAV2,PDLIM1,CRIP2
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,30,3,2,0.13395289331674576,IRF1 | KLF2 | NFKBIA,IRF1,KLF2,NFKBIA
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,31,3,2,0.14577870815992355,C3ORF58 | BCL6 | TRIM8,C3ORF58,BCL6,TRIM8
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,32,3,2,0.1183951795101165,COQ7 | HIST1H2AC | LINC00662,COQ7,HIST1H2AC,LINC00662
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,33,2,1,0.224910631775856,HSPH1 | HSP90AA1,HSPH1,HSP90AA1,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,34,2,1,0.1978927552700042,HSPA1A | HSPA1B,HSPA1A,HSPA1B,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,35,2,1,0.1959835439920425,ANKDD1A | RPGR,ANKDD1A,RPGR,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,36,2,1,0.1913295090198516,GNPTAB | SC5D,GNPTAB,SC5D,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,37,2,1,0.1814427375793457,LRP1 | GPNMB,LRP1,GPNMB,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,38,2,1,0.1751178205013275,DCP1B | B3GAT2,DCP1B,B3GAT2,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,39,2,1,0.1683593839406967,SMCR5 | PTBP2,SMCR5,PTBP2,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,40,2,1,0.167019784450531,HIST1H1C | HIST1H2BG,HIST1H1C,HIST1H2BG,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,41,2,1,0.1621640920639038,IFI27L2 | EMP3,IFI27L2,EMP3,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,42,2,1,0.156054601073265,AC124016.1 | HIST2H2AC,AC124016.1,HIST2H2AC,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,43,2,1,0.1470120549201965,SLC38A1 | TUBA4A,SLC38A1,TUBA4A,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,44,2,1,0.1410911828279495,PDGFRL | PDGFRA,PDGFRL,PDGFRA,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,45,2,1,0.1351213455200195,C22ORF46 | GLMN,C22ORF46,GLMN,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,46,2,1,0.1349300444126129,MXRA8 | FRZB,MXRA8,FRZB,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,47,2,1,0.1292419731616974,DUSP6 | KLF7,DUSP6,KLF7,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,48,2,1,0.1286734789609909,TBC1D4 | FRMD4B,TBC1D4,FRMD4B,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,49,2,1,0.1275163739919662,C19ORF66 | RNF213,C19ORF66,RNF213,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,50,2,1,0.1258354634046554,OSTM1 | MTHFR,OSTM1,MTHFR,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,51,2,1,0.1251016855239868,APOC1 | APOE,APOC1,APOE,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,52,2,1,0.1225765123963356,MGA | PDS5B,MGA,PDS5B,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,53,2,1,0.1187130138278007,ATG2A | STK17B,ATG2A,STK17B,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,54,2,1,0.1176835224032402,RAP2B | ZNF654,RAP2B,ZNF654,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,55,2,1,0.117528811097145,TRIM41 | QSOX2,TRIM41,QSOX2,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,56,2,1,0.1159631460905075,FAM13B | MRNIP,FAM13B,MRNIP,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,57,2,1,0.1152352392673492,RORA | CRIP1,RORA,CRIP1,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,58,2,1,0.1145927831530571,THUMPD1 | HCG18,THUMPD1,HCG18,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,59,2,1,0.1140244305133819,GTF3C1 | SLC25A44,GTF3C1,SLC25A44,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,60,2,1,0.1114205569028854,S100A10 | S100A6,S100A10,S100A6,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,61,2,1,0.1111273989081382,CEP135 | CERK,CEP135,CERK,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,62,2,1,0.1071045398712158,CRYAB | MYC,CRYAB,MYC,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,63,2,1,0.1006662920117378,CABIN1 | LEMD3,CABIN1,LEMD3,
+Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,64,2,1,0.1006442904472351,CTDSPL2 | ZNF689,CTDSPL2,ZNF689,
+Normal__plus__ER_tumor,Normal | ER_tumor,20,1,6,9,0.18053491910298664,MT-CO3 | MT-ND4 | MT-ATP6,MT-CO3,MT-ND4,MT-ATP6
+Normal__plus__ER_tumor,Normal | ER_tumor,20,2,6,6,0.18296116342147192,KRT8 | KRT19 | KRT18,KRT8,KRT19,KRT18
+Normal__plus__ER_tumor,Normal | ER_tumor,20,3,6,9,0.15847050398588178,FXYD3 | ELF3 | TACSTD2,FXYD3,ELF3,TACSTD2
+Normal__plus__ER_tumor,Normal | ER_tumor,20,4,3,3,0.2233355094989141,TAGLN | MYL9 | CALD1,TAGLN,MYL9,CALD1
+Normal__plus__ER_tumor,Normal | ER_tumor,20,5,3,3,0.21513721346855164,HSPA1A | DNAJB1 | HSPA1B,HSPA1A,DNAJB1,HSPA1B
+Normal__plus__ER_tumor,Normal | ER_tumor,20,6,3,2,0.1579480990767479,ERBIN | REV1 | EP300,ERBIN,REV1,EP300
+Normal__plus__ER_tumor,Normal | ER_tumor,20,7,3,2,0.1530346386134624,HLA-DRA | CD74 | HLA-DPB1,HLA-DRA,CD74,HLA-DPB1
+Normal__plus__ER_tumor,Normal | ER_tumor,20,8,2,1,0.1952410340309143,JUNB | ZFP36,JUNB,ZFP36,
+Normal__plus__ER_tumor,Normal | ER_tumor,20,9,2,1,0.1422227174043655,FOS | JUN,FOS,JUN,
+Normal__plus__ER_tumor,Normal | ER_tumor,20,10,2,1,0.1413321942090988,ARMCX3 | ANKRD10,ARMCX3,ANKRD10,
+Normal__plus__ER_tumor,Normal | ER_tumor,20,11,2,1,0.1274978816509246,RAB21 | ATP13A3,RAB21,ATP13A3,
+Normal__plus__ER_tumor,Normal | ER_tumor,20,12,2,1,0.104543998837471,IAH1 | ADAM17,IAH1,ADAM17,
+Normal__plus__ER_tumor,Normal | ER_tumor,20,13,2,1,0.1023318469524383,BMPR2 | HIP1,BMPR2,HIP1,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,1,18,35,0.17576035410165786,DCN | LUM | BGN,DCN,LUM,BGN
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,2,17,26,0.148071735810775,COL4A1 | SPARC | COL4A2,COL4A1,SPARC,COL4A2
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,3,16,23,0.13526840054470557,SLC2A3 | FMNL3 | WIPF1,SLC2A3,FMNL3,WIPF1
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,4,15,54,0.18889208441531216,KRT8 | CD24 | ELF3,KRT8,CD24,ELF3
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,5,8,24,0.19639919232577085,HLA-DRA | HLA-DRB1 | CD74,HLA-DRA,HLA-DRB1,CD74
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,6,8,9,0.13225822067923015,ARHGAP29 | TINAGL1 | BCAM,ARHGAP29,TINAGL1,BCAM
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,7,7,8,0.1639158111065626,PODXL | TM4SF18 | DOCK9,PODXL,TM4SF18,DOCK9
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,8,6,8,0.1963283810764551,TAGLN | ACTA2 | TPM2,TAGLN,ACTA2,TPM2
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,9,6,6,0.16818490996956825,POLK | EP300 | ZBED5,POLK,EP300,ZBED5
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,10,5,7,0.2697455308267048,MT-CO3 | MT-ATP6 | MT-CO1,MT-CO3,MT-ATP6,MT-CO1
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,11,5,4,0.1297925543040037,TPM1 | PALLD | CSRP1,TPM1,PALLD,CSRP1
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,12,5,4,0.10829517804086206,BMPR2 | SNTB2 | MTUS1,BMPR2,SNTB2,MTUS1
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,13,4,3,0.10727969060341513,PJA2 | FTX | PIK3CA,PJA2,FTX,PIK3CA
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,14,3,2,0.28085157275199885,HSPA1B | HSPA1A | DNAJB1,HSPA1B,HSPA1A,DNAJB1
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,15,3,2,0.1273720785975456,PECAM1 | RASGRP3 | CARD8,PECAM1,RASGRP3,CARD8
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,16,3,2,0.16132424771785736,INO80D | KIDINS220 | RLF,INO80D,KIDINS220,RLF
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,17,3,2,0.11238612234592435,ENG | RIPOR1 | CD93,ENG,RIPOR1,CD93
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,18,3,2,0.10771476104855535,SMAD1 | HYAL2 | RALGAPA2,SMAD1,HYAL2,RALGAPA2
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,19,3,2,0.1177189350128173,KIAA1109 | S100PBP | VPS13C,KIAA1109,S100PBP,VPS13C
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,20,3,2,0.12544630467891685,RAI14 | PPFIBP1 | WWTR1,RAI14,PPFIBP1,WWTR1
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,21,2,1,0.4059634804725647,S100A9 | S100A8,S100A9,S100A8,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,22,2,1,0.2624951601028442,CYTOR | MIR4435-2HG,CYTOR,MIR4435-2HG,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,23,2,1,0.2313246130943298,MYSM1 | GIGYF1,MYSM1,GIGYF1,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,24,2,1,0.212548553943634,PEAK1 | TNS1,PEAK1,TNS1,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,25,2,1,0.159408152103424,MTRNR2L8 | MTRNR2L12,MTRNR2L8,MTRNR2L12,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,26,2,1,0.1304864734411239,CXCL3 | CXCL2,CXCL3,CXCL2,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,27,2,1,0.1296515017747879,TAOK2 | TBCD,TAOK2,TBCD,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,28,2,1,0.1278499960899353,APOC1 | APOE,APOC1,APOE,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,29,2,1,0.1269256472587585,CCNL1 | IFRD1,CCNL1,IFRD1,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,30,2,1,0.1245855391025543,ZFYVE16 | MAN2A1,ZFYVE16,MAN2A1,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,31,2,1,0.1229949295520782,COL6A2 | COL6A1,COL6A2,COL6A1,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,32,2,1,0.1159382089972496,ZMYM2 | ZNF292,ZMYM2,ZNF292,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,33,2,1,0.1093799099326133,SKIL | CREBRF,SKIL,CREBRF,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,34,2,1,0.1078002750873565,SLC9A3R2 | CNKSR3,SLC9A3R2,CNKSR3,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,35,2,1,0.1074982658028602,GBP4 | TRIM22,GBP4,TRIM22,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,36,2,1,0.1073318049311637,SH3BP5 | PHACTR2,SH3BP5,PHACTR2,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,37,2,1,0.1067657321691513,CTDSPL2 | SETX,CTDSPL2,SETX,
+Normal__plus__HER2_tumor,Normal | HER2_tumor,20,38,2,1,0.1047849059104919,SMC2 | PCNA,SMC2,PCNA,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,1,107,390,0.15356860275451953,PDGFRB | MMP19 | ENPEP,PDGFRB,MMP19,ENPEP
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,2,106,529,0.16885631758233774,MYCT1 | PTPRB | ECSCR,MYCT1,PTPRB,ECSCR
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,3,93,492,0.18373956213273654,KRT7 | S100A14 | CLDN7,KRT7,S100A14,CLDN7
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,4,61,154,0.14906220597686706,BAG3 | CCNL1 | HEXIM1,BAG3,CCNL1,HEXIM1
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,5,58,137,0.15896699697214323,HELZ | DENND4A | ZRANB1,HELZ,DENND4A,ZRANB1
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,6,42,58,0.14211493435090986,NRP2 | MSRB3 | TSHZ2,NRP2,MSRB3,TSHZ2
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,7,42,59,0.15016800354597928,TAGLN | MEG3 | FAT1,TAGLN,MEG3,FAT1
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,8,38,69,0.15649729718764624,LHFPL6 | IGFBP7 | TIMP3,LHFPL6,IGFBP7,TIMP3
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,9,38,60,0.1375899039208889,DNAJA4 | NFIL3 | SIRT1,DNAJA4,NFIL3,SIRT1
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,10,36,52,0.134722845055736,TMEM263 | REV1 | SMC4,TMEM263,REV1,SMC4
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,11,24,64,0.15773549245204777,SOX17 | ACKR1 | PLVAP,SOX17,ACKR1,PLVAP
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,12,18,26,0.16238129081634375,ADAM17 | TRPM7 | OFD1,ADAM17,TRPM7,OFD1
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,13,14,16,0.15325373830273747,NEDD9 | ITGA6 | ADRB2,NEDD9,ITGA6,ADRB2
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,14,7,7,0.156850839299815,ARHGAP29 | TINAGL1 | EFNA1,ARHGAP29,TINAGL1,EFNA1
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,15,5,7,0.3733947181275913,MT-CO3 | MT-CO1 | MT-ND4,MT-CO3,MT-CO1,MT-ND4
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,16,5,6,0.14862646162509913,OAF | CD276 | MEIS2,OAF,CD276,MEIS2
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,17,5,6,0.14266064514716462,CCNT1 | G2E3 | MSL2,CCNT1,G2E3,MSL2
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,18,5,4,0.13647618331015107,ATP6V0A1 | FRMD6 | SLC9A1,ATP6V0A1,FRMD6,SLC9A1
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,19,4,5,0.14158056527376167,DUSP14 | GLIPR1 | ARHGEF35,DUSP14,GLIPR1,ARHGEF35
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,20,4,3,0.13349835326274231,TMEM237 | EPHA2 | MGME1,TMEM237,EPHA2,MGME1
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,21,4,5,0.118874979019165,WIPF1 | FOXN3 | RORA,WIPF1,FOXN3,RORA
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,22,4,3,0.13692009449005124,MEPCE | PHF2 | AC012306.2,MEPCE,PHF2,AC012306.2
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,23,4,3,0.12036033968130744,ZNF7 | CCDC93 | HCG18,ZNF7,CCDC93,HCG18
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,24,3,2,0.2579753212630748,C3 | LGALS3BP | ANPEP,C3,LGALS3BP,ANPEP
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,25,3,2,0.14543772488832468,ATF7IP | TTBK2 | PHACTR4,ATF7IP,TTBK2,PHACTR4
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,26,3,2,0.14024296402931208,RASA3 | PIKFYVE | P3H1,RASA3,PIKFYVE,P3H1
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,27,3,2,0.12641163542866704,ANKRD50 | ZNF407 | ANKRD26,ANKRD50,ZNF407,ANKRD26
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,28,3,2,0.11952110379934311,S100A6 | SLC25A37 | S100A10,S100A6,SLC25A37,S100A10
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,29,3,2,0.12303937226533884,GNPTAB | SC5D | MALT1,GNPTAB,SC5D,MALT1
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,30,3,2,0.1160265579819679,DAB2 | LIMS1 | EMP2,DAB2,LIMS1,EMP2
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,31,3,2,0.11252777650952335,BMP2 | PLA2G4C | NR2F2,BMP2,PLA2G4C,NR2F2
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,32,3,2,0.13234191387891764,EPB41 | CDC42SE2 | FAM102A,EPB41,CDC42SE2,FAM102A
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,33,3,2,0.10403925180435175,ADAM12 | CLEC11A | S1PR2,ADAM12,CLEC11A,S1PR2
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,34,3,2,0.10319543257355684,EMILIN2 | CBLB | SAMHD1,EMILIN2,CBLB,SAMHD1
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,35,3,2,0.1036127209663391,C9ORF72 | B3GNT2 | PRKAR1A,C9ORF72,B3GNT2,PRKAR1A
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,36,2,1,0.2687263786792755,EEA1 | MAP1B,EEA1,MAP1B,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,37,2,1,0.1928876191377639,ISG15 | IRF7,ISG15,IRF7,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,38,2,1,0.1924406588077545,MEIS3 | PRRX2,MEIS3,PRRX2,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,39,2,1,0.1909668296575546,EZH1 | ZRSR2,EZH1,ZRSR2,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,40,2,1,0.183563619852066,C3ORF58 | ZBTB21,C3ORF58,ZBTB21,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,41,2,1,0.1748284548521042,KLF11 | KLF2,KLF11,KLF2,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,42,2,1,0.1628891825675964,KLHL20 | SMARCE1,KLHL20,SMARCE1,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,43,2,1,0.1607541590929031,TMEM47 | SPRED1,TMEM47,SPRED1,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,44,2,1,0.1573156863451004,TDP2 | CYP20A1,TDP2,CYP20A1,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,45,2,1,0.1529928594827652,ATG14 | KPNA5,ATG14,KPNA5,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,46,2,1,0.1466647833585739,MYC | PLK2,MYC,PLK2,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,47,2,1,0.1384669691324234,NDUFS2 | KCTD20,NDUFS2,KCTD20,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,48,2,1,0.1373895555734634,NNT-AS1 | ADD3,NNT-AS1,ADD3,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,49,2,1,0.1359841078519821,B2M | STARD4,B2M,STARD4,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,50,2,1,0.1353628188371658,ZNF267 | CFLAR,ZNF267,CFLAR,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,51,2,1,0.1339558511972427,DHX33 | ITPRIPL2,DHX33,ITPRIPL2,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,52,2,1,0.1286545693874359,TNFAIP2 | MGLL,TNFAIP2,MGLL,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,53,2,1,0.1268101930618286,NR1D1 | ZDHHC14,NR1D1,ZDHHC14,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,54,2,1,0.1246950253844261,KLF7 | SLCO3A1,KLF7,SLCO3A1,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,55,2,1,0.1230522096157074,STEAP4 | CPM,STEAP4,CPM,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,56,2,1,0.1220129281282424,SHPRH | THUMPD1,SHPRH,THUMPD1,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,57,2,1,0.1153983399271965,FAM84B | TNFSF10,FAM84B,TNFSF10,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,58,2,1,0.1152075007557869,ARID5B | CTNNAL1,ARID5B,CTNNAL1,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,59,2,1,0.1146932244300842,CD99 | VAMP5,CD99,VAMP5,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,60,2,1,0.1133675947785377,DGKE | LPIN2,DGKE,LPIN2,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,61,2,1,0.1132268235087394,PDLIM1 | CRIP2,PDLIM1,CRIP2,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,62,2,1,0.1127151474356651,ERBIN | SMARCA2,ERBIN,SMARCA2,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,63,2,1,0.1123869121074676,SH3KBP1 | CELF2,SH3KBP1,CELF2,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,64,2,1,0.1118609458208084,TPBG | MAP4K5,TPBG,MAP4K5,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,65,2,1,0.1100485026836395,CDC42SE1 | C1ORF56,CDC42SE1,C1ORF56,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,66,2,1,0.1092497408390045,SCLT1 | CCDC18,SCLT1,CCDC18,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,67,2,1,0.1087895929813385,RFX1 | CAPN7,RFX1,CAPN7,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,68,2,1,0.1079533994197845,AC092279.1 | TMEM67,AC092279.1,TMEM67,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,69,2,1,0.107416883111,ZBTB43 | NFAT5,ZBTB43,NFAT5,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,70,2,1,0.1073179990053176,KIAA1217 | CRABP2,KIAA1217,CRABP2,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,71,2,1,0.1053553000092506,RASA2 | TTPAL,RASA2,TTPAL,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,72,2,1,0.1053368151187896,TSPAN13 | CYTH1,TSPAN13,CYTH1,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,73,2,1,0.1046724393963813,EGFR | TBX3,EGFR,TBX3,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,74,2,1,0.1044404208660125,ERVK3-1 | TFB2M,ERVK3-1,TFB2M,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,75,2,1,0.1037788838148117,KANK2 | INAFM1,KANK2,INAFM1,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,76,2,1,0.1036951541900634,TXNL4B | ANKRD49,TXNL4B,ANKRD49,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,77,2,1,0.1022654250264167,ZNF559 | DPP8,ZNF559,DPP8,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,78,2,1,0.1020627543330192,HBP1 | ZMYM5,HBP1,ZMYM5,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,79,2,1,0.101756140589714,UGDH | ERRFI1,UGDH,ERRFI1,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,80,2,1,0.101707637310028,AR | ALCAM,AR,ALCAM,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,81,2,1,0.101107656955719,RAI2 | PLSCR4,RAI2,PLSCR4,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,82,2,1,0.1008414849638938,THUMPD2 | PRR3,THUMPD2,PRR3,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,83,2,1,0.100678950548172,C1QTNF1 | NOTCH3,C1QTNF1,NOTCH3,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,84,2,1,0.1001237258315086,TCF7L1 | RNF217,TCF7L1,RNF217,
+Normal__plus__Normal_BRCA1_pre_neoplastic,Normal | Normal_BRCA1_-_pre-neoplastic,20,85,2,1,0.1000154167413711,VCPKMT | LEMD3,VCPKMT,LEMD3,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,1,16,39,0.18888380225652301,KRT7 | KRT8 | KRT17,KRT7,KRT8,KRT17
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,2,14,14,0.17369182833603447,C1R | C1S | LHFPL6,C1R,C1S,LHFPL6
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,3,10,25,0.18818981766700746,ELF3 | CLDN4 | MAL2,ELF3,CLDN4,MAL2
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,4,9,11,0.16335291686383158,CALD1 | MYL9 | TAGLN,CALD1,MYL9,TAGLN
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,5,6,8,0.1596173234283924,LAMA4 | COL18A1 | ADAMTS4,LAMA4,COL18A1,ADAMTS4
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,6,5,6,0.17677523568272588,HLA-DRB1 | HLA-DRA | CD74,HLA-DRB1,HLA-DRA,CD74
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,7,4,4,0.29937696456909174,MT-CO3 | MT-ND4 | MT-CO2,MT-CO3,MT-ND4,MT-CO2
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,8,3,2,0.17997539788484568,HSPA1A | HSPA1B | DNAJB1,HSPA1A,HSPA1B,DNAJB1
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,9,3,2,0.181127481162548,ZBTB1 | DENND4A | UHRF2,ZBTB1,DENND4A,UHRF2
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,10,3,2,0.13990412652492515,CREBRF | SLC38A2 | INO80D,CREBRF,SLC38A2,INO80D
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,11,3,2,0.12736749276518816,CYBRD1 | NFIA | GSN,CYBRD1,NFIA,GSN
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,12,3,2,0.11678253114223475,FN1 | ABCA1 | TIMP2,FN1,ABCA1,TIMP2
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,13,3,2,0.10436772182583806,FOS | FOSB | ATF3,FOS,FOSB,ATF3
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,14,2,1,0.2299579381942749,HSPH1 | HSP90AA1,HSPH1,HSP90AA1,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,15,2,1,0.1732485145330429,ISG15 | IRF7,ISG15,IRF7,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,16,2,1,0.1514496058225631,EPB41 | CDC42SE2,EPB41,CDC42SE2,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,17,2,1,0.1504044234752655,BAG3 | KLF9,BAG3,KLF9,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,18,2,1,0.1457259505987167,FXYD1 | BGN,FXYD1,BGN,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,19,2,1,0.1309136748313903,LGALS3BP | C3,LGALS3BP,C3,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,20,2,1,0.1256524324417114,GNPTAB | SC5D,GNPTAB,SC5D,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,21,2,1,0.1206731721758842,OGT | EPM2AIP1,OGT,EPM2AIP1,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,22,2,1,0.1192037612199783,CSRNP1 | DUSP1,CSRNP1,DUSP1,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,23,2,1,0.1089042052626609,ZBED5 | DOT1L,ZBED5,DOT1L,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,24,2,1,0.1078705415129661,PIKFYVE | CSGALNACT2,PIKFYVE,CSGALNACT2,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,25,2,1,0.1033637002110481,NAF1 | GTF2B,NAF1,GTF2B,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,26,2,1,0.1013273447751998,MAST4 | NEDD9,MAST4,NEDD9,
+Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor,Normal | Normal_BRCA1_-_pre-neoplastic | Triple_negative_BRCA1_tumor,20,27,2,1,0.1000750660896301,JUNB | HEXIM1,JUNB,HEXIM1,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,1,25,93,0.19619854635769318,CD24 | KRT7 | KRT8,CD24,KRT7,KRT8
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,2,22,38,0.16903768303362945,C1R | C1S | CCDC80,C1R,C1S,CCDC80
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,3,10,20,0.200055730715394,KRT17 | KRT5 | SFN,KRT17,KRT5,SFN
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,4,9,12,0.1584865351517995,CALD1 | MYL9 | TPM2,CALD1,MYL9,TPM2
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,5,9,13,0.14126630585927225,POLK | CLK4 | SACM1L,POLK,CLK4,SACM1L
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,6,7,8,0.16216516774147746,ZC3H4 | FRYL | ATAD2B,ZC3H4,FRYL,ATAD2B
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,7,6,11,0.25238311493938614,MT-ATP6 | MT-ND4 | MT-CO3,MT-ATP6,MT-ND4,MT-CO3
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,8,6,5,0.12180172204971311,CDC42SE2 | MAP3K1 | EPB41,CDC42SE2,MAP3K1,EPB41
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,9,6,5,0.10755921900272365,PARP14 | VOPP1 | VPS13C,PARP14,VOPP1,VPS13C
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,10,6,7,0.18185504419463022,LAMA4 | ADAMTS4 | IGFBP7,LAMA4,ADAMTS4,IGFBP7
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,11,5,4,0.15936792641878125,B2M | IFI6 | IFI27,B2M,IFI6,IFI27
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,12,5,7,0.2454487830400467,HLA-DRA | HLA-DRB1 | CD74,HLA-DRA,HLA-DRB1,CD74
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,13,4,3,0.16049520671367642,ZNF654 | KDM6A | FAM208A,ZNF654,KDM6A,FAM208A
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,14,4,3,0.12314714491367339,KDM6B | NFKB1 | ITPRIP,KDM6B,NFKB1,ITPRIP
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,15,3,2,0.1778943091630935,TBCD | TAOK2 | DCP2,TBCD,TAOK2,DCP2
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,16,3,2,0.1281877793371677,ZFAND2A | CLK1 | ID2,ZFAND2A,CLK1,ID2
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,17,3,2,0.1822400093078613,METTL8 | MED27 | ZNF7,METTL8,MED27,ZNF7
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,18,3,2,0.1160422228276729,PIK3CA | ATP11B | LEMD3,PIK3CA,ATP11B,LEMD3
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,19,3,2,0.1124678403139114,CREBRF | SLC38A2 | HECA,CREBRF,SLC38A2,HECA
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,20,2,1,0.3969831466674804,CYTOR | MIR4435-2HG,CYTOR,MIR4435-2HG,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,21,2,1,0.294218361377716,MTRNR2L8 | MTRNR2L12,MTRNR2L8,MTRNR2L12,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,22,2,1,0.2409243583679199,HSPA1A | HSPA1B,HSPA1A,HSPA1B,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,23,2,1,0.176480621099472,HSPH1 | HSP90AA1,HSPH1,HSP90AA1,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,24,2,1,0.1727213561534881,ZBTB1 | DENND4A,ZBTB1,DENND4A,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,25,2,1,0.1591804176568985,SP140L | IFI35,SP140L,IFI35,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,26,2,1,0.1393656432628631,MAST4 | NEDD9,MAST4,NEDD9,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,27,2,1,0.1386191993951797,NXF1 | JMJD6,NXF1,JMJD6,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,28,2,1,0.1371231973171234,PODXL | DOCK9,PODXL,DOCK9,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,29,2,1,0.1305800378322601,CARD8 | SLC12A6,CARD8,SLC12A6,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,30,2,1,0.1299963891506195,KAT6B | TMX4,KAT6B,TMX4,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,31,2,1,0.1291712522506714,MANF | SDF2L1,MANF,SDF2L1,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,32,2,1,0.1281374990940094,NR3C1 | TACC1,NR3C1,TACC1,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,33,2,1,0.1234051436185836,HEY1 | ID1,HEY1,ID1,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,34,2,1,0.1229256689548492,DDR2 | TGFBR3,DDR2,TGFBR3,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,35,2,1,0.1225003749132156,TSPYL2 | PER1,TSPYL2,PER1,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,36,2,1,0.1223240718245506,FOS | GADD45B,FOS,GADD45B,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,37,2,1,0.1177015975117683,NFIB | CRIM1,NFIB,CRIM1,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,38,2,1,0.1173547953367233,JUNB | HEXIM1,JUNB,HEXIM1,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,39,2,1,0.1156520396471023,PARP4 | SLC39A8,PARP4,SLC39A8,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,40,2,1,0.1155826076865196,SNX14 | ERBIN,SNX14,ERBIN,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,41,2,1,0.1134301126003265,CSRNP1 | SOCS3,CSRNP1,SOCS3,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,42,2,1,0.1134202405810356,MTMR3 | ADAM17,MTMR3,ADAM17,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,43,2,1,0.1133446618914604,HIP1 | ECE1,HIP1,ECE1,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,44,2,1,0.1129166185855865,PIKFYVE | CSGALNACT2,PIKFYVE,CSGALNACT2,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,45,2,1,0.112321138381958,PLPP1 | RGS3,PLPP1,RGS3,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,46,2,1,0.1096118316054344,CEP68 | ZBED5,CEP68,ZBED5,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,47,2,1,0.1087941229343414,SLC5A3 | HIVEP1,SLC5A3,HIVEP1,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,48,2,1,0.1068944036960601,BRD1 | COG3,BRD1,COG3,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,49,2,1,0.1055018529295921,UBE2W | RBBP5,UBE2W,RBBP5,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,50,2,1,0.105209045112133,CYBRD1 | GSN,CYBRD1,GSN,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,51,2,1,0.1046066656708717,LGALS1 | FN1,LGALS1,FN1,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,52,2,1,0.1032087728381156,ZNF431 | ING5,ZNF431,ING5,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,53,2,1,0.1017658337950706,HERC1 | NPHP3,HERC1,NPHP3,
+Normal__plus__Triple_negative_BRCA1_tumor,Normal | Triple_negative_BRCA1_tumor,20,54,2,1,0.1001850143074989,SUPV3L1 | MSL2,SUPV3L1,MSL2,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,1,51,395,0.19470649071132082,S100A14 | FXYD3 | SAA1,S100A14,FXYD3,SAA1
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,2,48,89,0.13943452823362992,BRAF | KIDINS220 | POLK,BRAF,KIDINS220,POLK
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,3,48,74,0.1470515849823887,LAMA4 | IGFBP7 | TIMP3,LAMA4,IGFBP7,TIMP3
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,4,22,34,0.14066444490762314,PODXL | TM4SF18 | ARHGAP29,PODXL,TM4SF18,ARHGAP29
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,5,22,32,0.16238514869473872,TPM1 | TAGLN | FHL2,TPM1,TAGLN,FHL2
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,6,17,20,0.1351049471646547,ITGA5 | SERPINB9 | SH2B3,ITGA5,SERPINB9,SH2B3
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,7,15,24,0.17681152187287805,DNAJB1 | HSPA1A | HSPH1,DNAJB1,HSPA1A,HSPH1
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,8,10,11,0.15752273256128482,GTF2A1 | TTC14 | PRKD3,GTF2A1,TTC14,PRKD3
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,9,10,12,0.15483933314681053,USP42 | CCNT1 | ZNF263,USP42,CCNT1,ZNF263
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,10,9,9,0.13421292851368583,BEX2 | GATA3 | NUP210,BEX2,GATA3,NUP210
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,11,8,21,0.20276587811254315,HLA-DRA | CD74 | HLA-DPA1,HLA-DRA,CD74,HLA-DPA1
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,12,7,12,0.29853201905886334,MT-ND4 | MT-ATP6 | MT-CO1,MT-ND4,MT-ATP6,MT-CO1
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,13,7,8,0.14475895743817085,MIB1 | FAM208A | TMX3,MIB1,FAM208A,TMX3
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,14,5,4,0.12123201228678224,ZNF331 | CSRNP1 | TLE4,ZNF331,CSRNP1,TLE4
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,15,5,4,0.12395196221768849,ACSL5 | PREX1 | PRKCH,ACSL5,PREX1,PRKCH
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,16,4,4,0.16320105828344816,DENND4A | ZBTB1 | HECA,DENND4A,ZBTB1,HECA
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,17,4,3,0.14476009706656134,BAG3 | ZFAND2A | GADD45B,BAG3,ZFAND2A,GADD45B
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,18,4,3,0.13130882134040198,CREBZF | OGT | KIAA2026,CREBZF,OGT,KIAA2026
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,19,4,3,0.137596716483434,DCP2 | DNAJB14 | KLHL9,DCP2,DNAJB14,KLHL9
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,20,4,3,0.12554146349430081,MKLN1 | RECQL | FBRS,MKLN1,RECQL,FBRS
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,21,3,2,0.17791695892810822,CPNE8 | NRP2 | FAM126A,CPNE8,NRP2,FAM126A
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,22,3,2,0.15922044590115544,TUT7 | NECAP1 | PTPN9,TUT7,NECAP1,PTPN9
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,23,3,2,0.16429045796394345,CSRP2 | SSBP3 | PLPP1,CSRP2,SSBP3,PLPP1
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,24,3,2,0.1376717016100883,ARID5B | PER1 | AHI1,ARID5B,PER1,AHI1
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,25,3,2,0.1202646605670452,CLK4 | FAM76B | DGKE,CLK4,FAM76B,DGKE
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,26,3,2,0.1131888926029205,MEF2A | PLXNA2 | RAI14,MEF2A,PLXNA2,RAI14
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,27,3,2,0.10453335195779795,HIF1A | PARP14 | HIPK3,HIF1A,PARP14,HIPK3
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,28,2,1,0.3930833637714386,CDC42SE1 | C1ORF56,CDC42SE1,C1ORF56,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,29,2,1,0.2986144423484802,CYTOR | MIR4435-2HG,CYTOR,MIR4435-2HG,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,30,2,1,0.23828786611557,CXCL3 | CXCL2,CXCL3,CXCL2,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,31,2,1,0.2232284992933273,C5ORF46 | SDC1,C5ORF46,SDC1,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,32,2,1,0.2141265720129013,SLC20A1 | PPP1R15B,SLC20A1,PPP1R15B,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,33,2,1,0.2055380940437317,ZBED5 | SACM1L,ZBED5,SACM1L,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,34,2,1,0.2047567963600158,AKAP10 | NBPF19,AKAP10,NBPF19,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,35,2,1,0.2003071904182434,FSTL1 | LAMC1,FSTL1,LAMC1,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,36,2,1,0.1740324199199676,DMTF1 | PHYKPL,DMTF1,PHYKPL,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,37,2,1,0.1718713045120239,SHPRH | TP53BP1,SHPRH,TP53BP1,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,38,2,1,0.1670241206884384,CYP20A1 | ESCO1,CYP20A1,ESCO1,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,39,2,1,0.158216968178749,LGALS3BP | C3,LGALS3BP,C3,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,40,2,1,0.1577819436788559,GIGYF1 | SIK3,GIGYF1,SIK3,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,41,2,1,0.1534316837787628,TAOK2 | TBCD,TAOK2,TBCD,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,42,2,1,0.1496977508068084,VCPKMT | ETV3,VCPKMT,ETV3,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,43,2,1,0.1466267704963684,RASGRP3 | HHEX,RASGRP3,HHEX,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,44,2,1,0.1418761610984802,H2AFX | C3ORF58,H2AFX,C3ORF58,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,45,2,1,0.1237341612577438,JAG1 | CDH13,JAG1,CDH13,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,46,2,1,0.1233809143304824,PTPRE | SWAP70,PTPRE,SWAP70,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,47,2,1,0.1226825565099716,CITED2 | NUDT4,CITED2,NUDT4,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,48,2,1,0.1200595125555992,SNAI2 | FGFR1,SNAI2,FGFR1,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,49,2,1,0.1182849332690239,HEXIM1 | PCF11,HEXIM1,PCF11,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,50,2,1,0.1172723919153213,ACSL4 | FNDC3A,ACSL4,FNDC3A,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,51,2,1,0.1170885264873504,RASA3 | PXK,RASA3,PXK,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,52,2,1,0.1165386363863945,ZEB2 | FCER1G,ZEB2,FCER1G,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,53,2,1,0.1153309494256973,AL031777.3 | HIST1H2BG,AL031777.3,HIST1H2BG,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,54,2,1,0.1146455034613609,SENP1 | GTF3C1,SENP1,GTF3C1,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,55,2,1,0.1141080111265182,SLFN5 | RNF213,SLFN5,RNF213,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,56,2,1,0.1139260455965995,SLC39A6 | TRPS1,SLC39A6,TRPS1,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,57,2,1,0.108914591372013,GRK5 | SRGAP2C,GRK5,SRGAP2C,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,58,2,1,0.1068864837288856,PLEKHM2 | MAP4K4,PLEKHM2,MAP4K4,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,59,2,1,0.1067931652069091,IL3RA | FLT1,IL3RA,FLT1,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,60,2,1,0.1064388230443,SH3KBP1 | PLIN2,SH3KBP1,PLIN2,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,61,2,1,0.1059494987130165,HERC1 | SLC35E3,HERC1,SLC35E3,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,62,2,1,0.1039687916636467,FOXP1 | NFAT5,FOXP1,NFAT5,
+Normal__plus__Triple_negative_tumor,Normal | Triple_negative_tumor,18,63,2,1,0.1002286449074745,COL6A2 | COL6A1,COL6A2,COL6A1,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,1,85,389,0.17152385450037708,CALD1 | DPYSL3 | NNMT,CALD1,DPYSL3,NNMT
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,2,57,84,0.15356675624137833,HCST | CORO1A | FMNL1,HCST,CORO1A,FMNL1
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,3,56,85,0.13936465137145096,CREBRF | IL6ST | CHFR,CREBRF,IL6ST,CHFR
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,4,50,71,0.15810585042960204,CWF19L1 | CDK11A | SMG6,CWF19L1,CDK11A,SMG6
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,5,48,216,0.19470701508086033,FXYD3 | KRT8 | ELF3,FXYD3,KRT8,ELF3
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,6,48,257,0.18384044368095434,TOP2A | NUF2 | CCNB2,TOP2A,NUF2,CCNB2
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,7,43,89,0.15026591307996365,ZC3H7A | ZC3H4 | LENG8,ZC3H7A,ZC3H4,LENG8
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,8,38,46,0.15580537769457567,PSAP | MMP14 | GSN,PSAP,MMP14,GSN
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,9,26,37,0.14424266364123367,JAK1 | RNF213 | IFITM2,JAK1,RNF213,IFITM2
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,10,18,21,0.14238617498250233,DCP2 | ZBTB1 | PHC3,DCP2,ZBTB1,PHC3
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,11,16,30,0.1642187255124251,C15ORF40 | SLC16A1-AS1 | DMTF1,C15ORF40,SLC16A1-AS1,DMTF1
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,12,12,21,0.16257122123525253,COL1A1 | RARRES2 | PCOLCE,COL1A1,RARRES2,PCOLCE
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,13,12,11,0.16523151370612055,PALLD | ID4 | TNFRSF12A,PALLD,ID4,TNFRSF12A
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,14,10,9,0.1320977210998535,TDRD3 | WDR54 | POLK,TDRD3,WDR54,POLK
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,15,8,8,0.17071102652698755,NCOA1 | MAST4 | DHX38,NCOA1,MAST4,DHX38
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,16,8,9,0.13096002737681067,NSUN6 | GNB5 | SCAI,NSUN6,GNB5,SCAI
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,17,7,15,0.32093531588713325,MT-CYB | MT-ND4 | MT-CO2,MT-CYB,MT-ND4,MT-CO2
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,18,6,10,0.2687891714274883,HLA-DRA | CD74 | HLA-DPB1,HLA-DRA,CD74,HLA-DPB1
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,19,5,4,0.15055223926901812,PER1 | KDM6B | KLF2,PER1,KDM6B,KLF2
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,20,5,4,0.17730861529707903,KANSL3 | DNAJC24 | CTR9,KANSL3,DNAJC24,CTR9
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,21,5,5,0.13358869403600687,TNFRSF14 | RGS2 | IFI35,TNFRSF14,RGS2,IFI35
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,22,4,3,0.2047827839851379,HSPA1A | HSPH1 | HSPA1B,HSPA1A,HSPH1,HSPA1B
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,23,4,4,0.15234864503145215,FRYL | TBCD | TAOK2,FRYL,TBCD,TAOK2
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,24,4,3,0.14084036399920777,CABIN1 | DLGAP1-AS1 | KLF12,CABIN1,DLGAP1-AS1,KLF12
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,25,4,3,0.12732994059721625,RBM5 | SNRK | ZZEF1,RBM5,SNRK,ZZEF1
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,26,4,3,0.1115927969415982,SYMPK | CERS5 | ZNF506,SYMPK,CERS5,ZNF506
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,27,4,3,0.12677370508511857,LIMA1 | MINDY2 | ID3,LIMA1,MINDY2,ID3
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,28,3,3,0.2034275333086649,RASGEF1B | ACP5 | CD83,RASGEF1B,ACP5,CD83
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,29,3,2,0.19974356889724731,AP1G1 | RC3H1 | FAM208A,AP1G1,RC3H1,FAM208A
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,30,3,2,0.137334618717432,SYTL1 | BCAS4 | AL121944.1,SYTL1,BCAS4,AL121944.1
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,31,3,2,0.17664957046508784,CDC42SE2 | PPP2R5C | RHOF,CDC42SE2,PPP2R5C,RHOF
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,32,3,2,0.12654597312211985,INTS4 | WHRN | RAB11FIP4,INTS4,WHRN,RAB11FIP4
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,33,3,2,0.12344722077250475,THADA | ZCCHC2 | CDK13,THADA,ZCCHC2,CDK13
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,34,3,3,0.13251295437415436,WDR59 | VPS53 | ZNF830,WDR59,VPS53,ZNF830
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,35,3,2,0.28655628487467766,ISG15 | IFI6 | MX1,ISG15,IFI6,MX1
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,36,3,2,0.1318569257855415,HERC1 | CASK | USP12,HERC1,CASK,USP12
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,37,3,2,0.13836593553423876,HIST1H2BD | AQP3 | ZNF296,HIST1H2BD,AQP3,ZNF296
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,38,3,2,0.11704165861010549,CLEC2D | SEPT1 | STK4,CLEC2D,SEPT1,STK4
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,39,2,1,0.4137351512908935,CYTOR | MIR4435-2HG,CYTOR,MIR4435-2HG,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,40,2,1,0.2979797720909118,TNFSF12 | CMTM3,TNFSF12,CMTM3,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,41,2,1,0.2753351330757141,CCND1 | HES1,CCND1,HES1,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,42,2,1,0.2343998253345489,RUFY2 | MAP3K4,RUFY2,MAP3K4,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,43,2,1,0.2333522140979766,NCOA7 | ITGA2,NCOA7,ITGA2,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,44,2,1,0.2155259251594543,ANKS3 | LRIG2,ANKS3,LRIG2,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,45,2,1,0.2007721066474914,PAXBP1 | CCDC14,PAXBP1,CCDC14,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,46,2,1,0.1930633336305618,POU5F2 | CUL9,POU5F2,CUL9,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,47,2,1,0.1770777255296707,MDK | MGP,MDK,MGP,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,48,2,1,0.1727047264575958,ZNF282 | ERCC6,ZNF282,ERCC6,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,49,2,1,0.1720070093870163,USP38 | ZBTB17,USP38,ZBTB17,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,50,2,1,0.1686628609895706,C21ORF91 | RNF4,C21ORF91,RNF4,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,51,2,1,0.1680935174226761,ANKRA2 | CALCOCO1,ANKRA2,CALCOCO1,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,52,2,1,0.1601088345050811,PLK3 | GADD45B,PLK3,GADD45B,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,53,2,1,0.1595737785100937,MLLT6 | KANSL1,MLLT6,KANSL1,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,54,2,1,0.1582758575677871,TTF1 | SLC4A7,TTF1,SLC4A7,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,55,2,1,0.1511758714914322,CDK11B | TLK1,CDK11B,TLK1,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,56,2,1,0.150851622223854,RFFL | ZNF669,RFFL,ZNF669,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,57,2,1,0.1500823497772216,HIF1A | NAMPT,HIF1A,NAMPT,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,58,2,1,0.1426956057548523,MAP4K4 | MPRIP,MAP4K4,MPRIP,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,59,2,1,0.1389492750167846,SYNM | ACTG2,SYNM,ACTG2,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,60,2,1,0.1357365250587463,ZMYM5 | SC5D,ZMYM5,SC5D,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,61,2,1,0.131050556898117,CPM | AP1S2,CPM,AP1S2,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,62,2,1,0.1307843625545501,MPHOSPH9 | ATP6V0A2,MPHOSPH9,ATP6V0A2,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,63,2,1,0.1264480203390121,ADCY3 | ARAP1,ADCY3,ARAP1,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,64,2,1,0.1263466775417328,SPTY2D1 | MRPL1,SPTY2D1,MRPL1,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,65,2,1,0.1242907270789146,PIK3IP1 | ZNF331,PIK3IP1,ZNF331,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,66,2,1,0.1227218434214592,RNF113A | ATM,RNF113A,ATM,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,67,2,1,0.120136022567749,ZFP36L2 | IDS,ZFP36L2,IDS,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,68,2,1,0.1179216131567955,PIBF1 | ZNF91,PIBF1,ZNF91,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,69,2,1,0.1175731867551803,PODXL | DOCK9,PODXL,DOCK9,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,70,2,1,0.1146362945437431,ARL4A | EHD4,ARL4A,EHD4,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,71,2,1,0.1126951426267623,CARNMT1 | SOCS4,CARNMT1,SOCS4,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,72,2,1,0.1124911233782768,CDC42SE1 | C1ORF56,CDC42SE1,C1ORF56,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,73,2,1,0.1114972531795501,NEK7 | MFHAS1,NEK7,MFHAS1,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,74,2,1,0.1109812557697296,TRDMT1 | ANKRD52,TRDMT1,ANKRD52,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,75,2,1,0.1099090203642845,C12ORF65 | RSBN1,C12ORF65,RSBN1,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,76,2,1,0.1095438748598098,AQR | RNF111,AQR,RNF111,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,77,2,1,0.109306052327156,EBLN2 | DCP1B,EBLN2,DCP1B,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,78,2,1,0.108338214457035,BMP2K | CEP170,BMP2K,CEP170,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,79,2,1,0.1079554483294487,OGT | ZNF721,OGT,ZNF721,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,80,2,1,0.1077929139137268,PHLDA1 | ANKH,PHLDA1,ANKH,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,81,2,1,0.1050866097211837,ARRDC3 | LMBR1L,ARRDC3,LMBR1L,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,82,2,1,0.1023383066058158,TTPAL | UNKL,TTPAL,UNKL,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,83,2,1,0.1015354245901107,DDX23 | TBC1D10A,DDX23,TBC1D10A,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,84,2,1,0.101255290210247,NEAT1 | NFKBIZ,NEAT1,NFKBIZ,
+Triple_negative_tumor__plus__Triple_negative_BRCA1_tumor,Triple_negative_tumor | Triple_negative_BRCA1_tumor,20,85,2,1,0.1000005677342414,RBM33 | ZNF587,RBM33,ZNF587,

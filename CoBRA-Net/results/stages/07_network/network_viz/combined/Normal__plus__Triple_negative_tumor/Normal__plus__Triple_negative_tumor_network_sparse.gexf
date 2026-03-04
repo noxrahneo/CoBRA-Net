@@ -1,0 +1,1240 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-03-03">
+    <creator>NetworkX 3.4.2</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <nodes>
+      <node id="KRT14" label="KRT14" />
+      <node id="KRT5" label="KRT5" />
+      <node id="MT-CO1" label="MT-CO1" />
+      <node id="MT-CO2" label="MT-CO2" />
+      <node id="KRT17" label="KRT17" />
+      <node id="SFN" label="SFN" />
+      <node id="S100A8" label="S100A8" />
+      <node id="S100A9" label="S100A9" />
+      <node id="MT-ATP6" label="MT-ATP6" />
+      <node id="MT-ND4" label="MT-ND4" />
+      <node id="HSPA1A" label="HSPA1A" />
+      <node id="HSPA1B" label="HSPA1B" />
+      <node id="S100A14" label="S100A14" />
+      <node id="TACSTD2" label="TACSTD2" />
+      <node id="ELF3" label="ELF3" />
+      <node id="WFDC2" label="WFDC2" />
+      <node id="FXYD3" label="FXYD3" />
+      <node id="SAA1" label="SAA1" />
+      <node id="SAA2" label="SAA2" />
+      <node id="KRT16" label="KRT16" />
+      <node id="CD24" label="CD24" />
+      <node id="KRT19" label="KRT19" />
+      <node id="S100A2" label="S100A2" />
+      <node id="KRT8" label="KRT8" />
+      <node id="KRT7" label="KRT7" />
+      <node id="C1ORF56" label="C1ORF56" />
+      <node id="CDC42SE1" label="CDC42SE1" />
+      <node id="KRT23" label="KRT23" />
+      <node id="CLDN4" label="CLDN4" />
+      <node id="CD74" label="CD74" />
+      <node id="HLA-DRA" label="HLA-DRA" />
+      <node id="MYL9" label="MYL9" />
+      <node id="TAGLN" label="TAGLN" />
+      <node id="HSP90AA1" label="HSP90AA1" />
+      <node id="HSPH1" label="HSPH1" />
+      <node id="GTF2A1" label="GTF2A1" />
+      <node id="TTC14" label="TTC14" />
+      <node id="PDZK1IP1" label="PDZK1IP1" />
+      <node id="HELZ" label="HELZ" />
+      <node id="KIDINS220" label="KIDINS220" />
+      <node id="IGFBP7" label="IGFBP7" />
+      <node id="LAMA4" label="LAMA4" />
+      <node id="CLDN7" label="CLDN7" />
+      <node id="CHI3L2" label="CHI3L2" />
+      <node id="HLA-DPA1" label="HLA-DPA1" />
+      <node id="CYTOR" label="CYTOR" />
+      <node id="MIR4435-2HG" label="MIR4435-2HG" />
+      <node id="ITGB6" label="ITGB6" />
+      <node id="DCN" label="DCN" />
+      <node id="LUM" label="LUM" />
+      <node id="C1R" label="C1R" />
+      <node id="C1S" label="C1S" />
+      <node id="ADAMTS4" label="ADAMTS4" />
+      <node id="RARRES2" label="RARRES2" />
+      <node id="HLA-DRB1" label="HLA-DRB1" />
+      <node id="PODXL" label="PODXL" />
+      <node id="TM4SF18" label="TM4SF18" />
+      <node id="ACTA2" label="ACTA2" />
+      <node id="SOX9" label="SOX9" />
+      <node id="TFAP2C" label="TFAP2C" />
+      <node id="SLPI" label="SLPI" />
+      <node id="KRT18" label="KRT18" />
+      <node id="CLDN3" label="CLDN3" />
+      <node id="SMIM22" label="SMIM22" />
+      <node id="FBXO32" label="FBXO32" />
+      <node id="FHL2" label="FHL2" />
+      <node id="MIA" label="MIA" />
+      <node id="ATP1B1" label="ATP1B1" />
+      <node id="SDC4" label="SDC4" />
+      <node id="MT1G" label="MT1G" />
+      <node id="MT1X" label="MT1X" />
+      <node id="HLA-DPB1" label="HLA-DPB1" />
+      <node id="MT-ND3" label="MT-ND3" />
+      <node id="TIMP3" label="TIMP3" />
+      <node id="MT-ND1" label="MT-ND1" />
+      <node id="MAL2" label="MAL2" />
+      <node id="LCN2" label="LCN2" />
+      <node id="FOS" label="FOS" />
+      <node id="JUN" label="JUN" />
+      <node id="DPYSL3" label="DPYSL3" />
+      <node id="CALD1" label="CALD1" />
+      <node id="TPM1" label="TPM1" />
+      <node id="BCAM" label="BCAM" />
+      <node id="TINAGL1" label="TINAGL1" />
+      <node id="CRYAB" label="CRYAB" />
+      <node id="ID4" label="ID4" />
+      <node id="CXCL2" label="CXCL2" />
+      <node id="CXCL3" label="CXCL3" />
+      <node id="STC1" label="STC1" />
+      <node id="PRKD3" label="PRKD3" />
+      <node id="HLA-DQB1" label="HLA-DQB1" />
+      <node id="DNAJB1" label="DNAJB1" />
+      <node id="BRAF" label="BRAF" />
+      <node id="NAA16" label="NAA16" />
+      <node id="DPP8" label="DPP8" />
+      <node id="ZC3H4" label="ZC3H4" />
+      <node id="CPNE8" label="CPNE8" />
+      <node id="NRP2" label="NRP2" />
+      <node id="HLA-DQA1" label="HLA-DQA1" />
+      <node id="C5ORF46" label="C5ORF46" />
+      <node id="SDC1" label="SDC1" />
+      <node id="CCNT1" label="CCNT1" />
+      <node id="ZNF493" label="ZNF493" />
+      <node id="HECA" label="HECA" />
+      <node id="ZBTB1" label="ZBTB1" />
+      <node id="SERPINF1" label="SERPINF1" />
+      <node id="NECAP1" label="NECAP1" />
+      <node id="TUT7" label="TUT7" />
+      <node id="PPP1R15B" label="PPP1R15B" />
+      <node id="SLC20A1" label="SLC20A1" />
+      <node id="CTSS" label="CTSS" />
+      <node id="SERPINB9" label="SERPINB9" />
+      <node id="CSRP1" label="CSRP1" />
+      <node id="PALLD" label="PALLD" />
+      <node id="FTX" label="FTX" />
+      <node id="SACM1L" label="SACM1L" />
+      <node id="ZBED5" label="ZBED5" />
+      <node id="BGN" label="BGN" />
+      <node id="CCDC80" label="CCDC80" />
+      <node id="AKAP10" label="AKAP10" />
+      <node id="NBPF19" label="NBPF19" />
+      <node id="ARHGAP29" label="ARHGAP29" />
+      <node id="CREBRF" label="CREBRF" />
+      <node id="INO80D" label="INO80D" />
+      <node id="EGR1" label="EGR1" />
+      <node id="EGR3" label="EGR3" />
+      <node id="FSTL1" label="FSTL1" />
+      <node id="LAMC1" label="LAMC1" />
+      <node id="AL121944.1" label="AL121944.1" />
+      <node id="BEX2" label="BEX2" />
+      <node id="MGST1" label="MGST1" />
+      <node id="RPRD2" label="RPRD2" />
+      <node id="USP42" label="USP42" />
+      <node id="DSP" label="DSP" />
+      <node id="ZNF263" label="ZNF263" />
+      <node id="TOR1AIP1" label="TOR1AIP1" />
+      <node id="ATAD2B" label="ATAD2B" />
+      <node id="POLK" label="POLK" />
+      <node id="CAMK2D" label="CAMK2D" />
+      <node id="FAM208A" label="FAM208A" />
+      <node id="ATF7IP" label="ATF7IP" />
+      <node id="LASP1" label="LASP1" />
+      <node id="LNPEP" label="LNPEP" />
+      <node id="CSRP2" label="CSRP2" />
+      <node id="SSBP3" label="SSBP3" />
+      <node id="AZGP1" label="AZGP1" />
+      <node id="MCF2L" label="MCF2L" />
+      <node id="PIK3R3" label="PIK3R3" />
+      <node id="TPM2" label="TPM2" />
+      <node id="SDC2" label="SDC2" />
+      <node id="MMP7" label="MMP7" />
+      <node id="DCP2" label="DCP2" />
+      <node id="KLHL9" label="KLHL9" />
+      <node id="TIMP2" label="TIMP2" />
+      <node id="MEF2D" label="MEF2D" />
+      <node id="RBP1" label="RBP1" />
+      <node id="SFRP1" label="SFRP1" />
+      <node id="DAPP1" label="DAPP1" />
+      <node id="NUP210" label="NUP210" />
+      <node id="CLEC2B" label="CLEC2B" />
+      <node id="SLC2A3" label="SLC2A3" />
+      <node id="STC2" label="STC2" />
+      <node id="CRISPLD2" label="CRISPLD2" />
+      <node id="ENG" label="ENG" />
+      <node id="ITGA5" label="ITGA5" />
+      <node id="ATXN1" label="ATXN1" />
+      <node id="RASA2" label="RASA2" />
+      <node id="DMTF1" label="DMTF1" />
+      <node id="PHYKPL" label="PHYKPL" />
+      <node id="MIB1" label="MIB1" />
+      <node id="TMX3" label="TMX3" />
+      <node id="ATF3" label="ATF3" />
+      <node id="SHPRH" label="SHPRH" />
+      <node id="TP53BP1" label="TP53BP1" />
+      <node id="ZNF430" label="ZNF430" />
+      <node id="BAG3" label="BAG3" />
+      <node id="ZFAND2A" label="ZFAND2A" />
+      <node id="CREBZF" label="CREBZF" />
+      <node id="OGT" label="OGT" />
+      <node id="GABARAPL1" label="GABARAPL1" />
+      <node id="KLF9" label="KLF9" />
+      <node id="CYP20A1" label="CYP20A1" />
+      <node id="ESCO1" label="ESCO1" />
+      <node id="FMNL3" label="FMNL3" />
+      <node id="UHRF2" label="UHRF2" />
+      <node id="PRRX1" label="PRRX1" />
+      <node id="IGFBP5" label="IGFBP5" />
+      <node id="DENND4A" label="DENND4A" />
+      <node id="COL4A2" label="COL4A2" />
+      <node id="SPARC" label="SPARC" />
+      <node id="BTN2A1" label="BTN2A1" />
+      <node id="FAM193A" label="FAM193A" />
+      <node id="MARF1" label="MARF1" />
+      <node id="VPS13C" label="VPS13C" />
+      <node id="LAMB3" label="LAMB3" />
+      <node id="GADD45B" label="GADD45B" />
+      <node id="MYSM1" label="MYSM1" />
+      <node id="LIMA1" label="LIMA1" />
+      <node id="PIK3R1" label="PIK3R1" />
+      <node id="C3" label="C3" />
+      <node id="LGALS3BP" label="LGALS3BP" />
+      <node id="GIGYF1" label="GIGYF1" />
+      <node id="SIK3" label="SIK3" />
+      <node id="NR2C2" label="NR2C2" />
+      <node id="TAOK2" label="TAOK2" />
+      <node id="TBCD" label="TBCD" />
+      <node id="WIPF1" label="WIPF1" />
+      <node id="MMP2" label="MMP2" />
+      <node id="A2M" label="A2M" />
+      <node id="ADAMTS1" label="ADAMTS1" />
+      <node id="DAB2" label="DAB2" />
+      <node id="MKLN1" label="MKLN1" />
+      <node id="RECQL" label="RECQL" />
+      <node id="LENG8" label="LENG8" />
+      <node id="IL1R1" label="IL1R1" />
+      <node id="TNRC6C" label="TNRC6C" />
+      <node id="INHBB" label="INHBB" />
+      <node id="EP300" label="EP300" />
+      <node id="GMFG" label="GMFG" />
+      <node id="TGFB1" label="TGFB1" />
+      <node id="ETV3" label="ETV3" />
+      <node id="VCPKMT" label="VCPKMT" />
+      <node id="AHR" label="AHR" />
+      <node id="FGF7" label="FGF7" />
+      <node id="PCNX1" label="PCNX1" />
+      <node id="HHEX" label="HHEX" />
+      <node id="RASGRP3" label="RASGRP3" />
+      <node id="CASP3" label="CASP3" />
+      <node id="EVA1C" label="EVA1C" />
+      <node id="MAST4" label="MAST4" />
+      <node id="DOCK9" label="DOCK9" />
+      <node id="HLA-DMA" label="HLA-DMA" />
+      <node id="CSRNP1" label="CSRNP1" />
+      <node id="ZNF331" label="ZNF331" />
+      <node id="CTGF" label="CTGF" />
+      <node id="TCEAL9" label="TCEAL9" />
+      <node id="ACSL5" label="ACSL5" />
+      <node id="PRKCH" label="PRKCH" />
+      <node id="EHD4" label="EHD4" />
+      <node id="NEDD9" label="NEDD9" />
+      <node id="C3ORF58" label="C3ORF58" />
+      <node id="H2AFX" label="H2AFX" />
+      <node id="EFNA1" label="EFNA1" />
+      <node id="ARID5B" label="ARID5B" />
+      <node id="PER1" label="PER1" />
+      <node id="SH2B3" label="SH2B3" />
+      <node id="MSL2" label="MSL2" />
+      <node id="MFGE8" label="MFGE8" />
+      <node id="PLPP1" label="PLPP1" />
+      <node id="ACTN1" label="ACTN1" />
+      <node id="DST" label="DST" />
+      <node id="DEFB1" label="DEFB1" />
+      <node id="AEBP1" label="AEBP1" />
+      <node id="NR4A3" label="NR4A3" />
+      <node id="ADD3" label="ADD3" />
+      <node id="CASK" label="CASK" />
+      <node id="CRIP2" label="CRIP2" />
+      <node id="SLC9A3R2" label="SLC9A3R2" />
+      <node id="PREX1" label="PREX1" />
+      <node id="MPZL3" label="MPZL3" />
+      <node id="PLPP3" label="PLPP3" />
+      <node id="AHI1" label="AHI1" />
+      <node id="WDFY1" label="WDFY1" />
+      <node id="BTBD7" label="BTBD7" />
+      <node id="HOTAIRM1" label="HOTAIRM1" />
+      <node id="CHI3L1" label="CHI3L1" />
+      <node id="KRT15" label="KRT15" />
+      <node id="TCF4" label="TCF4" />
+      <node id="GATA3" label="GATA3" />
+      <node id="FAM126A" label="FAM126A" />
+      <node id="ZMYM5" label="ZMYM5" />
+      <node id="FAM241A" label="FAM241A" />
+      <node id="RPGR" label="RPGR" />
+      <node id="DNAJB14" label="DNAJB14" />
+      <node id="NPHP3" label="NPHP3" />
+      <node id="LY96" label="LY96" />
+      <node id="C9ORF3" label="C9ORF3" />
+      <node id="ARHGAP26" label="ARHGAP26" />
+      <node id="MEX3C" label="MEX3C" />
+      <node id="SMARCA2" label="SMARCA2" />
+      <node id="RBM15" label="RBM15" />
+      <node id="CDC42EP3" label="CDC42EP3" />
+      <node id="KRT81" label="KRT81" />
+      <node id="ID3" label="ID3" />
+      <node id="ITPRIP" label="ITPRIP" />
+      <node id="CDH13" label="CDH13" />
+      <node id="JAG1" label="JAG1" />
+      <node id="CRIM1" label="CRIM1" />
+      <node id="PTPRE" label="PTPRE" />
+      <node id="SWAP70" label="SWAP70" />
+      <node id="PDLIM1" label="PDLIM1" />
+      <node id="CITED2" label="CITED2" />
+      <node id="NUDT4" label="NUDT4" />
+      <node id="MT-ND2" label="MT-ND2" />
+      <node id="FN1" label="FN1" />
+      <node id="ARID4A" label="ARID4A" />
+      <node id="VCAN" label="VCAN" />
+      <node id="JUNB" label="JUNB" />
+      <node id="LAMB1" label="LAMB1" />
+      <node id="CLK4" label="CLK4" />
+      <node id="FAM76B" label="FAM76B" />
+      <node id="KIAA2026" label="KIAA2026" />
+      <node id="FGFR1" label="FGFR1" />
+      <node id="SNAI2" label="SNAI2" />
+      <node id="DGKE" label="DGKE" />
+      <node id="HIST1H2BD" label="HIST1H2BD" />
+      <node id="FOSB" label="FOSB" />
+      <node id="ACTG2" label="ACTG2" />
+      <node id="JMY" label="JMY" />
+      <node id="TARSL2" label="TARSL2" />
+      <node id="MTA2" label="MTA2" />
+      <node id="HEXIM1" label="HEXIM1" />
+      <node id="PCF11" label="PCF11" />
+      <node id="RORA" label="RORA" />
+      <node id="ACSL4" label="ACSL4" />
+      <node id="FNDC3A" label="FNDC3A" />
+      <node id="CBLB" label="CBLB" />
+      <node id="PXK" label="PXK" />
+      <node id="RASA3" label="RASA3" />
+      <node id="BAMBI" label="BAMBI" />
+      <node id="FCER1G" label="FCER1G" />
+      <node id="ZEB2" label="ZEB2" />
+      <node id="RP2" label="RP2" />
+      <node id="MEF2A" label="MEF2A" />
+      <node id="PLXNA2" label="PLXNA2" />
+      <node id="AL031777.3" label="AL031777.3" />
+      <node id="HIST1H2BG" label="HIST1H2BG" />
+      <node id="KCTD12" label="KCTD12" />
+      <node id="MEF2C" label="MEF2C" />
+      <node id="GTF3C1" label="GTF3C1" />
+      <node id="SENP1" label="SENP1" />
+      <node id="FBRS" label="FBRS" />
+      <node id="RNF213" label="RNF213" />
+      <node id="SLFN5" label="SLFN5" />
+      <node id="LHFPL6" label="LHFPL6" />
+      <node id="COG3" label="COG3" />
+      <node id="ECE1" label="ECE1" />
+      <node id="SLC39A6" label="SLC39A6" />
+      <node id="TRPS1" label="TRPS1" />
+      <node id="KIAA0319L" label="KIAA0319L" />
+      <node id="HEG1" label="HEG1" />
+      <node id="LMCD1" label="LMCD1" />
+      <node id="STIM2" label="STIM2" />
+      <node id="LIX1L" label="LIX1L" />
+      <node id="MGAT4A" label="MGAT4A" />
+      <node id="TNF" label="TNF" />
+      <node id="PKIG" label="PKIG" />
+      <node id="PGF" label="PGF" />
+      <node id="C1ORF54" label="C1ORF54" />
+      <node id="RAI14" label="RAI14" />
+      <node id="UBXN7" label="UBXN7" />
+      <node id="CPE" label="CPE" />
+      <node id="FRYL" label="FRYL" />
+      <node id="GRK5" label="GRK5" />
+      <node id="SRGAP2C" label="SRGAP2C" />
+      <node id="RGS3" label="RGS3" />
+      <node id="WSB1" label="WSB1" />
+      <node id="NR4A1" label="NR4A1" />
+      <node id="MAGEH1" label="MAGEH1" />
+      <node id="RARRES1" label="RARRES1" />
+      <node id="APOD" label="APOD" />
+      <node id="CYYR1" label="CYYR1" />
+      <node id="S100PBP" label="S100PBP" />
+      <node id="MAP4K4" label="MAP4K4" />
+      <node id="PLEKHM2" label="PLEKHM2" />
+      <node id="FLT1" label="FLT1" />
+      <node id="IL3RA" label="IL3RA" />
+      <node id="PLIN2" label="PLIN2" />
+      <node id="SH3KBP1" label="SH3KBP1" />
+      <node id="SERPING1" label="SERPING1" />
+      <node id="SIN3A" label="SIN3A" />
+      <node id="HERC1" label="HERC1" />
+      <node id="SLC35E3" label="SLC35E3" />
+      <node id="YPEL2" label="YPEL2" />
+      <node id="HIF1A" label="HIF1A" />
+      <node id="PARP14" label="PARP14" />
+      <node id="KIAA1551" label="KIAA1551" />
+      <node id="MAGI1" label="MAGI1" />
+      <node id="CHORDC1" label="CHORDC1" />
+      <node id="DDIT3" label="DDIT3" />
+      <node id="MLLT6" label="MLLT6" />
+      <node id="DUSP1" label="DUSP1" />
+      <node id="PTPN9" label="PTPN9" />
+      <node id="FOXP1" label="FOXP1" />
+      <node id="NFAT5" label="NFAT5" />
+      <node id="HIPK3" label="HIPK3" />
+      <node id="UCP2" label="UCP2" />
+      <node id="BAZ2B" label="BAZ2B" />
+      <node id="RND3" label="RND3" />
+      <node id="RLF" label="RLF" />
+      <node id="TLE4" label="TLE4" />
+      <node id="SLC25A37" label="SLC25A37" />
+      <node id="EPAS1" label="EPAS1" />
+      <node id="MTUS1" label="MTUS1" />
+      <node id="SERPINH1" label="SERPINH1" />
+      <node id="COL6A1" label="COL6A1" />
+      <node id="COL6A2" label="COL6A2" />
+    </nodes>
+    <edges>
+      <edge source="KRT14" target="KRT5" id="0" weight="0.6546869874000549" />
+      <edge source="KRT14" target="KRT17" id="1" weight="0.5664862394332886" />
+      <edge source="KRT14" target="SFN" id="2" weight="0.3882380723953247" />
+      <edge source="KRT14" target="S100A2" id="3" weight="0.2754802405834198" />
+      <edge source="KRT14" target="SAA1" id="4" weight="0.23218797147274017" />
+      <edge source="KRT14" target="MIA" id="5" weight="0.19189001619815826" />
+      <edge source="KRT14" target="KRT16" id="6" weight="0.14402613043785095" />
+      <edge source="KRT14" target="TACSTD2" id="7" weight="0.12962792813777924" />
+      <edge source="KRT14" target="S100A14" id="8" weight="0.11654338985681534" />
+      <edge source="KRT14" target="MT1X" id="9" weight="0.1153678148984909" />
+      <edge source="KRT5" target="SFN" id="10" weight="0.5694323778152466" />
+      <edge source="KRT5" target="KRT17" id="11" weight="0.5650679469108582" />
+      <edge source="KRT5" target="S100A2" id="12" weight="0.34322813153266907" />
+      <edge source="KRT5" target="SAA1" id="13" weight="0.2961033284664154" />
+      <edge source="KRT5" target="MIA" id="14" weight="0.2370436191558838" />
+      <edge source="KRT5" target="KRT16" id="15" weight="0.21670259535312653" />
+      <edge source="KRT5" target="S100A14" id="16" weight="0.18618960678577423" />
+      <edge source="KRT5" target="TACSTD2" id="17" weight="0.16895493865013123" />
+      <edge source="KRT5" target="ITGB6" id="18" weight="0.16238269209861755" />
+      <edge source="KRT5" target="KRT7" id="19" weight="0.11169566959142685" />
+      <edge source="KRT5" target="TFAP2C" id="20" weight="0.10656534880399704" />
+      <edge source="KRT5" target="SFRP1" id="21" weight="0.10331901907920837" />
+      <edge source="KRT5" target="MT1X" id="22" weight="0.10273050516843796" />
+      <edge source="KRT5" target="SOX9" id="23" weight="0.1000198945403099" />
+      <edge source="MT-CO1" target="MT-CO2" id="24" weight="0.6475659608840942" />
+      <edge source="MT-CO1" target="MT-ND4" id="25" weight="0.45096492767333984" />
+      <edge source="MT-CO1" target="MT-ATP6" id="26" weight="0.18978172540664673" />
+      <edge source="MT-CO1" target="MT-ND1" id="27" weight="0.10076270997524261" />
+      <edge source="MT-CO2" target="MT-ND4" id="28" weight="0.47307321429252625" />
+      <edge source="MT-CO2" target="MT-ATP6" id="29" weight="0.23313556611537933" />
+      <edge source="KRT17" target="SFN" id="30" weight="0.6071375012397766" />
+      <edge source="KRT17" target="SAA1" id="31" weight="0.3651430904865265" />
+      <edge source="KRT17" target="S100A2" id="32" weight="0.3339378535747528" />
+      <edge source="KRT17" target="KRT16" id="33" weight="0.3180624544620514" />
+      <edge source="KRT17" target="MIA" id="34" weight="0.2604007124900818" />
+      <edge source="KRT17" target="S100A14" id="35" weight="0.2508871555328369" />
+      <edge source="KRT17" target="TACSTD2" id="36" weight="0.21806082129478455" />
+      <edge source="KRT17" target="FXYD3" id="37" weight="0.20247210562229156" />
+      <edge source="KRT17" target="ITGB6" id="38" weight="0.1743955910205841" />
+      <edge source="KRT17" target="KRT8" id="39" weight="0.17083489894866943" />
+      <edge source="KRT17" target="KRT7" id="40" weight="0.1513187289237976" />
+      <edge source="KRT17" target="ELF3" id="41" weight="0.1428917646408081" />
+      <edge source="KRT17" target="KRT23" id="42" weight="0.12532822787761688" />
+      <edge source="KRT17" target="SOX9" id="43" weight="0.12057912349700928" />
+      <edge source="KRT17" target="TFAP2C" id="44" weight="0.11467894166707993" />
+      <edge source="KRT17" target="WFDC2" id="45" weight="0.10976512730121613" />
+      <edge source="SFN" target="S100A2" id="46" weight="0.4235017001628876" />
+      <edge source="SFN" target="TACSTD2" id="47" weight="0.4227848947048187" />
+      <edge source="SFN" target="KRT16" id="48" weight="0.4216480553150177" />
+      <edge source="SFN" target="SAA1" id="49" weight="0.4126051366329193" />
+      <edge source="SFN" target="S100A14" id="50" weight="0.38956955075263977" />
+      <edge source="SFN" target="KRT7" id="51" weight="0.307239830493927" />
+      <edge source="SFN" target="ITGB6" id="52" weight="0.24380885064601898" />
+      <edge source="SFN" target="KRT8" id="53" weight="0.2384004294872284" />
+      <edge source="SFN" target="FXYD3" id="54" weight="0.20226265490055084" />
+      <edge source="SFN" target="MIA" id="55" weight="0.18797607719898224" />
+      <edge source="SFN" target="WFDC2" id="56" weight="0.18621186912059784" />
+      <edge source="SFN" target="ELF3" id="57" weight="0.18576328456401825" />
+      <edge source="SFN" target="SOX9" id="58" weight="0.1637699455022812" />
+      <edge source="SFN" target="SFRP1" id="59" weight="0.14887824654579163" />
+      <edge source="SFN" target="KRT23" id="60" weight="0.13267827033996582" />
+      <edge source="SFN" target="LAMB3" id="61" weight="0.13132545351982117" />
+      <edge source="SFN" target="MGST1" id="62" weight="0.12922056019306183" />
+      <edge source="SFN" target="MT1X" id="63" weight="0.12542319297790527" />
+      <edge source="SFN" target="TFAP2C" id="64" weight="0.1234714612364769" />
+      <edge source="SFN" target="DSP" id="65" weight="0.12079716473817825" />
+      <edge source="SFN" target="CLDN4" id="66" weight="0.10725834965705872" />
+      <edge source="SFN" target="TPM1" id="67" weight="0.10500992834568024" />
+      <edge source="SFN" target="SDC4" id="68" weight="0.10120712220668793" />
+      <edge source="SFN" target="SAA2" id="69" weight="0.10101275891065598" />
+      <edge source="S100A8" target="S100A9" id="70" weight="0.5596444010734558" />
+      <edge source="S100A8" target="PDZK1IP1" id="71" weight="0.12564612925052643" />
+      <edge source="S100A8" target="CLDN7" id="72" weight="0.10353999584913254" />
+      <edge source="S100A9" target="CLDN4" id="73" weight="0.17072604596614838" />
+      <edge source="S100A9" target="LCN2" id="74" weight="0.167888805270195" />
+      <edge source="S100A9" target="PDZK1IP1" id="75" weight="0.14168986678123474" />
+      <edge source="S100A9" target="WFDC2" id="76" weight="0.12526445090770721" />
+      <edge source="S100A9" target="CLDN7" id="77" weight="0.12519890069961548" />
+      <edge source="S100A9" target="DEFB1" id="78" weight="0.1250249147415161" />
+      <edge source="S100A9" target="SMIM22" id="79" weight="0.10760514438152313" />
+      <edge source="S100A9" target="CLDN3" id="80" weight="0.10324827581644058" />
+      <edge source="MT-ATP6" target="MT-ND4" id="81" weight="0.5139025449752808" />
+      <edge source="MT-ATP6" target="MT-ND3" id="82" weight="0.25263768434524536" />
+      <edge source="MT-ATP6" target="MT-ND1" id="83" weight="0.2505643367767334" />
+      <edge source="MT-ND4" target="MT-ND1" id="84" weight="0.1979624480009079" />
+      <edge source="MT-ND4" target="MT-ND3" id="85" weight="0.14953850209712982" />
+      <edge source="HSPA1A" target="HSPA1B" id="86" weight="0.492626816034317" />
+      <edge source="HSPA1A" target="HSPH1" id="87" weight="0.23877589404582977" />
+      <edge source="HSPA1A" target="DNAJB1" id="88" weight="0.21934263408184052" />
+      <edge source="HSPA1A" target="HSP90AA1" id="89" weight="0.17797361314296722" />
+      <edge source="HSPA1B" target="DNAJB1" id="90" weight="0.18605351448059082" />
+      <edge source="S100A14" target="TACSTD2" id="91" weight="0.49015626311302185" />
+      <edge source="S100A14" target="KRT16" id="92" weight="0.46393638849258423" />
+      <edge source="S100A14" target="SAA1" id="93" weight="0.43088293075561523" />
+      <edge source="S100A14" target="WFDC2" id="94" weight="0.39901164174079895" />
+      <edge source="S100A14" target="FXYD3" id="95" weight="0.388459712266922" />
+      <edge source="S100A14" target="KRT23" id="96" weight="0.3472456634044647" />
+      <edge source="S100A14" target="ELF3" id="97" weight="0.33576491475105286" />
+      <edge source="S100A14" target="KRT7" id="98" weight="0.3355834484100342" />
+      <edge source="S100A14" target="CLDN4" id="99" weight="0.31555065512657166" />
+      <edge source="S100A14" target="ITGB6" id="100" weight="0.28239378333091736" />
+      <edge source="S100A14" target="CLDN7" id="101" weight="0.27430322766304016" />
+      <edge source="S100A14" target="KRT8" id="102" weight="0.234640434384346" />
+      <edge source="S100A14" target="SOX9" id="103" weight="0.22513416409492493" />
+      <edge source="S100A14" target="SAA2" id="104" weight="0.22027701139450073" />
+      <edge source="S100A14" target="S100A2" id="105" weight="0.18915070593357086" />
+      <edge source="S100A14" target="PDZK1IP1" id="106" weight="0.17330145835876465" />
+      <edge source="S100A14" target="CD24" id="107" weight="0.16927361488342285" />
+      <edge source="S100A14" target="MGST1" id="108" weight="0.1505824327468872" />
+      <edge source="S100A14" target="SFRP1" id="109" weight="0.1437145471572876" />
+      <edge source="S100A14" target="KRT18" id="110" weight="0.13979674875736237" />
+      <edge source="S100A14" target="SDC4" id="111" weight="0.13425453007221222" />
+      <edge source="S100A14" target="TFAP2C" id="112" weight="0.12801145017147064" />
+      <edge source="S100A14" target="MIA" id="113" weight="0.12696796655654907" />
+      <edge source="S100A14" target="STC2" id="114" weight="0.11858886480331421" />
+      <edge source="S100A14" target="DSP" id="115" weight="0.11524350196123123" />
+      <edge source="S100A14" target="CHI3L2" id="116" weight="0.11075025051832199" />
+      <edge source="S100A14" target="MT1X" id="117" weight="0.11036137491464615" />
+      <edge source="S100A14" target="MAL2" id="118" weight="0.10883740335702896" />
+      <edge source="S100A14" target="ATP1B1" id="119" weight="0.10060333460569382" />
+      <edge source="TACSTD2" target="SAA1" id="120" weight="0.4055764973163605" />
+      <edge source="TACSTD2" target="CLDN4" id="121" weight="0.38460013270378113" />
+      <edge source="TACSTD2" target="KRT7" id="122" weight="0.3401257395744324" />
+      <edge source="TACSTD2" target="KRT16" id="123" weight="0.3228198289871216" />
+      <edge source="TACSTD2" target="WFDC2" id="124" weight="0.2864910662174225" />
+      <edge source="TACSTD2" target="ELF3" id="125" weight="0.27310383319854736" />
+      <edge source="TACSTD2" target="FXYD3" id="126" weight="0.2623102366924286" />
+      <edge source="TACSTD2" target="KRT8" id="127" weight="0.25559699535369873" />
+      <edge source="TACSTD2" target="KRT23" id="128" weight="0.22502855956554413" />
+      <edge source="TACSTD2" target="S100A2" id="129" weight="0.21127796173095703" />
+      <edge source="TACSTD2" target="ITGB6" id="130" weight="0.1958986073732376" />
+      <edge source="TACSTD2" target="SAA2" id="131" weight="0.19324587285518646" />
+      <edge source="TACSTD2" target="DSP" id="132" weight="0.19196872413158417" />
+      <edge source="TACSTD2" target="PDZK1IP1" id="133" weight="0.17620129883289337" />
+      <edge source="TACSTD2" target="MGST1" id="134" weight="0.1384817212820053" />
+      <edge source="TACSTD2" target="SOX9" id="135" weight="0.13811123371124268" />
+      <edge source="TACSTD2" target="CLDN7" id="136" weight="0.13395704329013824" />
+      <edge source="TACSTD2" target="KRT18" id="137" weight="0.13182049989700317" />
+      <edge source="TACSTD2" target="SDC4" id="138" weight="0.11962535232305527" />
+      <edge source="TACSTD2" target="STC2" id="139" weight="0.11393535137176514" />
+      <edge source="TACSTD2" target="MMP7" id="140" weight="0.10890897363424301" />
+      <edge source="TACSTD2" target="MT1X" id="141" weight="0.10521506518125534" />
+      <edge source="ELF3" target="WFDC2" id="142" weight="0.4802699685096741" />
+      <edge source="ELF3" target="FXYD3" id="143" weight="0.47964027523994446" />
+      <edge source="ELF3" target="KRT8" id="144" weight="0.41019406914711" />
+      <edge source="ELF3" target="CLDN4" id="145" weight="0.3289942741394043" />
+      <edge source="ELF3" target="KRT23" id="146" weight="0.3115805685520172" />
+      <edge source="ELF3" target="CD24" id="147" weight="0.27254870533943176" />
+      <edge source="ELF3" target="SAA1" id="148" weight="0.26190605759620667" />
+      <edge source="ELF3" target="KRT7" id="149" weight="0.24617111682891846" />
+      <edge source="ELF3" target="PDZK1IP1" id="150" weight="0.22632469236850739" />
+      <edge source="ELF3" target="KRT16" id="151" weight="0.2230132669210434" />
+      <edge source="ELF3" target="CLDN7" id="152" weight="0.2196151316165924" />
+      <edge source="ELF3" target="SAA2" id="153" weight="0.2152169793844223" />
+      <edge source="ELF3" target="KRT18" id="154" weight="0.19979946315288544" />
+      <edge source="ELF3" target="KRT19" id="155" weight="0.1770443618297577" />
+      <edge source="ELF3" target="ITGB6" id="156" weight="0.1740024834871292" />
+      <edge source="ELF3" target="MAL2" id="157" weight="0.15977010130882263" />
+      <edge source="ELF3" target="MGST1" id="158" weight="0.15741658210754395" />
+      <edge source="ELF3" target="MMP7" id="159" weight="0.15260997414588928" />
+      <edge source="ELF3" target="SOX9" id="160" weight="0.1346132606267929" />
+      <edge source="ELF3" target="LCN2" id="161" weight="0.13349145650863647" />
+      <edge source="ELF3" target="CLDN3" id="162" weight="0.11527100950479507" />
+      <edge source="ELF3" target="STC2" id="163" weight="0.11346133053302765" />
+      <edge source="ELF3" target="CHI3L2" id="164" weight="0.1072302833199501" />
+      <edge source="ELF3" target="ATP1B1" id="165" weight="0.10156571120023727" />
+      <edge source="ELF3" target="KRT15" id="166" weight="0.10081887990236282" />
+      <edge source="WFDC2" target="FXYD3" id="167" weight="0.4162592589855194" />
+      <edge source="WFDC2" target="CLDN4" id="168" weight="0.3390563428401947" />
+      <edge source="WFDC2" target="KRT23" id="169" weight="0.32011878490448" />
+      <edge source="WFDC2" target="KRT8" id="170" weight="0.2680565416812897" />
+      <edge source="WFDC2" target="KRT16" id="171" weight="0.229584202170372" />
+      <edge source="WFDC2" target="SAA1" id="172" weight="0.22791685163974762" />
+      <edge source="WFDC2" target="KRT7" id="173" weight="0.21304723620414734" />
+      <edge source="WFDC2" target="CLDN7" id="174" weight="0.20271193981170654" />
+      <edge source="WFDC2" target="KRT18" id="175" weight="0.1961745023727417" />
+      <edge source="WFDC2" target="PDZK1IP1" id="176" weight="0.18665236234664917" />
+      <edge source="WFDC2" target="MGST1" id="177" weight="0.18249185383319855" />
+      <edge source="WFDC2" target="CD24" id="178" weight="0.17585031688213348" />
+      <edge source="WFDC2" target="ITGB6" id="179" weight="0.15406665205955505" />
+      <edge source="WFDC2" target="KRT19" id="180" weight="0.15020200610160828" />
+      <edge source="WFDC2" target="MMP7" id="181" weight="0.14354132115840912" />
+      <edge source="WFDC2" target="SAA2" id="182" weight="0.1420585662126541" />
+      <edge source="WFDC2" target="S100A2" id="183" weight="0.13909600675106049" />
+      <edge source="WFDC2" target="MAL2" id="184" weight="0.1347799152135849" />
+      <edge source="WFDC2" target="KRT15" id="185" weight="0.13233721256256104" />
+      <edge source="WFDC2" target="SLPI" id="186" weight="0.12234173715114594" />
+      <edge source="WFDC2" target="LCN2" id="187" weight="0.1220300942659378" />
+      <edge source="WFDC2" target="ATP1B1" id="188" weight="0.12002861499786377" />
+      <edge source="WFDC2" target="SOX9" id="189" weight="0.11122731864452362" />
+      <edge source="FXYD3" target="KRT8" id="190" weight="0.40122392773628235" />
+      <edge source="FXYD3" target="KRT23" id="191" weight="0.3928517699241638" />
+      <edge source="FXYD3" target="SAA1" id="192" weight="0.3859260380268097" />
+      <edge source="FXYD3" target="KRT16" id="193" weight="0.2923491895198822" />
+      <edge source="FXYD3" target="CD24" id="194" weight="0.2771499752998352" />
+      <edge source="FXYD3" target="CLDN4" id="195" weight="0.27306997776031494" />
+      <edge source="FXYD3" target="SAA2" id="196" weight="0.2599780559539795" />
+      <edge source="FXYD3" target="CLDN7" id="197" weight="0.2534600496292114" />
+      <edge source="FXYD3" target="MAL2" id="198" weight="0.23684486746788025" />
+      <edge source="FXYD3" target="PDZK1IP1" id="199" weight="0.22382085025310516" />
+      <edge source="FXYD3" target="ITGB6" id="200" weight="0.1966632604598999" />
+      <edge source="FXYD3" target="KRT7" id="201" weight="0.18835368752479553" />
+      <edge source="FXYD3" target="KRT18" id="202" weight="0.17902027070522308" />
+      <edge source="FXYD3" target="KRT19" id="203" weight="0.15958727896213531" />
+      <edge source="FXYD3" target="MMP7" id="204" weight="0.14788000285625458" />
+      <edge source="FXYD3" target="SOX9" id="205" weight="0.13831152021884918" />
+      <edge source="FXYD3" target="MGST1" id="206" weight="0.12860366702079773" />
+      <edge source="FXYD3" target="TFAP2C" id="207" weight="0.12180271744728088" />
+      <edge source="FXYD3" target="KRT81" id="208" weight="0.11752499639987946" />
+      <edge source="FXYD3" target="S100A2" id="209" weight="0.1136976107954979" />
+      <edge source="FXYD3" target="MIA" id="210" weight="0.11349509656429291" />
+      <edge source="FXYD3" target="SDC4" id="211" weight="0.11259515583515167" />
+      <edge source="FXYD3" target="ATP1B1" id="212" weight="0.10959715396165848" />
+      <edge source="FXYD3" target="CHI3L2" id="213" weight="0.10642925649881363" />
+      <edge source="FXYD3" target="STC2" id="214" weight="0.1014368012547493" />
+      <edge source="SAA1" target="SAA2" id="215" weight="0.47705087065696716" />
+      <edge source="SAA1" target="ITGB6" id="216" weight="0.29767900705337524" />
+      <edge source="SAA1" target="KRT8" id="217" weight="0.2462795525789261" />
+      <edge source="SAA1" target="S100A2" id="218" weight="0.22361621260643005" />
+      <edge source="SAA1" target="KRT7" id="219" weight="0.21854515373706818" />
+      <edge source="SAA1" target="KRT16" id="220" weight="0.21811358630657196" />
+      <edge source="SAA1" target="KRT23" id="221" weight="0.20996657013893127" />
+      <edge source="SAA1" target="SOX9" id="222" weight="0.19081634283065796" />
+      <edge source="SAA1" target="PDZK1IP1" id="223" weight="0.17682568728923798" />
+      <edge source="SAA1" target="TFAP2C" id="224" weight="0.17193420231342316" />
+      <edge source="SAA1" target="CLDN4" id="225" weight="0.16789527237415314" />
+      <edge source="SAA1" target="MIA" id="226" weight="0.16775256395339966" />
+      <edge source="SAA1" target="CLDN7" id="227" weight="0.16197223961353302" />
+      <edge source="SAA1" target="CHI3L2" id="228" weight="0.1602180004119873" />
+      <edge source="SAA1" target="SDC4" id="229" weight="0.14527527987957" />
+      <edge source="SAA1" target="MT1X" id="230" weight="0.13726980984210968" />
+      <edge source="SAA1" target="MGST1" id="231" weight="0.12610644102096558" />
+      <edge source="SAA1" target="SFRP1" id="232" weight="0.11333875358104706" />
+      <edge source="SAA1" target="DSP" id="233" weight="0.11103576421737671" />
+      <edge source="SAA2" target="CHI3L2" id="234" weight="0.3068966567516327" />
+      <edge source="SAA2" target="PDZK1IP1" id="235" weight="0.295169472694397" />
+      <edge source="SAA2" target="ITGB6" id="236" weight="0.2617186903953552" />
+      <edge source="SAA2" target="CLDN7" id="237" weight="0.20106366276741028" />
+      <edge source="SAA2" target="SOX9" id="238" weight="0.17116202414035797" />
+      <edge source="SAA2" target="CLDN4" id="239" weight="0.16557098925113678" />
+      <edge source="SAA2" target="KRT8" id="240" weight="0.1609962284564972" />
+      <edge source="SAA2" target="CD24" id="241" weight="0.14696724712848663" />
+      <edge source="SAA2" target="TFAP2C" id="242" weight="0.13869035243988037" />
+      <edge source="SAA2" target="KRT7" id="243" weight="0.13226360082626343" />
+      <edge source="SAA2" target="KRT23" id="244" weight="0.12603724002838135" />
+      <edge source="SAA2" target="MMP7" id="245" weight="0.1258157342672348" />
+      <edge source="SAA2" target="CHI3L1" id="246" weight="0.1055343747138977" />
+      <edge source="SAA2" target="KRT81" id="247" weight="0.1044386476278305" />
+      <edge source="SAA2" target="DEFB1" id="248" weight="0.10073569416999817" />
+      <edge source="SAA2" target="MAL2" id="249" weight="0.1002044528722763" />
+      <edge source="KRT16" target="KRT23" id="250" weight="0.34994208812713623" />
+      <edge source="KRT16" target="KRT8" id="251" weight="0.2531944513320923" />
+      <edge source="KRT16" target="CLDN4" id="252" weight="0.21770977973937988" />
+      <edge source="KRT16" target="S100A2" id="253" weight="0.21444588899612427" />
+      <edge source="KRT16" target="KRT7" id="254" weight="0.19173578917980194" />
+      <edge source="KRT16" target="SOX9" id="255" weight="0.1818239688873291" />
+      <edge source="KRT16" target="ITGB6" id="256" weight="0.1587834656238556" />
+      <edge source="KRT16" target="CLDN7" id="257" weight="0.13616730272769928" />
+      <edge source="KRT16" target="ATP1B1" id="258" weight="0.1327132284641266" />
+      <edge source="KRT16" target="MGST1" id="259" weight="0.13113577663898468" />
+      <edge source="KRT16" target="KRT15" id="260" weight="0.11719421297311783" />
+      <edge source="KRT16" target="SDC4" id="261" weight="0.1160336583852768" />
+      <edge source="KRT16" target="MIA" id="262" weight="0.10314785689115524" />
+      <edge source="CD24" target="KRT19" id="263" weight="0.45225536823272705" />
+      <edge source="CD24" target="KRT23" id="264" weight="0.3107849359512329" />
+      <edge source="CD24" target="KRT18" id="265" weight="0.25764793157577515" />
+      <edge source="CD24" target="MAL2" id="266" weight="0.24969482421875" />
+      <edge source="CD24" target="CLDN7" id="267" weight="0.2311532199382782" />
+      <edge source="CD24" target="CLDN4" id="268" weight="0.23023721575737" />
+      <edge source="CD24" target="PDZK1IP1" id="269" weight="0.22033986449241638" />
+      <edge source="CD24" target="LCN2" id="270" weight="0.18213586509227753" />
+      <edge source="CD24" target="KRT8" id="271" weight="0.18133503198623657" />
+      <edge source="CD24" target="SLPI" id="272" weight="0.17189641296863556" />
+      <edge source="CD24" target="CLDN3" id="273" weight="0.1687680035829544" />
+      <edge source="CD24" target="SMIM22" id="274" weight="0.16431407630443573" />
+      <edge source="CD24" target="KRT7" id="275" weight="0.10902828723192215" />
+      <edge source="CD24" target="AZGP1" id="276" weight="0.10814234614372253" />
+      <edge source="KRT19" target="KRT23" id="277" weight="0.2555696964263916" />
+      <edge source="KRT19" target="LCN2" id="278" weight="0.2488245666027069" />
+      <edge source="KRT19" target="KRT18" id="279" weight="0.2484630048274994" />
+      <edge source="KRT19" target="SMIM22" id="280" weight="0.21988174319267273" />
+      <edge source="KRT19" target="CLDN7" id="281" weight="0.20612306892871857" />
+      <edge source="KRT19" target="MAL2" id="282" weight="0.1988941729068756" />
+      <edge source="KRT19" target="CLDN3" id="283" weight="0.19055400788784027" />
+      <edge source="KRT19" target="AZGP1" id="284" weight="0.18919344246387482" />
+      <edge source="KRT19" target="CLDN4" id="285" weight="0.16218319535255432" />
+      <edge source="KRT19" target="PDZK1IP1" id="286" weight="0.14816996455192566" />
+      <edge source="KRT19" target="SLPI" id="287" weight="0.12217807024717331" />
+      <edge source="KRT19" target="KRT8" id="288" weight="0.10154001414775848" />
+      <edge source="KRT19" target="KRT7" id="289" weight="0.10105720907449722" />
+      <edge source="S100A2" target="KRT7" id="290" weight="0.16309525072574615" />
+      <edge source="S100A2" target="KRT8" id="291" weight="0.1543339341878891" />
+      <edge source="S100A2" target="SDC4" id="292" weight="0.14672739803791046" />
+      <edge source="S100A2" target="ITGB6" id="293" weight="0.14033697545528412" />
+      <edge source="S100A2" target="MT1X" id="294" weight="0.13911953568458557" />
+      <edge source="S100A2" target="DSP" id="295" weight="0.10658968985080719" />
+      <edge source="S100A2" target="SOX9" id="296" weight="0.10382610559463501" />
+      <edge source="S100A2" target="KRT23" id="297" weight="0.10118159651756287" />
+      <edge source="KRT8" target="KRT7" id="298" weight="0.39442506432533264" />
+      <edge source="KRT8" target="ITGB6" id="299" weight="0.2877780795097351" />
+      <edge source="KRT8" target="KRT18" id="300" weight="0.26835188269615173" />
+      <edge source="KRT8" target="KRT23" id="301" weight="0.22272366285324097" />
+      <edge source="KRT8" target="CLDN7" id="302" weight="0.1882740557193756" />
+      <edge source="KRT8" target="TFAP2C" id="303" weight="0.18010930716991425" />
+      <edge source="KRT8" target="MGST1" id="304" weight="0.15494172275066376" />
+      <edge source="KRT8" target="SOX9" id="305" weight="0.1348564773797989" />
+      <edge source="KRT8" target="SDC4" id="306" weight="0.13117995858192444" />
+      <edge source="KRT8" target="CLDN4" id="307" weight="0.1302269697189331" />
+      <edge source="KRT8" target="STC2" id="308" weight="0.12249874323606491" />
+      <edge source="KRT8" target="MIA" id="309" weight="0.1132102981209755" />
+      <edge source="KRT8" target="LAMB3" id="310" weight="0.10987588763237" />
+      <edge source="KRT7" target="ITGB6" id="311" weight="0.25540152192115784" />
+      <edge source="KRT7" target="KRT23" id="312" weight="0.2018307000398636" />
+      <edge source="KRT7" target="KRT18" id="313" weight="0.19373752176761627" />
+      <edge source="KRT7" target="STC2" id="314" weight="0.17423485219478607" />
+      <edge source="KRT7" target="CLDN4" id="315" weight="0.15540248155593872" />
+      <edge source="KRT7" target="CLDN7" id="316" weight="0.144409641623497" />
+      <edge source="KRT7" target="TFAP2C" id="317" weight="0.13766033947467804" />
+      <edge source="KRT7" target="MGST1" id="318" weight="0.13625667989253998" />
+      <edge source="KRT7" target="DSP" id="319" weight="0.12124195694923401" />
+      <edge source="KRT7" target="SFRP1" id="320" weight="0.10983467847108841" />
+      <edge source="KRT7" target="SOX9" id="321" weight="0.10942583531141281" />
+      <edge source="C1ORF56" target="CDC42SE1" id="322" weight="0.3930833637714386" />
+      <edge source="KRT23" target="CLDN4" id="323" weight="0.32313910126686096" />
+      <edge source="KRT23" target="CLDN7" id="324" weight="0.3225599229335785" />
+      <edge source="KRT23" target="MAL2" id="325" weight="0.24272185564041138" />
+      <edge source="KRT23" target="PDZK1IP1" id="326" weight="0.20493511855602264" />
+      <edge source="KRT23" target="MGST1" id="327" weight="0.16038279235363007" />
+      <edge source="KRT23" target="KRT18" id="328" weight="0.1473378837108612" />
+      <edge source="KRT23" target="ATP1B1" id="329" weight="0.14509689807891846" />
+      <edge source="KRT23" target="MMP7" id="330" weight="0.1319381594657898" />
+      <edge source="KRT23" target="SOX9" id="331" weight="0.12319863587617874" />
+      <edge source="KRT23" target="LCN2" id="332" weight="0.12319736927747726" />
+      <edge source="KRT23" target="ITGB6" id="333" weight="0.11327306926250458" />
+      <edge source="KRT23" target="SLPI" id="334" weight="0.11068706214427948" />
+      <edge source="CLDN4" target="PDZK1IP1" id="335" weight="0.33317217230796814" />
+      <edge source="CLDN4" target="CLDN7" id="336" weight="0.20513702929019928" />
+      <edge source="CLDN4" target="SLPI" id="337" weight="0.18302315473556519" />
+      <edge source="CLDN4" target="MMP7" id="338" weight="0.17648375034332275" />
+      <edge source="CLDN4" target="KRT18" id="339" weight="0.1714671403169632" />
+      <edge source="CLDN4" target="LCN2" id="340" weight="0.17120583355426788" />
+      <edge source="CLDN4" target="CLDN3" id="341" weight="0.14183476567268372" />
+      <edge source="CLDN4" target="MGST1" id="342" weight="0.13979165256023407" />
+      <edge source="CLDN4" target="MAL2" id="343" weight="0.12361985445022583" />
+      <edge source="CLDN4" target="SOX9" id="344" weight="0.11732061952352524" />
+      <edge source="CLDN4" target="SMIM22" id="345" weight="0.11443277448415756" />
+      <edge source="CLDN4" target="DEFB1" id="346" weight="0.11151767522096634" />
+      <edge source="CLDN4" target="KRT15" id="347" weight="0.1047559604048729" />
+      <edge source="CD74" target="HLA-DRA" id="348" weight="0.38111311197280884" />
+      <edge source="CD74" target="HLA-DRB1" id="349" weight="0.2736358940601349" />
+      <edge source="CD74" target="HLA-DPA1" id="350" weight="0.20782338082790375" />
+      <edge source="CD74" target="HLA-DQB1" id="351" weight="0.19987167418003082" />
+      <edge source="CD74" target="HLA-DPB1" id="352" weight="0.17078359425067902" />
+      <edge source="CD74" target="HLA-DMA" id="353" weight="0.12498676031827927" />
+      <edge source="CD74" target="HLA-DQA1" id="354" weight="0.12210564315319061" />
+      <edge source="HLA-DRA" target="HLA-DPA1" id="355" weight="0.30231526494026184" />
+      <edge source="HLA-DRA" target="HLA-DQB1" id="356" weight="0.23213928937911987" />
+      <edge source="HLA-DRA" target="HLA-DRB1" id="357" weight="0.21290791034698486" />
+      <edge source="HLA-DRA" target="HLA-DQA1" id="358" weight="0.19839955866336823" />
+      <edge source="HLA-DRA" target="HLA-DPB1" id="359" weight="0.17821018397808075" />
+      <edge source="HLA-DRA" target="HLA-DMA" id="360" weight="0.14450247585773468" />
+      <edge source="MYL9" target="TAGLN" id="361" weight="0.37157362699508667" />
+      <edge source="MYL9" target="CALD1" id="362" weight="0.19184623658657074" />
+      <edge source="MYL9" target="TPM2" id="363" weight="0.14640513062477112" />
+      <edge source="MYL9" target="ACTA2" id="364" weight="0.1126665398478508" />
+      <edge source="TAGLN" target="ACTA2" id="365" weight="0.27173155546188354" />
+      <edge source="TAGLN" target="TPM2" id="366" weight="0.18723559379577637" />
+      <edge source="TAGLN" target="CALD1" id="367" weight="0.15698252618312836" />
+      <edge source="HSP90AA1" target="HSPH1" id="368" weight="0.3675442039966583" />
+      <edge source="HSP90AA1" target="DNAJB1" id="369" weight="0.12766629457473755" />
+      <edge source="HSP90AA1" target="CHORDC1" id="370" weight="0.10471697896718979" />
+      <edge source="HSPH1" target="DNAJB1" id="371" weight="0.15064243972301483" />
+      <edge source="HSPH1" target="FOSB" id="372" weight="0.11641939729452133" />
+      <edge source="GTF2A1" target="TTC14" id="373" weight="0.3633261024951935" />
+      <edge source="GTF2A1" target="PRKD3" id="374" weight="0.23214387893676758" />
+      <edge source="GTF2A1" target="NR2C2" id="375" weight="0.15400229394435883" />
+      <edge source="GTF2A1" target="COG3" id="376" weight="0.11398466676473618" />
+      <edge source="TTC14" target="PRKD3" id="377" weight="0.16506163775920868" />
+      <edge source="TTC14" target="NR2C2" id="378" weight="0.12743258476257324" />
+      <edge source="TTC14" target="S100PBP" id="379" weight="0.10725151002407074" />
+      <edge source="PDZK1IP1" target="SLPI" id="380" weight="0.2685917913913727" />
+      <edge source="PDZK1IP1" target="LCN2" id="381" weight="0.2489253133535385" />
+      <edge source="PDZK1IP1" target="MAL2" id="382" weight="0.23675259947776794" />
+      <edge source="PDZK1IP1" target="CHI3L2" id="383" weight="0.1976875364780426" />
+      <edge source="PDZK1IP1" target="MMP7" id="384" weight="0.18443429470062256" />
+      <edge source="PDZK1IP1" target="CLDN3" id="385" weight="0.17456994950771332" />
+      <edge source="PDZK1IP1" target="KRT18" id="386" weight="0.1729244887828827" />
+      <edge source="PDZK1IP1" target="CLDN7" id="387" weight="0.1669255793094635" />
+      <edge source="PDZK1IP1" target="SMIM22" id="388" weight="0.13764286041259766" />
+      <edge source="PDZK1IP1" target="MGST1" id="389" weight="0.10349123924970627" />
+      <edge source="PDZK1IP1" target="DEFB1" id="390" weight="0.10302024334669113" />
+      <edge source="HELZ" target="KIDINS220" id="391" weight="0.3308475613594055" />
+      <edge source="HELZ" target="UHRF2" id="392" weight="0.1656571328639984" />
+      <edge source="HELZ" target="INO80D" id="393" weight="0.1384456902742386" />
+      <edge source="HELZ" target="ATXN1" id="394" weight="0.13640086352825165" />
+      <edge source="HELZ" target="LENG8" id="395" weight="0.1305561512708664" />
+      <edge source="HELZ" target="LNPEP" id="396" weight="0.12703566253185272" />
+      <edge source="HELZ" target="ZC3H4" id="397" weight="0.1181863471865654" />
+      <edge source="HELZ" target="KIAA0319L" id="398" weight="0.11384677141904831" />
+      <edge source="HELZ" target="FTX" id="399" weight="0.10959897935390472" />
+      <edge source="KIDINS220" target="FTX" id="400" weight="0.2082565277814865" />
+      <edge source="KIDINS220" target="POLK" id="401" weight="0.17383494973182678" />
+      <edge source="KIDINS220" target="INO80D" id="402" weight="0.17107520997524261" />
+      <edge source="KIDINS220" target="ZC3H4" id="403" weight="0.14861780405044556" />
+      <edge source="KIDINS220" target="UHRF2" id="404" weight="0.1357722282409668" />
+      <edge source="KIDINS220" target="BRAF" id="405" weight="0.12558142840862274" />
+      <edge source="KIDINS220" target="DPP8" id="406" weight="0.12299396097660065" />
+      <edge source="KIDINS220" target="LENG8" id="407" weight="0.11679317057132721" />
+      <edge source="KIDINS220" target="VPS13C" id="408" weight="0.10859136283397675" />
+      <edge source="KIDINS220" target="CREBRF" id="409" weight="0.10116726905107498" />
+      <edge source="IGFBP7" target="LAMA4" id="410" weight="0.3227710723876953" />
+      <edge source="IGFBP7" target="ADAMTS4" id="411" weight="0.2714666724205017" />
+      <edge source="IGFBP7" target="TIMP3" id="412" weight="0.25217995047569275" />
+      <edge source="IGFBP7" target="DPYSL3" id="413" weight="0.13229456543922424" />
+      <edge source="IGFBP7" target="TCF4" id="414" weight="0.13001905381679535" />
+      <edge source="IGFBP7" target="PKIG" id="415" weight="0.11166629940271378" />
+      <edge source="IGFBP7" target="COL4A2" id="416" weight="0.10052405297756195" />
+      <edge source="LAMA4" target="ADAMTS4" id="417" weight="0.27726471424102783" />
+      <edge source="LAMA4" target="DPYSL3" id="418" weight="0.2455589324235916" />
+      <edge source="LAMA4" target="TIMP3" id="419" weight="0.16653867065906525" />
+      <edge source="LAMA4" target="IL1R1" id="420" weight="0.14319825172424316" />
+      <edge source="LAMA4" target="PLPP3" id="421" weight="0.1349390149116516" />
+      <edge source="LAMA4" target="TCF4" id="422" weight="0.11148960143327713" />
+      <edge source="CLDN7" target="ITGB6" id="423" weight="0.18740268051624298" />
+      <edge source="CLDN7" target="CLDN3" id="424" weight="0.17515188455581665" />
+      <edge source="CLDN7" target="MGST1" id="425" weight="0.16499176621437073" />
+      <edge source="CLDN7" target="ATP1B1" id="426" weight="0.1535826474428177" />
+      <edge source="CLDN7" target="C5ORF46" id="427" weight="0.14998997747898102" />
+      <edge source="CLDN7" target="KRT18" id="428" weight="0.14020974934101105" />
+      <edge source="CLDN7" target="DEFB1" id="429" weight="0.13818944990634918" />
+      <edge source="CLDN7" target="AZGP1" id="430" weight="0.13531528413295746" />
+      <edge source="CLDN7" target="MMP7" id="431" weight="0.134011372923851" />
+      <edge source="CLDN7" target="SMIM22" id="432" weight="0.13367901742458344" />
+      <edge source="CLDN7" target="KRT81" id="433" weight="0.12399809807538986" />
+      <edge source="CLDN7" target="SOX9" id="434" weight="0.12332449853420258" />
+      <edge source="CLDN7" target="MAL2" id="435" weight="0.12118745595216751" />
+      <edge source="CLDN7" target="BAMBI" id="436" weight="0.11658795922994614" />
+      <edge source="CLDN7" target="SDC1" id="437" weight="0.10758031904697418" />
+      <edge source="CHI3L2" target="SOX9" id="438" weight="0.19446037709712982" />
+      <edge source="CHI3L2" target="ITGB6" id="439" weight="0.11743953078985214" />
+      <edge source="CHI3L2" target="CLDN3" id="440" weight="0.10940874367952347" />
+      <edge source="HLA-DPA1" target="HLA-DPB1" id="441" weight="0.25634732842445374" />
+      <edge source="HLA-DPA1" target="HLA-DRB1" id="442" weight="0.25198039412498474" />
+      <edge source="HLA-DPA1" target="HLA-DQA1" id="443" weight="0.22572661936283112" />
+      <edge source="HLA-DPA1" target="HLA-DQB1" id="444" weight="0.20441171526908875" />
+      <edge source="CYTOR" target="MIR4435-2HG" id="445" weight="0.2986144423484802" />
+      <edge source="ITGB6" target="SOX9" id="446" weight="0.2618922293186188" />
+      <edge source="ITGB6" target="TFAP2C" id="447" weight="0.2179943025112152" />
+      <edge source="ITGB6" target="MIA" id="448" weight="0.16526786983013153" />
+      <edge source="ITGB6" target="LAMB3" id="449" weight="0.15989935398101807" />
+      <edge source="ITGB6" target="SDC4" id="450" weight="0.12427739053964615" />
+      <edge source="ITGB6" target="GATA3" id="451" weight="0.1195567324757576" />
+      <edge source="ITGB6" target="DSP" id="452" weight="0.10564646124839783" />
+      <edge source="ITGB6" target="BEX2" id="453" weight="0.10362690687179565" />
+      <edge source="DCN" target="LUM" id="454" weight="0.2897491455078125" />
+      <edge source="DCN" target="SERPINF1" id="455" weight="0.21684502065181732" />
+      <edge source="DCN" target="RARRES2" id="456" weight="0.16942055523395538" />
+      <edge source="DCN" target="CRISPLD2" id="457" weight="0.11447924375534058" />
+      <edge source="DCN" target="FGF7" id="458" weight="0.10745735466480255" />
+      <edge source="LUM" target="RARRES2" id="459" weight="0.2750212252140045" />
+      <edge source="LUM" target="CRISPLD2" id="460" weight="0.17414157092571259" />
+      <edge source="LUM" target="PRRX1" id="461" weight="0.15267114341259003" />
+      <edge source="LUM" target="APOD" id="462" weight="0.10762520134449005" />
+      <edge source="C1R" target="C1S" id="463" weight="0.28050270676612854" />
+      <edge source="C1R" target="BGN" id="464" weight="0.17158454656600952" />
+      <edge source="C1R" target="CCDC80" id="465" weight="0.14427952468395233" />
+      <edge source="C1R" target="PRRX1" id="466" weight="0.13043589890003204" />
+      <edge source="C1R" target="CPE" id="467" weight="0.10989271104335785" />
+      <edge source="C1R" target="AEBP1" id="468" weight="0.10363475233316422" />
+      <edge source="C1R" target="RARRES2" id="469" weight="0.10110773891210556" />
+      <edge source="C1S" target="SDC2" id="470" weight="0.18676048517227173" />
+      <edge source="C1S" target="FGF7" id="471" weight="0.14833664894104004" />
+      <edge source="ADAMTS4" target="TCF4" id="472" weight="0.11852084845304489" />
+      <edge source="ADAMTS4" target="LMCD1" id="473" weight="0.11283601820468903" />
+      <edge source="ADAMTS4" target="KLF9" id="474" weight="0.10569058358669281" />
+      <edge source="ADAMTS4" target="EPAS1" id="475" weight="0.10189981013536453" />
+      <edge source="RARRES2" target="CRISPLD2" id="476" weight="0.11411029100418091" />
+      <edge source="HLA-DRB1" target="HLA-DQB1" id="477" weight="0.17814286053180695" />
+      <edge source="HLA-DRB1" target="HLA-DMA" id="478" weight="0.11905515938997269" />
+      <edge source="PODXL" target="TM4SF18" id="479" weight="0.27327221632003784" />
+      <edge source="PODXL" target="STC1" id="480" weight="0.21292297542095184" />
+      <edge source="PODXL" target="INHBB" id="481" weight="0.1463431566953659" />
+      <edge source="PODXL" target="DOCK9" id="482" weight="0.14495854079723358" />
+      <edge source="PODXL" target="SLC9A3R2" id="483" weight="0.10535222291946411" />
+      <edge source="PODXL" target="PIK3R3" id="484" weight="0.1045650839805603" />
+      <edge source="TM4SF18" target="STC1" id="485" weight="0.23616406321525574" />
+      <edge source="TM4SF18" target="INHBB" id="486" weight="0.14792636036872864" />
+      <edge source="TM4SF18" target="ECE1" id="487" weight="0.1139674186706543" />
+      <edge source="TM4SF18" target="PIK3R3" id="488" weight="0.10892784595489502" />
+      <edge source="TM4SF18" target="MCF2L" id="489" weight="0.10040774196386337" />
+      <edge source="ACTA2" target="TPM2" id="490" weight="0.125468909740448" />
+      <edge source="ACTA2" target="ACTG2" id="491" weight="0.11867601424455643" />
+      <edge source="SOX9" target="TFAP2C" id="492" weight="0.2706947326660156" />
+      <edge source="SOX9" target="LAMB3" id="493" weight="0.14678262174129486" />
+      <edge source="SOX9" target="BEX2" id="494" weight="0.14121687412261963" />
+      <edge source="SOX9" target="MIA" id="495" weight="0.1392703652381897" />
+      <edge source="SOX9" target="SFRP1" id="496" weight="0.11337766796350479" />
+      <edge source="SOX9" target="KRT15" id="497" weight="0.10723959654569626" />
+      <edge source="SOX9" target="FHL2" id="498" weight="0.10453459620475769" />
+      <edge source="SOX9" target="TPM1" id="499" weight="0.10378076136112213" />
+      <edge source="SOX9" target="ATP1B1" id="500" weight="0.10237332433462143" />
+      <edge source="TFAP2C" target="MIA" id="501" weight="0.19145992398262024" />
+      <edge source="TFAP2C" target="TPM1" id="502" weight="0.15589402616024017" />
+      <edge source="TFAP2C" target="LAMB3" id="503" weight="0.14312437176704407" />
+      <edge source="TFAP2C" target="SFRP1" id="504" weight="0.11708732694387436" />
+      <edge source="SLPI" target="SMIM22" id="505" weight="0.15120729804039001" />
+      <edge source="SLPI" target="LCN2" id="506" weight="0.14417944848537445" />
+      <edge source="SLPI" target="MAL2" id="507" weight="0.13790255784988403" />
+      <edge source="SLPI" target="KRT18" id="508" weight="0.12959502637386322" />
+      <edge source="KRT18" target="CLDN3" id="509" weight="0.13001328706741333" />
+      <edge source="KRT18" target="LCN2" id="510" weight="0.11738497763872147" />
+      <edge source="KRT18" target="SMIM22" id="511" weight="0.1139017716050148" />
+      <edge source="CLDN3" target="SMIM22" id="512" weight="0.26711922883987427" />
+      <edge source="CLDN3" target="LCN2" id="513" weight="0.23634442687034607" />
+      <edge source="CLDN3" target="AZGP1" id="514" weight="0.11336816102266312" />
+      <edge source="CLDN3" target="MAL2" id="515" weight="0.111996129155159" />
+      <edge source="CLDN3" target="ATP1B1" id="516" weight="0.10262265056371689" />
+      <edge source="SMIM22" target="LCN2" id="517" weight="0.20017586648464203" />
+      <edge source="SMIM22" target="AZGP1" id="518" weight="0.1754438877105713" />
+      <edge source="SMIM22" target="MAL2" id="519" weight="0.11180129647254944" />
+      <edge source="FBXO32" target="FHL2" id="520" weight="0.2624664902687073" />
+      <edge source="FBXO32" target="CSRP1" id="521" weight="0.21128296852111816" />
+      <edge source="FBXO32" target="TPM1" id="522" weight="0.10929451137781143" />
+      <edge source="FHL2" target="CSRP1" id="523" weight="0.20647257566452026" />
+      <edge source="FHL2" target="TPM1" id="524" weight="0.1952275186777115" />
+      <edge source="FHL2" target="PALLD" id="525" weight="0.10937835276126862" />
+      <edge source="MIA" target="BEX2" id="526" weight="0.1120445504784584" />
+      <edge source="ATP1B1" target="SDC4" id="527" weight="0.25838175415992737" />
+      <edge source="ATP1B1" target="MGST1" id="528" weight="0.19479432702064514" />
+      <edge source="SDC4" target="MGST1" id="529" weight="0.18445180356502533" />
+      <edge source="SDC4" target="MT1X" id="530" weight="0.11885074526071548" />
+      <edge source="MT1G" target="MT1X" id="531" weight="0.2574754059314728" />
+      <edge source="HLA-DPB1" target="HLA-DQA1" id="532" weight="0.10393550246953964" />
+      <edge source="TIMP3" target="TIMP2" id="533" weight="0.18114261329174042" />
+      <edge source="TIMP3" target="BGN" id="534" weight="0.15107253193855286" />
+      <edge source="TIMP3" target="CCDC80" id="535" weight="0.12183456122875214" />
+      <edge source="TIMP3" target="SPARC" id="536" weight="0.11790461838245392" />
+      <edge source="TIMP3" target="LHFPL6" id="537" weight="0.11399394273757935" />
+      <edge source="TIMP3" target="DPYSL3" id="538" weight="0.1105421781539917" />
+      <edge source="MT-ND1" target="MT-ND2" id="539" weight="0.12249460816383362" />
+      <edge source="MAL2" target="LCN2" id="540" weight="0.1535618156194687" />
+      <edge source="FOS" target="JUN" id="541" weight="0.24619409441947937" />
+      <edge source="FOS" target="EGR1" id="542" weight="0.12850408256053925" />
+      <edge source="FOS" target="ATF3" id="543" weight="0.12185242027044296" />
+      <edge source="FOS" target="JUNB" id="544" weight="0.12123874574899673" />
+      <edge source="FOS" target="FOSB" id="545" weight="0.10246823728084564" />
+      <edge source="JUN" target="DNAJB1" id="546" weight="0.23162613809108734" />
+      <edge source="JUN" target="ATF3" id="547" weight="0.17312529683113098" />
+      <edge source="JUN" target="JUNB" id="548" weight="0.11971484869718552" />
+      <edge source="DPYSL3" target="IL1R1" id="549" weight="0.13014531135559082" />
+      <edge source="CALD1" target="TPM1" id="550" weight="0.24129706621170044" />
+      <edge source="CALD1" target="C9ORF3" id="551" weight="0.12645727396011353" />
+      <edge source="CALD1" target="TPM2" id="552" weight="0.1227085217833519" />
+      <edge source="TPM1" target="PALLD" id="553" weight="0.21078179776668549" />
+      <edge source="TPM1" target="SFRP1" id="554" weight="0.1754249781370163" />
+      <edge source="TPM1" target="RBP1" id="555" weight="0.10213374346494675" />
+      <edge source="TPM1" target="CSRP1" id="556" weight="0.10121593624353409" />
+      <edge source="BCAM" target="TINAGL1" id="557" weight="0.2408534735441208" />
+      <edge source="BCAM" target="ARHGAP29" id="558" weight="0.17371083796024323" />
+      <edge source="BCAM" target="PDLIM1" id="559" weight="0.11560165882110596" />
+      <edge source="TINAGL1" target="ARHGAP29" id="560" weight="0.20351897180080414" />
+      <edge source="TINAGL1" target="PDLIM1" id="561" weight="0.12328942865133286" />
+      <edge source="CRYAB" target="ID4" id="562" weight="0.23914489150047302" />
+      <edge source="CRYAB" target="TPM2" id="563" weight="0.13001418113708496" />
+      <edge source="ID4" target="TPM2" id="564" weight="0.15254159271717072" />
+      <edge source="ID4" target="RND3" id="565" weight="0.10204894840717316" />
+      <edge source="CXCL2" target="CXCL3" id="566" weight="0.23828786611557007" />
+      <edge source="STC1" target="INHBB" id="567" weight="0.14764851331710815" />
+      <edge source="STC1" target="DOCK9" id="568" weight="0.10243888944387436" />
+      <edge source="HLA-DQB1" target="HLA-DQA1" id="569" weight="0.1696891188621521" />
+      <edge source="DNAJB1" target="ATF3" id="570" weight="0.17257405817508698" />
+      <edge source="DNAJB1" target="FOSB" id="571" weight="0.11873002350330353" />
+      <edge source="BRAF" target="NAA16" id="572" weight="0.22957538068294525" />
+      <edge source="BRAF" target="ZC3H4" id="573" weight="0.20011352002620697" />
+      <edge source="BRAF" target="POLK" id="574" weight="0.17704692482948303" />
+      <edge source="BRAF" target="ATAD2B" id="575" weight="0.17403258383274078" />
+      <edge source="BRAF" target="DPP8" id="576" weight="0.17050138115882874" />
+      <edge source="BRAF" target="AHR" id="577" weight="0.14879757165908813" />
+      <edge source="BRAF" target="CASP3" id="578" weight="0.146604984998703" />
+      <edge source="BRAF" target="MARF1" id="579" weight="0.13613878190517426" />
+      <edge source="BRAF" target="ARHGAP26" id="580" weight="0.1257300227880478" />
+      <edge source="BRAF" target="ARID4A" id="581" weight="0.1224496066570282" />
+      <edge source="BRAF" target="FAM193A" id="582" weight="0.10326407849788666" />
+      <edge source="NAA16" target="ATAD2B" id="583" weight="0.15244297683238983" />
+      <edge source="NAA16" target="ARID4A" id="584" weight="0.11748452484607697" />
+      <edge source="NAA16" target="TOR1AIP1" id="585" weight="0.11029303818941116" />
+      <edge source="NAA16" target="ZC3H4" id="586" weight="0.10944326221942902" />
+      <edge source="NAA16" target="POLK" id="587" weight="0.1028674840927124" />
+      <edge source="NAA16" target="CASP3" id="588" weight="0.1021977886557579" />
+      <edge source="DPP8" target="ZC3H4" id="589" weight="0.22842343151569366" />
+      <edge source="DPP8" target="ATAD2B" id="590" weight="0.13564281165599823" />
+      <edge source="DPP8" target="POLK" id="591" weight="0.1253724992275238" />
+      <edge source="DPP8" target="CASP3" id="592" weight="0.11786459386348724" />
+      <edge source="ZC3H4" target="AHR" id="593" weight="0.14141662418842316" />
+      <edge source="ZC3H4" target="POLK" id="594" weight="0.12962742149829865" />
+      <edge source="ZC3H4" target="ATAD2B" id="595" weight="0.10654382407665253" />
+      <edge source="ZC3H4" target="ARHGAP26" id="596" weight="0.10210511088371277" />
+      <edge source="CPNE8" target="NRP2" id="597" weight="0.22652903199195862" />
+      <edge source="CPNE8" target="FAM126A" id="598" weight="0.1293048858642578" />
+      <edge source="C5ORF46" target="SDC1" id="599" weight="0.22322849929332733" />
+      <edge source="C5ORF46" target="MMP7" id="600" weight="0.16588948667049408" />
+      <edge source="CCNT1" target="ZNF493" id="601" weight="0.2223488837480545" />
+      <edge source="CCNT1" target="USP42" id="602" weight="0.17988881468772888" />
+      <edge source="CCNT1" target="ZNF430" id="603" weight="0.1700204759836197" />
+      <edge source="ZNF493" target="USP42" id="604" weight="0.12556245923042297" />
+      <edge source="HECA" target="ZBTB1" id="605" weight="0.22224114835262299" />
+      <edge source="HECA" target="DENND4A" id="606" weight="0.15917497873306274" />
+      <edge source="ZBTB1" target="DENND4A" id="607" weight="0.16537082195281982" />
+      <edge source="NECAP1" target="TUT7" id="608" weight="0.21428561210632324" />
+      <edge source="TUT7" target="PTPN9" id="609" weight="0.1041552796959877" />
+      <edge source="PPP1R15B" target="SLC20A1" id="610" weight="0.2141265720129013" />
+      <edge source="CTSS" target="SERPINB9" id="611" weight="0.2122374325990677" />
+      <edge source="CTSS" target="LY96" id="612" weight="0.12661023437976837" />
+      <edge source="CTSS" target="SH2B3" id="613" weight="0.10680166631937027" />
+      <edge source="SERPINB9" target="SLC2A3" id="614" weight="0.12379612028598785" />
+      <edge source="SERPINB9" target="GMFG" id="615" weight="0.10230886191129684" />
+      <edge source="SERPINB9" target="WIPF1" id="616" weight="0.10181386768817902" />
+      <edge source="CSRP1" target="MFGE8" id="617" weight="0.1391160786151886" />
+      <edge source="FTX" target="LENG8" id="618" weight="0.15162093937397003" />
+      <edge source="FTX" target="UHRF2" id="619" weight="0.10328035801649094" />
+      <edge source="FTX" target="ATAD2B" id="620" weight="0.10260559618473053" />
+      <edge source="SACM1L" target="ZBED5" id="621" weight="0.2055380940437317" />
+      <edge source="BGN" target="CCDC80" id="622" weight="0.20481666922569275" />
+      <edge source="BGN" target="IGFBP5" id="623" weight="0.16548468172550201" />
+      <edge source="BGN" target="PRRX1" id="624" weight="0.13939441740512848" />
+      <edge source="BGN" target="CRISPLD2" id="625" weight="0.13521234691143036" />
+      <edge source="BGN" target="TIMP2" id="626" weight="0.10629871487617493" />
+      <edge source="CCDC80" target="AEBP1" id="627" weight="0.13729625940322876" />
+      <edge source="CCDC80" target="PRRX1" id="628" weight="0.1341433823108673" />
+      <edge source="CCDC80" target="TIMP2" id="629" weight="0.12316567450761795" />
+      <edge source="CCDC80" target="SERPING1" id="630" weight="0.10613398253917694" />
+      <edge source="CCDC80" target="TCEAL9" id="631" weight="0.1040918156504631" />
+      <edge source="AKAP10" target="NBPF19" id="632" weight="0.20475679636001587" />
+      <edge source="ARHGAP29" target="EFNA1" id="633" weight="0.14086708426475525" />
+      <edge source="ARHGAP29" target="MAST4" id="634" weight="0.1068556159734726" />
+      <edge source="ARHGAP29" target="MAGI1" id="635" weight="0.1048247441649437" />
+      <edge source="CREBRF" target="INO80D" id="636" weight="0.20347341895103455" />
+      <edge source="CREBRF" target="MEF2D" id="637" weight="0.17931193113327026" />
+      <edge source="CREBRF" target="BTBD7" id="638" weight="0.13287213444709778" />
+      <edge source="CREBRF" target="JMY" id="639" weight="0.11847855150699615" />
+      <edge source="INO80D" target="TOR1AIP1" id="640" weight="0.1910170465707779" />
+      <edge source="INO80D" target="MEF2D" id="641" weight="0.16119372844696045" />
+      <edge source="INO80D" target="UHRF2" id="642" weight="0.1310659795999527" />
+      <edge source="INO80D" target="TNRC6C" id="643" weight="0.12094102799892426" />
+      <edge source="INO80D" target="BTBD7" id="644" weight="0.10843496024608612" />
+      <edge source="EGR1" target="EGR3" id="645" weight="0.20134399831295013" />
+      <edge source="EGR1" target="ATF3" id="646" weight="0.11171810328960419" />
+      <edge source="FSTL1" target="LAMC1" id="647" weight="0.2003071904182434" />
+      <edge source="AL121944.1" target="BEX2" id="648" weight="0.1965264081954956" />
+      <edge source="AL121944.1" target="GATA3" id="649" weight="0.1255338191986084" />
+      <edge source="BEX2" target="GATA3" id="650" weight="0.10850124806165695" />
+      <edge source="RPRD2" target="USP42" id="651" weight="0.19464708864688873" />
+      <edge source="RPRD2" target="ZMYM5" id="652" weight="0.12852045893669128" />
+      <edge source="USP42" target="ZNF263" id="653" weight="0.19121919572353363" />
+      <edge source="USP42" target="MSL2" id="654" weight="0.139926016330719" />
+      <edge source="USP42" target="ZMYM5" id="655" weight="0.10016734898090363" />
+      <edge source="DSP" target="EFNA1" id="656" weight="0.10767357051372528" />
+      <edge source="ZNF263" target="ZMYM5" id="657" weight="0.1289902776479721" />
+      <edge source="ZNF263" target="MTA2" id="658" weight="0.11835804581642151" />
+      <edge source="TOR1AIP1" target="MEF2D" id="659" weight="0.1464698612689972" />
+      <edge source="TOR1AIP1" target="UHRF2" id="660" weight="0.13954299688339233" />
+      <edge source="TOR1AIP1" target="HOTAIRM1" id="661" weight="0.13267405331134796" />
+      <edge source="ATAD2B" target="POLK" id="662" weight="0.1906224489212036" />
+      <edge source="POLK" target="PCNX1" id="663" weight="0.14758405089378357" />
+      <edge source="POLK" target="WDFY1" id="664" weight="0.13470780849456787" />
+      <edge source="POLK" target="MARF1" id="665" weight="0.12643097341060638" />
+      <edge source="POLK" target="STIM2" id="666" weight="0.11196685582399368" />
+      <edge source="POLK" target="AHR" id="667" weight="0.10923963040113449" />
+      <edge source="CAMK2D" target="FAM208A" id="668" weight="0.19017277657985687" />
+      <edge source="CAMK2D" target="MIB1" id="669" weight="0.11826629191637039" />
+      <edge source="FAM208A" target="MIB1" id="670" weight="0.16009820997714996" />
+      <edge source="FAM208A" target="TMX3" id="671" weight="0.15064837038516998" />
+      <edge source="ATF7IP" target="LASP1" id="672" weight="0.19004903733730316" />
+      <edge source="ATF7IP" target="LNPEP" id="673" weight="0.18955139815807343" />
+      <edge source="ATF7IP" target="MARF1" id="674" weight="0.13541270792484283" />
+      <edge source="ATF7IP" target="VPS13C" id="675" weight="0.1275061070919037" />
+      <edge source="ATF7IP" target="BAZ2B" id="676" weight="0.10244989395141602" />
+      <edge source="LASP1" target="VPS13C" id="677" weight="0.13835665583610535" />
+      <edge source="LASP1" target="MARF1" id="678" weight="0.11087334901094437" />
+      <edge source="LASP1" target="LNPEP" id="679" weight="0.10271837562322617" />
+      <edge source="CSRP2" target="SSBP3" id="680" weight="0.1894862800836563" />
+      <edge source="CSRP2" target="PLPP1" id="681" weight="0.13909463584423065" />
+      <edge source="MCF2L" target="PIK3R3" id="682" weight="0.187241330742836" />
+      <edge source="MCF2L" target="INHBB" id="683" weight="0.10972948372364044" />
+      <edge source="MCF2L" target="CYYR1" id="684" weight="0.10737898200750351" />
+      <edge source="PIK3R3" target="INHBB" id="685" weight="0.15078340470790863" />
+      <edge source="MMP7" target="CHI3L1" id="686" weight="0.13247306644916534" />
+      <edge source="MMP7" target="RARRES1" id="687" weight="0.10793831199407578" />
+      <edge source="DCP2" target="KLHL9" id="688" weight="0.18415731191635132" />
+      <edge source="DCP2" target="DNAJB14" id="689" weight="0.10105182230472565" />
+      <edge source="TIMP2" target="MMP2" id="690" weight="0.15301115810871124" />
+      <edge source="TIMP2" target="FN1" id="691" weight="0.1104711964726448" />
+      <edge source="MEF2D" target="JMY" id="692" weight="0.11458499729633331" />
+      <edge source="RBP1" target="SFRP1" id="693" weight="0.17858818173408508" />
+      <edge source="RBP1" target="ACTN1" id="694" weight="0.11049162596464157" />
+      <edge source="DAPP1" target="NUP210" id="695" weight="0.17842890322208405" />
+      <edge source="DAPP1" target="UCP2" id="696" weight="0.10306991636753082" />
+      <edge source="NUP210" target="MPZL3" id="697" weight="0.13520598411560059" />
+      <edge source="NUP210" target="TNF" id="698" weight="0.11176688969135284" />
+      <edge source="CLEC2B" target="SLC2A3" id="699" weight="0.1774008423089981" />
+      <edge source="CLEC2B" target="WIPF1" id="700" weight="0.15338657796382904" />
+      <edge source="SLC2A3" target="WIPF1" id="701" weight="0.11113813519477844" />
+      <edge source="CRISPLD2" target="PRRX1" id="702" weight="0.1655350625514984" />
+      <edge source="ENG" target="ITGA5" id="703" weight="0.17408160865306854" />
+      <edge source="ITGA5" target="FMNL3" id="704" weight="0.16658936440944672" />
+      <edge source="ITGA5" target="DAB2" id="705" weight="0.15195202827453613" />
+      <edge source="ITGA5" target="SH2B3" id="706" weight="0.13055811822414398" />
+      <edge source="ITGA5" target="RPGR" id="707" weight="0.10919394344091415" />
+      <edge source="ITGA5" target="YPEL2" id="708" weight="0.105527862906456" />
+      <edge source="ATXN1" target="RASA2" id="709" weight="0.1740383356809616" />
+      <edge source="DMTF1" target="PHYKPL" id="710" weight="0.17403241991996765" />
+      <edge source="MIB1" target="TMX3" id="711" weight="0.17340293526649475" />
+      <edge source="MIB1" target="CASK" id="712" weight="0.11098422110080719" />
+      <edge source="SHPRH" target="TP53BP1" id="713" weight="0.17187130451202393" />
+      <edge source="ZNF430" target="MYSM1" id="714" weight="0.15842293202877045" />
+      <edge source="BAG3" target="ZFAND2A" id="715" weight="0.16976448893547058" />
+      <edge source="BAG3" target="GADD45B" id="716" weight="0.15981508791446686" />
+      <edge source="ZFAND2A" target="DDIT3" id="717" weight="0.1047007143497467" />
+      <edge source="CREBZF" target="OGT" id="718" weight="0.1691577434539795" />
+      <edge source="CREBZF" target="KIAA2026" id="719" weight="0.1200752705335617" />
+      <edge source="CREBZF" target="MLLT6" id="720" weight="0.1046934500336647" />
+      <edge source="GABARAPL1" target="KLF9" id="721" weight="0.1673196256160736" />
+      <edge source="GABARAPL1" target="BTBD7" id="722" weight="0.11364129185676575" />
+      <edge source="GABARAPL1" target="WSB1" id="723" weight="0.10851579904556274" />
+      <edge source="KLF9" target="BTBD7" id="724" weight="0.10955394804477692" />
+      <edge source="KLF9" target="ID3" id="725" weight="0.1051960363984108" />
+      <edge source="CYP20A1" target="ESCO1" id="726" weight="0.16702412068843842" />
+      <edge source="FMNL3" target="SH2B3" id="727" weight="0.14050184190273285" />
+      <edge source="FMNL3" target="LIX1L" id="728" weight="0.11188596487045288" />
+      <edge source="IGFBP5" target="ADAMTS1" id="729" weight="0.10077016800642014" />
+      <edge source="DENND4A" target="SIN3A" id="730" weight="0.10601728409528732" />
+      <edge source="COL4A2" target="SPARC" id="731" weight="0.16510778665542603" />
+      <edge source="COL4A2" target="ADAMTS1" id="732" weight="0.1289510577917099" />
+      <edge source="COL4A2" target="LAMB1" id="733" weight="0.11334115266799927" />
+      <edge source="SPARC" target="VCAN" id="734" weight="0.12209069728851318" />
+      <edge source="SPARC" target="A2M" id="735" weight="0.11791355907917023" />
+      <edge source="BTN2A1" target="FAM193A" id="736" weight="0.16025154292583466" />
+      <edge source="FAM193A" target="EP300" id="737" weight="0.1501363068819046" />
+      <edge source="MARF1" target="VPS13C" id="738" weight="0.1599101424217224" />
+      <edge source="LIMA1" target="PIK3R1" id="739" weight="0.15836724638938904" />
+      <edge source="LIMA1" target="DST" id="740" weight="0.11331940442323685" />
+      <edge source="PIK3R1" target="DST" id="741" weight="0.12978829443454742" />
+      <edge source="C3" target="LGALS3BP" id="742" weight="0.15821696817874908" />
+      <edge source="GIGYF1" target="SIK3" id="743" weight="0.1577819436788559" />
+      <edge source="NR2C2" target="MEX3C" id="744" weight="0.1094926968216896" />
+      <edge source="TAOK2" target="TBCD" id="745" weight="0.15343168377876282" />
+      <edge source="MMP2" target="FN1" id="746" weight="0.12246248871088028" />
+      <edge source="A2M" target="ADAMTS1" id="747" weight="0.1522047519683838" />
+      <edge source="MKLN1" target="RECQL" id="748" weight="0.15168729424476624" />
+      <edge source="MKLN1" target="FBRS" id="749" weight="0.1144535094499588" />
+      <edge source="MKLN1" target="UBXN7" id="750" weight="0.11048358678817749" />
+      <edge source="IL1R1" target="TNRC6C" id="751" weight="0.15161406993865967" />
+      <edge source="IL1R1" target="LAMB1" id="752" weight="0.1209762692451477" />
+      <edge source="IL1R1" target="FN1" id="753" weight="0.11775673925876617" />
+      <edge source="IL1R1" target="CBLB" id="754" weight="0.11723239719867706" />
+      <edge source="TNRC6C" target="TARSL2" id="755" weight="0.11836136877536774" />
+      <edge source="GMFG" target="TGFB1" id="756" weight="0.14994943141937256" />
+      <edge source="TGFB1" target="SH2B3" id="757" weight="0.11762480437755585" />
+      <edge source="ETV3" target="VCPKMT" id="758" weight="0.14969775080680847" />
+      <edge source="PCNX1" target="RP2" id="759" weight="0.11596930772066116" />
+      <edge source="HHEX" target="RASGRP3" id="760" weight="0.1466267704963684" />
+      <edge source="EVA1C" target="MAST4" id="761" weight="0.1459498256444931" />
+      <edge source="EVA1C" target="CRIM1" id="762" weight="0.11865981668233871" />
+      <edge source="MAST4" target="CDC42EP3" id="763" weight="0.12473931163549423" />
+      <edge source="MAST4" target="CRIM1" id="764" weight="0.12354934215545654" />
+      <edge source="DOCK9" target="SLC9A3R2" id="765" weight="0.11224309355020523" />
+      <edge source="DOCK9" target="ECE1" id="766" weight="0.10723549127578735" />
+      <edge source="CSRNP1" target="ZNF331" id="767" weight="0.14442084729671478" />
+      <edge source="CSRNP1" target="TLE4" id="768" weight="0.10168670117855072" />
+      <edge source="ZNF331" target="NR4A3" id="769" weight="0.13684073090553284" />
+      <edge source="CTGF" target="TCEAL9" id="770" weight="0.14427189528942108" />
+      <edge source="TCEAL9" target="SERPINH1" id="771" weight="0.10111140459775925" />
+      <edge source="ACSL5" target="PRKCH" id="772" weight="0.14301633834838867" />
+      <edge source="ACSL5" target="PREX1" id="773" weight="0.13598299026489258" />
+      <edge source="ACSL5" target="KIAA1551" id="774" weight="0.10496288537979126" />
+      <edge source="EHD4" target="NEDD9" id="775" weight="0.14239616692066193" />
+      <edge source="EHD4" target="STIM2" id="776" weight="0.1115972027182579" />
+      <edge source="C3ORF58" target="H2AFX" id="777" weight="0.14187616109848022" />
+      <edge source="ARID5B" target="PER1" id="778" weight="0.14063555002212524" />
+      <edge source="ARID5B" target="AHI1" id="779" weight="0.13470785319805145" />
+      <edge source="ACTN1" target="DST" id="780" weight="0.1382218450307846" />
+      <edge source="ACTN1" target="SLC25A37" id="781" weight="0.10196775943040848" />
+      <edge source="ADD3" target="CASK" id="782" weight="0.1364169716835022" />
+      <edge source="ADD3" target="RORA" id="783" weight="0.11808188259601593" />
+      <edge source="CRIP2" target="SLC9A3R2" id="784" weight="0.13619709014892578" />
+      <edge source="CRIP2" target="PDLIM1" id="785" weight="0.10262052714824677" />
+      <edge source="PREX1" target="MGAT4A" id="786" weight="0.11184563487768173" />
+      <edge source="MPZL3" target="GATA3" id="787" weight="0.1299772411584854" />
+      <edge source="TCF4" target="MEF2C" id="788" weight="0.11110355705022812" />
+      <edge source="GATA3" target="HIST1H2BD" id="789" weight="0.1189059466123581" />
+      <edge source="FAM241A" target="RPGR" id="790" weight="0.12874023616313934" />
+      <edge source="DNAJB14" target="NPHP3" id="791" weight="0.12758101522922516" />
+      <edge source="MEX3C" target="SMARCA2" id="792" weight="0.1254064291715622" />
+      <edge source="MEX3C" target="RBM15" id="793" weight="0.12520267069339752" />
+      <edge source="SMARCA2" target="FRYL" id="794" weight="0.10944558680057526" />
+      <edge source="ID3" target="ITPRIP" id="795" weight="0.12395056337118149" />
+      <edge source="ID3" target="PGF" id="796" weight="0.11124788224697113" />
+      <edge source="ITPRIP" target="HEG1" id="797" weight="0.11379041522741318" />
+      <edge source="CDH13" target="JAG1" id="798" weight="0.12373416125774384" />
+      <edge source="PTPRE" target="SWAP70" id="799" weight="0.12338091433048248" />
+      <edge source="CITED2" target="NUDT4" id="800" weight="0.12268255650997162" />
+      <edge source="VCAN" target="C1ORF54" id="801" weight="0.11076076328754425" />
+      <edge source="JUNB" target="NR4A1" id="802" weight="0.10844739526510239" />
+      <edge source="JUNB" target="DUSP1" id="803" weight="0.10417729616165161" />
+      <edge source="CLK4" target="FAM76B" id="804" weight="0.1204952746629715" />
+      <edge source="CLK4" target="DGKE" id="805" weight="0.12003404647111893" />
+      <edge source="FGFR1" target="SNAI2" id="806" weight="0.12005951255559921" />
+      <edge source="HEXIM1" target="PCF11" id="807" weight="0.1182849332690239" />
+      <edge source="ACSL4" target="FNDC3A" id="808" weight="0.11727239191532135" />
+      <edge source="CBLB" target="MAGEH1" id="809" weight="0.10816029459238052" />
+      <edge source="PXK" target="RASA3" id="810" weight="0.11708852648735046" />
+      <edge source="FCER1G" target="ZEB2" id="811" weight="0.1165386363863945" />
+      <edge source="MEF2A" target="PLXNA2" id="812" weight="0.11564186215400696" />
+      <edge source="MEF2A" target="RAI14" id="813" weight="0.1107359230518341" />
+      <edge source="AL031777.3" target="HIST1H2BG" id="814" weight="0.11533094942569733" />
+      <edge source="KCTD12" target="MEF2C" id="815" weight="0.11471245437860489" />
+      <edge source="GTF3C1" target="SENP1" id="816" weight="0.11464550346136093" />
+      <edge source="RNF213" target="SLFN5" id="817" weight="0.11410801112651825" />
+      <edge source="ECE1" target="MTUS1" id="818" weight="0.10184658318758011" />
+      <edge source="SLC39A6" target="TRPS1" id="819" weight="0.11392604559659958" />
+      <edge source="STIM2" target="RGS3" id="820" weight="0.10882329940795898" />
+      <edge source="GRK5" target="SRGAP2C" id="821" weight="0.10891459137201309" />
+      <edge source="MAP4K4" target="PLEKHM2" id="822" weight="0.10688648372888565" />
+      <edge source="FLT1" target="IL3RA" id="823" weight="0.10679316520690918" />
+      <edge source="PLIN2" target="SH3KBP1" id="824" weight="0.10643882304430008" />
+      <edge source="HERC1" target="SLC35E3" id="825" weight="0.10594949871301651" />
+      <edge source="HIF1A" target="PARP14" id="826" weight="0.10511893779039383" />
+      <edge source="HIF1A" target="HIPK3" id="827" weight="0.10394776612520218" />
+      <edge source="FOXP1" target="NFAT5" id="828" weight="0.1039687916636467" />
+      <edge source="RLF" target="TLE4" id="829" weight="0.10197976976633072" />
+      <edge source="COL6A1" target="COL6A2" id="830" weight="0.10022864490747452" />
+    </edges>
+  </graph>
+</gexf>

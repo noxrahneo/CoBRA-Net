@@ -53,6 +53,30 @@ def parse_args() -> argparse.Namespace:
         help="obs column to aggregate heatmap columns",
     )
     parser.add_argument(
+        "--gene-set-file",
+        default="",
+        help=(
+            "Optional TSV/CSV/TXT file with genes for heatmap rows. "
+            "If set, marker-based selection is skipped"
+        ),
+    )
+    parser.add_argument(
+        "--gene-col",
+        default="Gene",
+        help=(
+            "Column name to read genes from gene-set file. "
+            "If missing, first column is used"
+        ),
+    )
+    parser.add_argument(
+        "--gene-set-name",
+        default="",
+        help=(
+            "Short label used in output filenames and plot titles "
+            "when --gene-set-file is provided"
+        ),
+    )
+    parser.add_argument(
         "--top-per-cluster",
         type=int,
         default=10,
@@ -112,6 +136,26 @@ def zscore_rows(df: pd.DataFrame) -> pd.DataFrame:
     std[std == 0] = 1.0
     out = (vals - mean) / std
     return pd.DataFrame(out, index=df.index, columns=df.columns)
+
+
+def read_genes_from_file(gene_set_file: Path, gene_col: str) -> list[str]:
+    suffix = gene_set_file.suffix.lower()
+    if suffix in {".tsv", ".txt"}:
+        df = pd.read_csv(gene_set_file, sep="\t")
+    else:
+        df = pd.read_csv(gene_set_file)
+
+    if df.empty:
+        return []
+
+    if gene_col in df.columns:
+        raw = df[gene_col]
+    else:
+        raw = df.iloc[:, 0]
+
+    genes = [g.strip() for g in raw.astype(str).tolist()]
+    genes = [g for g in genes if g and g.lower() != "nan"]
+    return list(dict.fromkeys(genes))
 
 
 def read_marker_genes(
@@ -214,6 +258,9 @@ def process_condition(
     min_padj: float,
     fig_dir_name: str,
     dpi: int,
+    gene_set_file: Path | None,
+    gene_col: str,
+    gene_set_name: str,
 ) -> dict[str, object]:
     # R equivalent flow:
     # FindMarkers output -> marker matrix by group -> pheatmap.
@@ -226,14 +273,26 @@ def process_condition(
             f"{condition}: {h5ad.name}, {marker_file.name}"
         )
 
-    genes = read_marker_genes(
-        marker_file=marker_file,
-        top_per_cluster=top_per_cluster,
-        min_padj=min_padj,
-    )
+    if gene_set_file is not None:
+        genes = read_genes_from_file(gene_set_file, gene_col=gene_col)
+        heatmap_type = (
+            gene_set_name.strip()
+            if gene_set_name.strip()
+            else gene_set_file.stem
+        )
+        file_tag = heatmap_type
+    else:
+        genes = read_marker_genes(
+            marker_file=marker_file,
+            top_per_cluster=top_per_cluster,
+            min_padj=min_padj,
+        )
+        heatmap_type = "marker"
+        file_tag = "marker"
+
     if not genes:
         raise ValueError(
-            f"No marker genes selected for condition: {condition}"
+            f"No genes selected for condition: {condition}"
         )
 
     adata = sc.read_h5ad(h5ad)
@@ -251,15 +310,15 @@ def process_condition(
 
     fig_dir = cond_dir / fig_dir_name
     fig_dir.mkdir(parents=True, exist_ok=True)
-    expr_file = cond_dir / f"{condition}_marker_heatmap_expression.csv"
-    z_file = cond_dir / f"{condition}_marker_heatmap_zscore.csv"
-    fig_file = fig_dir / f"{condition}_marker_heatmap_{group_col}.png"
+    expr_file = cond_dir / f"{condition}_{file_tag}_heatmap_expression.csv"
+    z_file = cond_dir / f"{condition}_{file_tag}_heatmap_zscore.csv"
+    fig_file = fig_dir / f"{condition}_{file_tag}_heatmap_{group_col}.png"
 
     mean_df.to_csv(expr_file)
     z_df.to_csv(z_file)
     render_heatmap(
         matrix_z=z_df,
-        title=f"{condition} | Marker heatmap by {group_col}",
+        title=f"{condition} | {heatmap_type} heatmap by {group_col}",
         out_file=fig_file,
         dpi=dpi,
     )
@@ -267,6 +326,7 @@ def process_condition(
     print(f"Marker heatmap complete: {condition}")
     return {
         "condition": condition,
+        "heatmap_type": heatmap_type,
         "input_file": str(h5ad),
         "group_col": group_col,
         "marker_genes": int(z_df.shape[0]),
@@ -291,6 +351,14 @@ def main() -> int:
         return 0
 
     conditions = resolve_conditions(root, args.condition)
+    gene_set_file: Path | None = None
+    if args.gene_set_file.strip():
+        gene_set_file = resolve_base(args.gene_set_file)
+        if not gene_set_file.exists():
+            raise FileNotFoundError(
+                f"Gene set file not found: {gene_set_file}"
+            )
+
     arg_hash = params_hash(vars(args))
     now = utc_now_iso()
     rows: list[dict[str, object]] = []
@@ -304,6 +372,9 @@ def main() -> int:
             min_padj=args.min_padj,
             fig_dir_name=args.fig_dir_name,
             dpi=args.dpi,
+            gene_set_file=gene_set_file,
+            gene_col=args.gene_col,
+            gene_set_name=args.gene_set_name,
         )
         rows.append(row)
         warehouse_rows.append(

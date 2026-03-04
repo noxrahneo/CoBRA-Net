@@ -65,6 +65,7 @@ The current R-to-Python thesis workflow is in `scripts/RtoPython/`:
 7. `07_plot_integrated_results.py`
 8. `08_plot_integrated_panels.py`
 9. `09_annotate_clusters.py`
+10. `10_annotate_clusters_minimal.py` (optional lightweight annotation)
 
 See `scripts/RtoPython/README.md` for commands and outputs.
 
@@ -75,12 +76,69 @@ Non-translation analysis utilities live in `scripts/analysis/`:
 - `04_marker_heatmaps.py`
 - `05_composition_tests.py`
 - `06_kegg_enrichment.py`
+- `07_kegg_plots.py`
+- `07_pseudobulk.py`
+- `07c_pseudobulk_sanity_check.py`
+- `07d_prepare_pre_correlation_pack.py`
+- `07e_prepare_condition_logcpm_h5ad.py`
+- `08a_compute_correlations.py`
+- `08c_network_power_tom_prep.py`
+- `08d_networkx_visualization.py`
+- `slurm_run_08_network_array.sh`
+- `08_pseudobulk_decoupler_downstream.py`
+- `slurm_run_07_pseudobulk_array.sh`
+- `slurm_run_08_network_build_and_viz.sh`
 - `90_build_thesis_pack.py`
 - `00_migrate_results_to_stages.py`
 - `warehouse.py`
 
 These utilities now read/write staged outputs under `results/stages/` by
 default.
+
+Pre-correlation preparation (recommended before network building):
+
+```bash
+python3 scripts/analysis/07_pseudobulk.py --condition all --threshold-mode auto
+python3 scripts/analysis/07c_pseudobulk_sanity_check.py
+python3 scripts/analysis/07d_prepare_pre_correlation_pack.py
+python3 scripts/analysis/07e_prepare_condition_logcpm_h5ad.py
+python3 scripts/analysis/08a_compute_correlations.py --condition all
+python3 scripts/analysis/08c_network_power_tom_prep.py --condition all
+python3 scripts/analysis/08d_networkx_visualization.py --condition all
+```
+
+Readable network visualization (interactive + cleaner static):
+
+```bash
+python3 scripts/analysis/08d_networkx_visualization.py \
+	--condition all \
+	--layout kamada \
+	--max-edges 1500 \
+	--min-weight 0.12 \
+	--interactive-html \
+	--interactive-max-edges 900 \
+	--interactive-min-weight 0.18
+```
+
+Slurm array run for network prep + visualization:
+
+```bash
+sbatch scripts/analysis/slurm_run_08_network_array.sh
+```
+
+Optional Slurm overrides:
+- `NETWORK_TYPE=signed|unsigned`
+- `MAX_EDGES=2500`
+- `MIN_WEIGHT=0.10`
+- `POWERS=1,2,3,4,5,6,7,8,9,10,12,14,16,18,20`
+- `INTERACTIVE_HTML=1`
+
+Main network-ready inputs:
+- `results/stages/07_network/pre_correlation/combined_logcpm.csv`
+- `results/stages/07_network/pre_correlation/metadata_with_qc.csv`
+- `results/stages/07_network/pre_correlation/include_mask_all.csv`
+- `results/stages/07_network/pre_correlation/include_mask_exclude_flagged.csv`
+- `results/stages/07_network/pre_correlation/per_condition/*_pseudobulk_logcpm.h5ad`
 
 Migration:
 - `python3 scripts/analysis/00_migrate_results_to_stages.py --mode copy`

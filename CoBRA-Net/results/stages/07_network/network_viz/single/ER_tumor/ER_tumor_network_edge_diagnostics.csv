@@ -1,0 +1,2 @@
+condition,n_genes_input,min_weight,max_edges_requested,candidate_edges_above_min_weight,edges_kept_after_clipping,clipped_to_max_edges
+ER_tumor,3000,0.1,2500,2084,2084,False

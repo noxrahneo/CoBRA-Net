@@ -1,0 +1,1253 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             html, body {
+                 width: 100%;
+                 height: 100%;
+             }
+
+             body {
+                 margin: 0;
+                 padding: 0;
+                 font-family: Inter, "Segoe UI", Arial, sans-serif;
+                 background: radial-gradient(circle at top left, #1f2937 0%, #0b1020 45%, #05070f 100%);
+                 color: #e5e7eb;
+                 overflow: hidden;
+             }
+
+             .app-shell {
+                 position: relative;
+                 width: 100vw;
+                 height: 100vh;
+             }
+
+             .graph-wrap {
+                 position: relative;
+                 width: 100%;
+                 height: 100%;
+             }
+
+             .graph-title {
+                 position: fixed;
+                 top: 12px;
+                 left: 12px;
+                 margin: 0;
+                 z-index: 10001;
+                 font-size: 15px;
+                 font-weight: 700;
+                 color: #f3f4f6;
+                 letter-spacing: 0.2px;
+                 background: rgba(17, 24, 39, 0.82);
+                 border: 1px solid rgba(229, 231, 235, 0.25);
+                 border-radius: 8px;
+                 padding: 6px 10px;
+                 backdrop-filter: blur(4px);
+             }
+
+             #mynetwork {
+                 width: 100%;
+                 height: 100%;
+                 background-color: #ffffff;
+                 border: none;
+                 border-radius: 0;
+                 box-shadow: none;
+                 position: relative;
+             }
+
+             .card,
+             .card-body {
+                 background: transparent;
+                 border: none;
+                 width: 100%;
+                 height: 100%;
+                 margin: 0;
+                 padding: 0;
+             }
+
+             #config {
+                 position: fixed;
+                 top: 56px;
+                 left: 12px;
+                 z-index: 10000;
+                 width: max-content;
+                 min-width: 460px;
+                 max-width: min(620px, calc(100vw - 24px));
+                 max-height: calc(100vh - 68px);
+                 overflow: auto;
+                 background: rgba(255, 255, 255, 0.96);
+                 color: #111827;
+                 border: 1px solid #d1d5db;
+                 border-radius: 10px;
+                 box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+                 padding: 8px;
+             }
+
+             #config .vis-configuration-wrapper {
+                 min-width: 440px;
+             }
+
+             .network-guide {
+                 position: fixed;
+                 top: 12px;
+                 right: 12px;
+                 z-index: 10001;
+                 background: rgba(17, 24, 39, 0.88);
+                 border: 1px solid rgba(229, 231, 235, 0.25);
+                 border-radius: 10px;
+                 padding: 10px 12px;
+                 font-size: 12px;
+                 line-height: 1.45;
+                 max-width: 280px;
+                 backdrop-filter: blur(4px);
+             }
+
+             .network-guide-title {
+                 font-weight: 700;
+                 margin-bottom: 6px;
+                 color: #f9fafb;
+             }
+
+             .network-controls {
+                 position: fixed;
+                 top: 164px;
+                 right: 12px;
+                 z-index: 10001;
+                 background: rgba(17, 24, 39, 0.88);
+                 border: 1px solid rgba(229, 231, 235, 0.25);
+                 border-radius: 10px;
+                 padding: 10px 12px;
+                 font-size: 12px;
+                 line-height: 1.45;
+                 width: 280px;
+                 backdrop-filter: blur(4px);
+             }
+
+             .network-controls-title {
+                 font-weight: 700;
+                 margin-bottom: 8px;
+                 color: #f9fafb;
+             }
+
+             .network-controls-row {
+                 margin-bottom: 8px;
+             }
+
+             .network-controls-label {
+                 display: flex;
+                 justify-content: space-between;
+                 margin-bottom: 2px;
+                 color: #e5e7eb;
+             }
+
+             .network-controls input[type="range"] {
+                 width: 100%;
+             }
+
+             .network-btn {
+                 width: 100%;
+                 border: 1px solid rgba(229, 231, 235, 0.4);
+                 border-radius: 8px;
+                 background: rgba(255, 255, 255, 0.1);
+                 color: #f9fafb;
+                 padding: 6px 8px;
+                 font-size: 12px;
+                 font-weight: 600;
+             }
+
+             .network-btn + .network-btn {
+                 margin-top: 6px;
+             }
+
+             .network-controls-note {
+                 color: #d1d5db;
+                 font-size: 11px;
+             }
+
+             .network-legend {
+                 position: fixed;
+                 right: 12px;
+                 bottom: 12px;
+                 z-index: 10001;
+                 background: rgba(17, 24, 39, 0.88);
+                 border: 1px solid rgba(229, 231, 235, 0.25);
+                 border-radius: 10px;
+                 padding: 10px 12px;
+                 font-size: 11px;
+                 line-height: 1.4;
+                 width: 280px;
+                 max-height: 230px;
+                 overflow: auto;
+                 color: #e5e7eb;
+                 backdrop-filter: blur(4px);
+             }
+
+             .network-legend-title {
+                 font-weight: 700;
+                 margin-bottom: 6px;
+                 color: #f9fafb;
+             }
+
+             .network-legend-subtitle {
+                 margin-bottom: 6px;
+                 color: #d1d5db;
+             }
+
+             .network-legend-row {
+                 display: flex;
+                 align-items: center;
+                 gap: 8px;
+                 margin-bottom: 4px;
+             }
+
+             .network-legend-button {
+                 width: 100%;
+                 display: flex;
+                 align-items: center;
+                 gap: 8px;
+                 background: rgba(255, 255, 255, 0.06);
+                 border: 1px solid rgba(229, 231, 235, 0.22);
+                 color: #e5e7eb;
+                 border-radius: 6px;
+                 padding: 4px 6px;
+                 text-align: left;
+                 font-size: 11px;
+                 cursor: pointer;
+             }
+
+             .network-legend-button:hover {
+                 border-color: rgba(229, 231, 235, 0.45);
+                 background: rgba(255, 255, 255, 0.1);
+             }
+
+             .network-legend-button.active {
+                 border-color: rgba(147, 197, 253, 0.9);
+                 background: rgba(59, 130, 246, 0.2);
+                 color: #f9fafb;
+             }
+
+             .network-legend-swatch {
+                 display: inline-block;
+                 width: 11px;
+                 height: 11px;
+                 border-radius: 2px;
+                 border: 1px solid rgba(229, 231, 235, 0.4);
+                 flex: 0 0 auto;
+                 box-sizing: border-box;
+             }
+        </style>
+    </head>
+
+
+    <body>
+
+<div class="network-guide">
+  <div class="network-guide-title">Network guide</div>
+  <div>• Mouse wheel: zoom</div>
+  <div>• Drag background: pan</div>
+    <div>• Click node: focus neighborhood</div>
+  <div>• Edge thickness: stronger co-expression</div>
+    <div>• Click legend rows: multi-filter view</div>
+  <div>• Node color: community (module-like group)</div>
+</div>
+
+<div class="network-controls">
+    <div class="network-controls-title">View controls</div>
+
+    <div class="network-controls-row">
+        <div class="network-controls-label">
+            <span>Genes shown</span>
+            <span id="genePctLabel">100%</span>
+        </div>
+        <input id="geneTopPct" type="range" min="5" max="100" step="1" value="100" />
+    </div>
+
+    <div class="network-controls-row">
+        <div class="network-controls-label">
+            <span>Connections shown</span>
+            <span id="edgePctLabel">100%</span>
+        </div>
+        <input id="edgeKeepPct" type="range" min="5" max="100" step="1" value="100" />
+    </div>
+
+    <div class="network-controls-row network-controls-note">
+        <div>Visible genes: <span id="visibleGeneCount">0</span></div>
+        <div>Visible edges: <span id="visibleEdgeCount">0</span></div>
+    </div>
+
+    <button id="saveViewBtn" class="network-btn" type="button">Save view (PNG, high-res)</button>
+    <button id="saveViewWhiteBtn" class="network-btn" type="button">Save view (PNG white bg, high-res)</button>
+</div>
+
+<div class="network-legend" id="communityLegend">
+    <div class="network-legend-title">Color legend</div>
+    <div class="network-legend-subtitle">Node colors = communities/modules</div>
+    <div id="communityLegendItems"></div>
+    <div class="network-legend-subtitle" style="margin-top:8px;">Node border = dominant cell type</div>
+    <div id="cellTypeLegendItems"></div>
+</div>
+
+        <div class="app-shell">
+            <div class="graph-wrap">
+                <h2 class="graph-title">Normal__plus__ER_tumor network (interactive)</h2>
+                <div id="mynetwork"></div>
+            </div>
+            <div id="config"></div>
+        </div>
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              var originalNodeArray = [];
+              var originalEdgeArray = [];
+              var controlsInitialized = false;
+              var TOP_BOLD_LABEL_PERCENT = 10;
+              var MAX_LEGEND_ITEMS = 12;
+              var focusedNodeId = null;
+              var activeCommunityFilters = new Set();
+              var activeCellTypeFilters = new Set();
+              var baseNodeStyles = new Map();
+              var baseEdgeColors = new Map();
+              var DIM_NODE_ALPHA = 0.18;
+              var DIM_EDGE_ALPHA = 0.08;
+
+              function extractMetric(text, metricName) {
+                  if (!text) {
+                      return 0.0;
+                  }
+                  var pattern = new RegExp(metricName + "=([0-9.]+)");
+                  var match = String(text).match(pattern);
+                  if (!match) {
+                      return 0.0;
+                  }
+                  var value = parseFloat(match[1]);
+                  return Number.isFinite(value) ? value : 0.0;
+              }
+
+              function nodeScore(node) {
+                  if (node && typeof node.wd === "number") {
+                      return node.wd;
+                  }
+                  return extractMetric(node ? node.title : "", "weighted_degree");
+              }
+
+              function edgeScore(edge) {
+                  if (edge && typeof edge.ew === "number") {
+                      return edge.ew;
+                  }
+                  return extractMetric(edge ? edge.title : "", "weight");
+              }
+
+              function updateControlLabels(genePct, edgePct, nGenes, nEdges) {
+                  document.getElementById("genePctLabel").textContent = genePct + "%";
+                  document.getElementById("edgePctLabel").textContent = edgePct + "%";
+                  document.getElementById("visibleGeneCount").textContent = String(nGenes);
+                  document.getElementById("visibleEdgeCount").textContent = String(nEdges);
+              }
+
+              function getNodeDisplayColor(node) {
+                  var renderedColor = getRenderedNodeColor(node, "background");
+                  if (renderedColor) {
+                      return renderedColor;
+                  }
+
+                  var groupColor = getGroupDisplayColor(node ? node.group : null);
+                  if (groupColor) {
+                      return groupColor;
+                  }
+
+                  if (!node || !node.color) {
+                      return "#97c2fc";
+                  }
+                  if (typeof node.color === "string") {
+                      return node.color;
+                  }
+                  if (node.color.background) {
+                      return node.color.background;
+                  }
+                  return "#97c2fc";
+              }
+
+              function normalizeNodeGroup(node) {
+                  return (node && node.group) ? node.group : "Ungrouped";
+              }
+
+              function normalizeNodeCellType(node) {
+                  return (node && node.cell_type) ? node.cell_type : "Unknown";
+              }
+
+              function getNodeLegendColor(node) {
+                  if (node && node.id && baseNodeStyles.has(node.id)) {
+                      return baseNodeStyles.get(node.id).fill;
+                  }
+
+                  var groupColor = getGroupDisplayColor(normalizeNodeGroup(node));
+                  if (groupColor) {
+                      return groupColor;
+                  }
+                  if (node && typeof node.color === "string") {
+                      return node.color;
+                  }
+                  if (node && node.color && typeof node.color === "object" && node.color.background) {
+                      return node.color.background;
+                  }
+                  return "#97c2fc";
+              }
+
+              function getNodeBorderColor(node) {
+                  var renderedBorder = getRenderedNodeColor(node, "border");
+                  if (renderedBorder) {
+                      return renderedBorder;
+                  }
+
+                  if (!node || !node.color) {
+                      return "#9ca3af";
+                  }
+                  if (typeof node.color === "object" && node.color.border) {
+                      return node.color.border;
+                  }
+                  if (typeof node.cell_color === "string" && node.cell_color) {
+                      return node.cell_color;
+                  }
+                  return "#9ca3af";
+              }
+
+              function getNodeLegendBorderColor(node) {
+                  if (normalizeNodeCellType(node) === "Unknown") {
+                      return "#9ca3af";
+                  }
+
+                  if (node && typeof node.cell_color === "string" && node.cell_color) {
+                      return node.cell_color;
+                  }
+
+                  if (node && node.id && baseNodeStyles.has(node.id)) {
+                      return baseNodeStyles.get(node.id).border;
+                  }
+
+                  if (node && node.color && typeof node.color === "object" && node.color.border) {
+                      return node.color.border;
+                  }
+                  return "#9ca3af";
+              }
+
+              function hexToRgba(hex, alpha) {
+                  if (typeof hex !== "string") {
+                      return "rgba(156, 163, 175, " + alpha + ")";
+                  }
+                  var value = hex.trim();
+                  if (!value.startsWith("#")) {
+                      return value;
+                  }
+                  var normalized = value.slice(1);
+                  if (normalized.length === 3) {
+                      normalized = normalized.split("").map(function (ch) { return ch + ch; }).join("");
+                  }
+                  if (normalized.length !== 6) {
+                      return value;
+                  }
+                  var r = parseInt(normalized.slice(0, 2), 16);
+                  var g = parseInt(normalized.slice(2, 4), 16);
+                  var b = parseInt(normalized.slice(4, 6), 16);
+                  if (![r, g, b].every(function (v) { return Number.isFinite(v); })) {
+                      return value;
+                  }
+                  return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+              }
+
+              function toAlphaColor(colorValue, alpha) {
+                  if (!colorValue) {
+                      return "rgba(156, 163, 175, " + alpha + ")";
+                  }
+                  if (typeof colorValue !== "string") {
+                      return colorValue;
+                  }
+                  if (colorValue.indexOf("rgba(") === 0) {
+                      return colorValue.replace(/rgba\(([^,]+),([^,]+),([^,]+),[^)]+\)/, "rgba($1,$2,$3," + alpha + ")");
+                  }
+                  if (colorValue.indexOf("rgb(") === 0) {
+                      return colorValue.replace(/rgb\(([^)]+)\)/, "rgba($1," + alpha + ")");
+                  }
+                  return hexToRgba(colorValue, alpha);
+              }
+
+              function buildAdjacencyMap(visibleEdges) {
+                  var adjacency = new Map();
+                  (visibleEdges || []).forEach(function (edge) {
+                      if (!adjacency.has(edge.from)) {
+                          adjacency.set(edge.from, new Set());
+                      }
+                      if (!adjacency.has(edge.to)) {
+                          adjacency.set(edge.to, new Set());
+                      }
+                      adjacency.get(edge.from).add(edge.to);
+                      adjacency.get(edge.to).add(edge.from);
+                  });
+                  return adjacency;
+              }
+
+              function captureBaseVisualStyles() {
+                  baseNodeStyles.clear();
+                  baseEdgeColors.clear();
+
+                  var visibleNodes = nodes ? nodes.get() : [];
+                  visibleNodes.forEach(function (node) {
+                      var cellType = normalizeNodeCellType(node);
+                      var fillColor = getRenderedNodeColor(node, "background")
+                          || getGroupDisplayColor(normalizeNodeGroup(node))
+                          || (node && typeof node.color === "string" ? node.color : null)
+                          || (node && node.color && typeof node.color === "object" ? node.color.background : null)
+                          || "#97c2fc";
+
+                      var borderColor = cellType === "Unknown"
+                          ? "#9ca3af"
+                          : ((node && typeof node.cell_color === "string" && node.cell_color)
+                              || getRenderedNodeColor(node, "border")
+                              || (node && node.color && typeof node.color === "object" ? node.color.border : null)
+                              || "#9ca3af");
+
+                      baseNodeStyles.set(node.id, {
+                          fill: fillColor,
+                          border: borderColor
+                      });
+                  });
+
+                  var visibleEdges = edges ? edges.get() : [];
+                  visibleEdges.forEach(function (edge) {
+                      var baseColor = (typeof edge.color === "string")
+                          ? edge.color
+                          : (edge.color && edge.color.color ? edge.color.color : "#8AA5CF");
+                      baseEdgeColors.set(edge.id, baseColor);
+                  });
+              }
+
+              function getFocusSet(adjacency) {
+                  if (!focusedNodeId) {
+                      return null;
+                  }
+                  var hasNode = nodes && nodes.get(focusedNodeId);
+                  if (!hasNode) {
+                      focusedNodeId = null;
+                      return null;
+                  }
+
+                  var focusSet = new Set();
+                  if (!adjacency || !adjacency.has(focusedNodeId)) {
+                      focusSet.add(focusedNodeId);
+                      return focusSet;
+                  }
+
+                  var queue = [focusedNodeId];
+                  while (queue.length) {
+                      var current = queue.shift();
+                      if (focusSet.has(current)) {
+                          continue;
+                      }
+                      focusSet.add(current);
+
+                      var neighbors = adjacency.get(current);
+                      if (!neighbors) {
+                          continue;
+                      }
+
+                      neighbors.forEach(function (neighborId) {
+                          if (!focusSet.has(neighborId)) {
+                              queue.push(neighborId);
+                          }
+                      });
+                  }
+                  return focusSet;
+              }
+
+              function nodePassesLegendFilters(node) {
+                  var group = normalizeNodeGroup(node);
+                  var cellType = normalizeNodeCellType(node);
+                  var groupOk = activeCommunityFilters.size === 0 || activeCommunityFilters.has(group);
+                  var cellTypeOk = activeCellTypeFilters.size === 0 || activeCellTypeFilters.has(cellType);
+                  return groupOk && cellTypeOk;
+              }
+
+              function applyVisualState() {
+                  if (!nodes || !edges) {
+                      return;
+                  }
+
+                  var visibleNodes = nodes.get();
+                  var visibleEdges = edges.get();
+                  var adjacency = buildAdjacencyMap(visibleEdges);
+                  var focusSet = getFocusSet(adjacency);
+                  var highlightedNodeIds = new Set();
+
+                  var nodeUpdates = visibleNodes.map(function (node) {
+                      var baseNodeStyle = baseNodeStyles.get(node.id) || {
+                          fill: getNodeLegendColor(node),
+                          border: getNodeLegendBorderColor(node)
+                      };
+                      var fillColor = baseNodeStyle.fill;
+                      var borderColor = baseNodeStyle.border;
+                      var isMatch = nodePassesLegendFilters(node);
+                      var inFocus = !focusSet || focusSet.has(node.id);
+                      var highlighted = isMatch && inFocus;
+
+                      if (highlighted) {
+                          highlightedNodeIds.add(node.id);
+                      }
+
+                      var nodeFont = (node && typeof node.font === "object" && node.font !== null)
+                          ? Object.assign({}, node.font)
+                          : {};
+
+                      if (highlighted) {
+                          nodeFont.color = "#222222";
+                      } else {
+                          nodeFont.color = "rgba(34, 34, 34, 0.35)";
+                      }
+
+                      return {
+                          id: node.id,
+                          color: {
+                              background: highlighted ? fillColor : toAlphaColor(fillColor, DIM_NODE_ALPHA),
+                              border: highlighted ? borderColor : toAlphaColor(borderColor, DIM_NODE_ALPHA)
+                          },
+                          font: nodeFont
+                      };
+                  });
+
+                  if (nodeUpdates.length) {
+                      nodes.update(nodeUpdates);
+                  }
+
+                  var edgeUpdates = visibleEdges.map(function (edge) {
+                      var keep = highlightedNodeIds.has(edge.from) && highlightedNodeIds.has(edge.to);
+                      var baseColor = baseEdgeColors.get(edge.id)
+                          || (typeof edge.color === "string"
+                              ? edge.color
+                              : (edge.color && edge.color.color ? edge.color.color : "#8AA5CF"));
+                      return {
+                          id: edge.id,
+                          color: keep
+                              ? baseColor
+                              : toAlphaColor(baseColor, DIM_EDGE_ALPHA)
+                      };
+                  });
+
+                  if (edgeUpdates.length) {
+                      edges.update(edgeUpdates);
+                  }
+              }
+
+              function getGroupDisplayColor(groupName) {
+                  if (!groupName || !options || !options.groups) {
+                      return null;
+                  }
+                  var groupConfig = options.groups[groupName];
+                  if (!groupConfig || !groupConfig.color) {
+                      return null;
+                  }
+                  if (typeof groupConfig.color === "string") {
+                      return groupConfig.color;
+                  }
+                  if (groupConfig.color.background) {
+                      return groupConfig.color.background;
+                  }
+                  return null;
+              }
+
+              function getRenderedNodeColor(node, channel) {
+                  if (!network || !network.body || !network.body.nodes || !node || !node.id) {
+                      return null;
+                  }
+
+                  var renderedNode = network.body.nodes[node.id];
+                  if (!renderedNode || !renderedNode.options) {
+                      return null;
+                  }
+
+                  var renderedColor = renderedNode.options.color;
+                  if (!renderedColor) {
+                      return null;
+                  }
+
+                  if (typeof renderedColor === "string") {
+                      return renderedColor;
+                  }
+
+                  if (channel === "border") {
+                      return renderedColor.border || null;
+                  }
+                  return renderedColor.background || renderedColor.border || null;
+              }
+
+              function applyNodeLabelStyles(nodesToStyle) {
+                  if (!nodesToStyle || !nodesToStyle.length) {
+                      return [];
+                  }
+
+                  var sorted = nodesToStyle.slice().sort(function (a, b) {
+                      return nodeScore(b) - nodeScore(a);
+                  });
+                  var boldCount = Math.max(1, Math.round(sorted.length * TOP_BOLD_LABEL_PERCENT / 100));
+                  var boldIds = new Set(sorted.slice(0, boldCount).map(function (node) { return node.id; }));
+
+                  return nodesToStyle.map(function (node) {
+                      var styledNode = Object.assign({}, node);
+                      var nodeFont = (node && typeof node.font === "object" && node.font !== null)
+                          ? Object.assign({}, node.font)
+                          : {};
+
+                      var isBold = boldIds.has(node.id);
+                      nodeFont.color = nodeFont.color || "#222222";
+                      nodeFont.size = isBold ? 18 : 14;
+                      nodeFont.face = isBold ? "Arial Black" : "Arial";
+                      nodeFont.strokeColor = "#ffffff";
+                      nodeFont.strokeWidth = isBold ? 5 : 4;
+
+                      styledNode.font = nodeFont;
+                      return styledNode;
+                  });
+              }
+
+              function buildCommunityLegendItems(visibleNodes) {
+                  var byGroup = new Map();
+                  (visibleNodes || []).forEach(function (node) {
+                      var group = normalizeNodeGroup(node);
+                      if (!byGroup.has(group)) {
+                          byGroup.set(group, {
+                              group: group,
+                              count: 0,
+                              color: getNodeLegendColor(node)
+                          });
+                      }
+                      byGroup.get(group).count += 1;
+                  });
+
+                  return Array.from(byGroup.values()).sort(function (a, b) {
+                      return b.count - a.count;
+                  });
+              }
+
+              function buildCellTypeLegendItems(visibleNodes) {
+                  var byCellType = new Map();
+                  (visibleNodes || []).forEach(function (node) {
+                      var cellType = normalizeNodeCellType(node);
+                      if (!byCellType.has(cellType)) {
+                          byCellType.set(cellType, {
+                              cellType: cellType,
+                              count: 0,
+                              color: getNodeLegendBorderColor(node)
+                          });
+                      }
+                      byCellType.get(cellType).count += 1;
+                  });
+
+                  return Array.from(byCellType.values()).sort(function (a, b) {
+                      return b.count - a.count;
+                  });
+              }
+
+              function renderCommunityLegend(visibleNodes) {
+                  var host = document.getElementById("communityLegendItems");
+                  if (!host) {
+                      return;
+                  }
+
+                  var items = buildCommunityLegendItems(visibleNodes);
+                  if (!items.length) {
+                      host.innerHTML = "<div>No visible communities</div>";
+                      return;
+                  }
+
+                  var shown = items.slice(0, MAX_LEGEND_ITEMS);
+                  var remainder = items.length - shown.length;
+                  var html = shown.map(function (item) {
+                      var isActive = activeCommunityFilters.has(item.group);
+                      return '<div class="network-legend-row"><button class="network-legend-button ' + (isActive ? 'active' : '') + '" data-legend-type="community" data-legend-value="' + item.group + '"><span class="network-legend-swatch" style="background:' + item.color + ';"></span><span>' + item.group + ' · ' + item.count + ' genes</span></button></div>';
+                  }).join("");
+
+                  if (remainder > 0) {
+                      html += '<div class="network-legend-row"><span>+' + remainder + ' more communities</span></div>';
+                  }
+
+                  host.innerHTML = html;
+              }
+
+              function renderCellTypeLegend(visibleNodes) {
+                  var host = document.getElementById("cellTypeLegendItems");
+                  if (!host) {
+                      return;
+                  }
+
+                  var items = buildCellTypeLegendItems(visibleNodes);
+                  if (!items.length) {
+                      host.innerHTML = "<div>No visible cell-type annotation</div>";
+                      return;
+                  }
+
+                  var shown = items.slice(0, MAX_LEGEND_ITEMS);
+                  var remainder = items.length - shown.length;
+                  var html = shown.map(function (item) {
+                      var isActive = activeCellTypeFilters.has(item.cellType);
+                      return '<div class="network-legend-row"><button class="network-legend-button ' + (isActive ? 'active' : '') + '" data-legend-type="cell_type" data-legend-value="' + item.cellType + '"><span class="network-legend-swatch" style="background:' + item.color + ';"></span><span>' + item.cellType + ' · ' + item.count + ' genes</span></button></div>';
+                  }).join("");
+
+                  if (remainder > 0) {
+                      html += '<div class="network-legend-row"><span>+' + remainder + ' more cell types</span></div>';
+                  }
+
+                  host.innerHTML = html;
+              }
+
+              function handleLegendClick(event) {
+                  var target = event.target.closest(".network-legend-button");
+                  if (!target) {
+                      return;
+                  }
+
+                  var legendType = target.getAttribute("data-legend-type");
+                  var legendValue = target.getAttribute("data-legend-value");
+                  if (!legendType || !legendValue) {
+                      return;
+                  }
+
+                  var legendSet = legendType === "community" ? activeCommunityFilters : activeCellTypeFilters;
+                  if (legendSet.has(legendValue)) {
+                      legendSet.delete(legendValue);
+                  } else {
+                      legendSet.add(legendValue);
+                  }
+
+                  var visibleNodes = nodes.get();
+                  renderCommunityLegend(visibleNodes);
+                  renderCellTypeLegend(visibleNodes);
+                  applyVisualState();
+              }
+
+              function bindLegendInteractions() {
+                  var communityHost = document.getElementById("communityLegendItems");
+                  var cellTypeHost = document.getElementById("cellTypeLegendItems");
+                  if (communityHost) {
+                      communityHost.addEventListener("click", handleLegendClick);
+                  }
+                  if (cellTypeHost) {
+                      cellTypeHost.addEventListener("click", handleLegendClick);
+                  }
+              }
+
+              function handleNetworkClick(params) {
+                  if (params && params.nodes && params.nodes.length) {
+                      focusedNodeId = params.nodes[0];
+                  } else {
+                      focusedNodeId = null;
+                  }
+                  applyVisualState();
+              }
+
+              function applyNetworkFilter() {
+                  if (!originalNodeArray.length) {
+                      return;
+                  }
+
+                  var genePct = parseInt(document.getElementById("geneTopPct").value || "100", 10);
+                  var edgePct = parseInt(document.getElementById("edgeKeepPct").value || "100", 10);
+
+                  var sortedNodes = originalNodeArray.slice().sort(function (a, b) {
+                      return nodeScore(b) - nodeScore(a);
+                  });
+                  var keepNodesCount = Math.max(1, Math.round(sortedNodes.length * genePct / 100));
+                  var keptNodes = sortedNodes.slice(0, keepNodesCount);
+                  var keepNodeIds = new Set(keptNodes.map(function (node) { return node.id; }));
+
+                  var candidateEdges = originalEdgeArray.filter(function (edge) {
+                      return keepNodeIds.has(edge.from) && keepNodeIds.has(edge.to);
+                  });
+                  var sortedEdges = candidateEdges.slice().sort(function (a, b) {
+                      return edgeScore(b) - edgeScore(a);
+                  });
+
+                  var keptEdges = [];
+                  if (sortedEdges.length > 0) {
+                      var keepEdgesCount = Math.max(1, Math.round(sortedEdges.length * edgePct / 100));
+                      keptEdges = sortedEdges.slice(0, keepEdgesCount);
+                  }
+
+                  var styledNodes = applyNodeLabelStyles(keptNodes);
+
+                  nodes.clear();
+                  nodes.add(styledNodes);
+                  edges.clear();
+                  edges.add(keptEdges);
+
+                  updateControlLabels(genePct, edgePct, styledNodes.length, keptEdges.length);
+                  renderCommunityLegend(styledNodes);
+                  renderCellTypeLegend(styledNodes);
+                  captureBaseVisualStyles();
+                  applyVisualState();
+              }
+
+              function getVisibleCounts() {
+                  var geneCount = parseInt(document.getElementById("visibleGeneCount").textContent || "0", 10);
+                  var edgeCount = parseInt(document.getElementById("visibleEdgeCount").textContent || "0", 10);
+                  if (!Number.isFinite(geneCount) || geneCount <= 0) {
+                      geneCount = nodes && typeof nodes.length === "number" ? nodes.length : 0;
+                  }
+                  if (!Number.isFinite(edgeCount) || edgeCount < 0) {
+                      edgeCount = edges && typeof edges.length === "number" ? edges.length : 0;
+                  }
+                  return { genes: geneCount, edges: edgeCount };
+              }
+
+              function detectSolverName() {
+                  var physics = options && options.physics ? options.physics : {};
+                  if (physics.solver) {
+                      return String(physics.solver);
+                  }
+                  if (physics.barnesHut) {
+                      return "barnesHut";
+                  }
+                  if (physics.forceAtlas2Based) {
+                      return "forceAtlas2Based";
+                  }
+                  if (physics.repulsion) {
+                      return "repulsion";
+                  }
+                  if (physics.hierarchicalRepulsion) {
+                      return "hierarchicalRepulsion";
+                  }
+                  return "unknownSolver";
+              }
+
+              function sanitizeFilenamePart(value) {
+                  return String(value || "")
+                      .toLowerCase()
+                      .replace(/[^a-z0-9]+/g, "_")
+                      .replace(/^_+|_+$/g, "");
+              }
+
+              function buildExportFilename(backgroundMode) {
+                  var titleText = (document.querySelector(".graph-title").textContent || "network_view").trim();
+                  var counts = getVisibleCounts();
+                  var solver = sanitizeFilenamePart(detectSolverName() || "unknownSolver");
+                  var background = backgroundMode === "white" ? "whitebg" : "transparent";
+                  var baseTitle = sanitizeFilenamePart(titleText) || "network_view";
+                  return [
+                      baseTitle,
+                      "visible_genes_" + counts.genes,
+                      "visible_connections_" + counts.edges,
+                      "solver_" + solver,
+                      background
+                  ].join("_") + ".png";
+              }
+
+              function saveCurrentViewPng(backgroundMode) {
+                  var canvas = document.querySelector("#mynetwork canvas");
+                  if (!canvas) {
+                      return;
+                  }
+
+                  var exportScale = 6;
+                  var exportCanvas = document.createElement("canvas");
+                  exportCanvas.width = canvas.width * exportScale;
+                  exportCanvas.height = canvas.height * exportScale;
+                  var ctx = exportCanvas.getContext("2d");
+                  if (!ctx) {
+                      return;
+                  }
+
+                  if (backgroundMode === "white") {
+                      ctx.fillStyle = "#ffffff";
+                      ctx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+                  }
+
+                  ctx.setTransform(exportScale, 0, 0, exportScale, 0, 0);
+                  ctx.imageSmoothingEnabled = true;
+                  ctx.drawImage(canvas, 0, 0);
+
+                  var visibleNodes = nodes.get();
+                  drawExportLabelOverlay(ctx, exportScale, visibleNodes);
+                  drawExportLegendOverlay(
+                      ctx,
+                      exportCanvas,
+                      exportScale,
+                      buildCommunityLegendItems(visibleNodes),
+                      buildCellTypeLegendItems(visibleNodes)
+                  );
+
+                  var filename = buildExportFilename(backgroundMode);
+                  var link = document.createElement("a");
+                  link.href = exportCanvas.toDataURL("image/png");
+                  link.download = filename;
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+              }
+
+              function drawExportLabelOverlay(ctx, exportScale, visibleNodes) {
+                  if (!network || !visibleNodes || !visibleNodes.length) {
+                      return;
+                  }
+
+                  var nodeIds = visibleNodes.map(function (node) { return node.id; });
+                  var positions = network.getPositions(nodeIds);
+
+                  ctx.textAlign = "center";
+                  ctx.textBaseline = "middle";
+
+                  visibleNodes.forEach(function (node) {
+                      var label = (node && node.label) ? String(node.label) : "";
+                      if (!label) {
+                          return;
+                      }
+
+                      var canvasPos = positions[node.id];
+                      if (!canvasPos) {
+                          return;
+                      }
+
+                      var domPos = network.canvasToDOM(canvasPos);
+                      var x = domPos.x * exportScale;
+                      var y = domPos.y * exportScale;
+                      var nodeFont = (node && typeof node.font === "object" && node.font !== null)
+                          ? node.font
+                          : {};
+                      var fontSize = Number(nodeFont.size || 14) * exportScale;
+                      var fontFace = nodeFont.face || "Arial";
+
+                      ctx.font = fontSize + "px " + fontFace;
+                      ctx.strokeStyle = nodeFont.strokeColor || "#ffffff";
+                      ctx.lineWidth = Number(nodeFont.strokeWidth || 3) * exportScale * 0.45;
+                      ctx.fillStyle = nodeFont.color || "#111111";
+                      ctx.strokeText(label, x, y);
+                      ctx.fillText(label, x, y);
+                  });
+              }
+
+              function drawExportLegendOverlay(ctx, exportCanvas, exportScale, communityItems, cellTypeItems) {
+                  var legendItems = communityItems || [];
+                  var ctItems = cellTypeItems || [];
+                  if (!legendItems.length && !ctItems.length) {
+                      return;
+                  }
+
+                  var items = legendItems.slice(0, MAX_LEGEND_ITEMS);
+                  var ctShown = ctItems.slice(0, MAX_LEGEND_ITEMS);
+                  var boxPadding = 8 * exportScale;
+                  var rowHeight = 16 * exportScale;
+                  var titleHeight = 24 * exportScale;
+                  var sectionGap = 10 * exportScale;
+                  var section2Header = ctShown.length ? 22 * exportScale : 0;
+                  var boxWidth = 240 * exportScale;
+                  var boxHeight = titleHeight + (items.length * rowHeight) + sectionGap + section2Header + (ctShown.length * rowHeight) + boxPadding;
+                  var boxX = exportCanvas.width - boxWidth - (18 * exportScale);
+                  var boxY = 18 * exportScale;
+
+                  ctx.save();
+                  ctx.fillStyle = "rgba(255, 255, 255, 0.94)";
+                  ctx.strokeStyle = "rgba(31, 41, 55, 0.6)";
+                  ctx.lineWidth = 1.2 * exportScale;
+                  ctx.fillRect(boxX, boxY, boxWidth, boxHeight);
+                  ctx.strokeRect(boxX, boxY, boxWidth, boxHeight);
+
+                  ctx.fillStyle = "#111827";
+                  ctx.font = (12 * exportScale) + "px Arial Black";
+                  ctx.textAlign = "left";
+                  ctx.textBaseline = "top";
+                  ctx.fillText("Node colors = communities/modules", boxX + boxPadding, boxY + (5 * exportScale));
+
+                  ctx.font = (11 * exportScale) + "px Arial";
+                  items.forEach(function (item, idx) {
+                      var rowY = boxY + titleHeight + (idx * rowHeight);
+                      var swatchSize = 10 * exportScale;
+                      ctx.fillStyle = item.color;
+                      ctx.fillRect(boxX + boxPadding, rowY + (2 * exportScale), swatchSize, swatchSize);
+                      ctx.strokeStyle = "rgba(31, 41, 55, 0.6)";
+                      ctx.strokeRect(boxX + boxPadding, rowY + (2 * exportScale), swatchSize, swatchSize);
+
+                      ctx.fillStyle = "#111827";
+                      ctx.fillText(item.group + " · " + item.count + " genes", boxX + boxPadding + swatchSize + (6 * exportScale), rowY);
+                  });
+
+                  if (ctShown.length) {
+                      var section2Y = boxY + titleHeight + (items.length * rowHeight) + sectionGap;
+                      ctx.fillStyle = "#111827";
+                      ctx.font = (12 * exportScale) + "px Arial Black";
+                      ctx.fillText("Node border = dominant cell type", boxX + boxPadding, section2Y);
+
+                      ctx.font = (11 * exportScale) + "px Arial";
+                      ctShown.forEach(function (item, idx) {
+                          var rowY = section2Y + section2Header + (idx * rowHeight);
+                          var swatchSize = 10 * exportScale;
+                          ctx.fillStyle = item.color;
+                          ctx.fillRect(boxX + boxPadding, rowY + (2 * exportScale), swatchSize, swatchSize);
+                          ctx.strokeStyle = "rgba(31, 41, 55, 0.6)";
+                          ctx.strokeRect(boxX + boxPadding, rowY + (2 * exportScale), swatchSize, swatchSize);
+
+                          ctx.fillStyle = "#111827";
+                          ctx.fillText(item.cellType + " · " + item.count + " genes", boxX + boxPadding + swatchSize + (6 * exportScale), rowY);
+                      });
+                  }
+                  ctx.restore();
+              }
+
+              function initializeNetworkControls() {
+                  if (controlsInitialized) {
+                      return;
+                  }
+                  controlsInitialized = true;
+
+                  var geneSlider = document.getElementById("geneTopPct");
+                  var edgeSlider = document.getElementById("edgeKeepPct");
+                  var saveBtn = document.getElementById("saveViewBtn");
+                  var saveWhiteBtn = document.getElementById("saveViewWhiteBtn");
+
+                  geneSlider.addEventListener("input", applyNetworkFilter);
+                  edgeSlider.addEventListener("input", applyNetworkFilter);
+                  saveBtn.addEventListener("click", function () { saveCurrentViewPng("transparent"); });
+                  saveWhiteBtn.addEventListener("click", function () { saveCurrentViewPng("white"); });
+                  bindLegendInteractions();
+
+                  applyNetworkFilter();
+              }
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "MT-ATP6", "label": "MT-ATP6", "original_label": "MT-ATP6", "shape": "dot", "size": 35.728748345513566, "title": "MT-ATP6\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.6373", "wd": 0.6373428404331207}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "MT-ND4", "label": "MT-ND4", "original_label": "MT-ND4", "shape": "dot", "size": 37.640950411308786, "title": "MT-ND4\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.6847", "wd": 0.6847111880779266}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "MYL9", "label": "MYL9", "original_label": "MYL9", "shape": "dot", "size": 26.51984136385772, "title": "MYL9\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.4092", "wd": 0.409223273396492}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "TAGLN", "label": "TAGLN", "original_label": "TAGLN", "shape": "dot", "size": 31.57000017900159, "title": "TAGLN\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.5343", "wd": 0.5343239009380341}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "MT-CO2", "label": "MT-CO2", "original_label": "MT-CO2", "shape": "dot", "size": 30.913918616286598, "title": "MT-CO2\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.5181", "wd": 0.5180716961622238}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "MT-CO3", "label": "MT-CO3", "original_label": "MT-CO3", "shape": "dot", "size": 38.68471109259279, "title": "MT-CO3\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.7106", "wd": 0.710566833615303}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "CALD1", "label": "CALD1", "original_label": "CALD1", "shape": "dot", "size": 26.004841155165757, "title": "CALD1\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.3965", "wd": 0.39646588265895844}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C5", "id": "DNAJB1", "label": "DNAJB1", "original_label": "DNAJB1", "shape": "dot", "size": 26.30925608975571, "title": "DNAJB1\u003cbr\u003ecommunity=C5\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.4040", "wd": 0.4040067344903946}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C5", "id": "HSPA1A", "label": "HSPA1A", "original_label": "HSPA1A", "shape": "dot", "size": 30.225664804646232, "title": "HSPA1A\u003cbr\u003ecommunity=C5\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.5010", "wd": 0.501022532582283}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "KRT18", "label": "KRT18", "original_label": "KRT18", "shape": "dot", "size": 30.149832065485608, "title": "KRT18\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.4991", "wd": 0.4991440325975418}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "KRT19", "label": "KRT19", "original_label": "KRT19", "shape": "dot", "size": 38.73607311982096, "title": "KRT19\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.7118", "wd": 0.7118391543626785}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "KRT8", "label": "KRT8", "original_label": "KRT8", "shape": "dot", "size": 44.26284085699018, "title": "KRT8\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.8487", "wd": 0.848746158182621}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C5", "id": "HSPA1B", "label": "HSPA1B", "original_label": "HSPA1B", "shape": "dot", "size": 25.574030902961795, "title": "HSPA1B\u003cbr\u003ecommunity=C5\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.3858", "wd": 0.3857940137386322}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "MT-ND3", "label": "MT-ND3", "original_label": "MT-ND3", "shape": "dot", "size": 19.744988816955114, "title": "MT-ND3\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2414", "wd": 0.24139918386936188}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "ELF3", "label": "ELF3", "original_label": "ELF3", "shape": "dot", "size": 41.531569233557214, "title": "ELF3\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.7811", "wd": 0.7810881286859512}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "FXYD3", "label": "FXYD3", "original_label": "FXYD3", "shape": "dot", "size": 45.0, "title": "FXYD3\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.8670", "wd": 0.8670067861676216}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "TACSTD2", "label": "TACSTD2", "original_label": "TACSTD2", "shape": "dot", "size": 35.61512134971565, "title": "TACSTD2\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.6345", "wd": 0.6345281153917313}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C6", "id": "ERBIN", "label": "ERBIN", "original_label": "ERBIN", "shape": "dot", "size": 22.752341863717298, "title": "ERBIN\u003cbr\u003ecommunity=C6\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.3159", "wd": 0.3158961981534958}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C6", "id": "REV1", "label": "REV1", "original_label": "REV1", "shape": "dot", "size": 18.405077781003474, "title": "REV1\u003cbr\u003ecommunity=C6\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2082", "wd": 0.2082074135541916}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "CLDN4", "label": "CLDN4", "original_label": "CLDN4", "shape": "dot", "size": 28.869140994568756, "title": "CLDN4\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.4674", "wd": 0.46741923689842224}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C8", "id": "JUNB", "label": "JUNB", "original_label": "JUNB", "shape": "dot", "size": 17.881640951494084, "title": "JUNB\u003cbr\u003ecommunity=C8\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1952", "wd": 0.1952410340309143}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C8", "id": "ZFP36", "label": "ZFP36", "original_label": "ZFP36", "shape": "dot", "size": 17.881640951494084, "title": "ZFP36\u003cbr\u003ecommunity=C8\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1952", "wd": 0.1952410340309143}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C7", "id": "CD74", "label": "CD74", "original_label": "CD74", "shape": "dot", "size": 17.83996855621794, "title": "CD74\u003cbr\u003ecommunity=C7\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1942", "wd": 0.19420874118804932}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C7", "id": "HLA-DRA", "label": "HLA-DRA", "original_label": "HLA-DRA", "shape": "dot", "size": 22.35564112513336, "title": "HLA-DRA\u003cbr\u003ecommunity=C7\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.3061", "wd": 0.3060692772269249}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "MT-CO1", "label": "MT-CO1", "original_label": "MT-CO1", "shape": "dot", "size": 28.47019921278658, "title": "MT-CO1\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.4575", "wd": 0.45753680169582367}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C9", "id": "FOS", "label": "FOS", "original_label": "FOS", "shape": "dot", "size": 15.741356571331863, "title": "FOS\u003cbr\u003ecommunity=C9\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1422", "wd": 0.14222271740436554}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C9", "id": "JUN", "label": "JUN", "original_label": "JUN", "shape": "dot", "size": 15.741356571331863, "title": "JUN\u003cbr\u003ecommunity=C9\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1422", "wd": 0.14222271740436554}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C10", "id": "ANKRD10", "label": "ANKRD10", "original_label": "ANKRD10", "shape": "dot", "size": 15.70540724275497, "title": "ANKRD10\u003cbr\u003ecommunity=C10\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1413", "wd": 0.14133219420909882}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C10", "id": "ARMCX3", "label": "ARMCX3", "original_label": "ARMCX3", "shape": "dot", "size": 15.70540724275497, "title": "ARMCX3\u003cbr\u003ecommunity=C10\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1413", "wd": 0.14133219420909882}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "GATA3", "label": "GATA3", "original_label": "GATA3", "shape": "dot", "size": 15.634818743186951, "title": "GATA3\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1396", "wd": 0.13958360254764557}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "KRT7", "label": "KRT7", "original_label": "KRT7", "shape": "dot", "size": 24.015780421026008, "title": "KRT7\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.3472", "wd": 0.3471936210989952}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "CLDN3", "label": "CLDN3", "original_label": "CLDN3", "shape": "dot", "size": 15.262889788101905, "title": "CLDN3\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1304", "wd": 0.13037031888961792}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C11", "id": "ATP13A3", "label": "ATP13A3", "original_label": "ATP13A3", "shape": "dot", "size": 15.14693302172104, "title": "ATP13A3\u003cbr\u003ecommunity=C11\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1275", "wd": 0.12749788165092468}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C11", "id": "RAB21", "label": "RAB21", "original_label": "RAB21", "shape": "dot", "size": 15.14693302172104, "title": "RAB21\u003cbr\u003ecommunity=C11\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1275", "wd": 0.12749788165092468}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "CD24", "label": "CD24", "original_label": "CD24", "shape": "dot", "size": 15.058522649428753, "title": "CD24\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1253", "wd": 0.1253078132867813}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "AZGP1", "label": "AZGP1", "original_label": "AZGP1", "shape": "dot", "size": 19.93275009923073, "title": "AZGP1\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2461", "wd": 0.24605033546686172}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C7", "id": "HLA-DPB1", "label": "HLA-DPB1", "original_label": "HLA-DPB1", "shape": "dot", "size": 14.51567256891542, "title": "HLA-DPB1\u003cbr\u003ecommunity=C7\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1119", "wd": 0.11186053603887558}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C6", "id": "EP300", "label": "EP300", "original_label": "EP300", "shape": "dot", "size": 14.347264082713824, "title": "EP300\u003cbr\u003ecommunity=C6\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1077", "wd": 0.1076887845993042}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C12", "id": "ADAM17", "label": "ADAM17", "original_label": "ADAM17", "shape": "dot", "size": 14.220312940669498, "title": "ADAM17\u003cbr\u003ecommunity=C12\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1045", "wd": 0.10454399883747101}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C12", "id": "IAH1", "label": "IAH1", "original_label": "IAH1", "shape": "dot", "size": 14.220312940669498, "title": "IAH1\u003cbr\u003ecommunity=C12\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1045", "wd": 0.10454399883747101}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C13", "id": "BMPR2", "label": "BMPR2", "original_label": "BMPR2", "shape": "dot", "size": 14.131011083738963, "title": "BMPR2\u003cbr\u003ecommunity=C13\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1023", "wd": 0.10233184695243835}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C13", "id": "HIP1", "label": "HIP1", "original_label": "HIP1", "shape": "dot", "size": 14.131011083738963, "title": "HIP1\u003cbr\u003ecommunity=C13\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1023", "wd": 0.10233184695243835}]);
+                  edges = new vis.DataSet([{"color": "#8AA5CF", "ew": 0.2753879129886627, "from": "MT-ATP6", "title": "weight=0.2754", "to": "MT-ND4", "value": 2.2031033039093018, "width": 6.4}, {"color": "#8AA5CF", "ew": 0.24139918386936188, "from": "MT-ATP6", "title": "weight=0.2414", "to": "MT-ND3", "value": 1.931193470954895, "width": 5.6594723112477325}, {"color": "#8AA5CF", "ew": 0.12055574357509613, "from": "MT-ATP6", "title": "weight=0.1206", "to": "MT-CO3", "value": 0.964445948600769, "width": 3.026602066882853}, {"color": "#8AA5CF", "ew": 0.150832399725914, "from": "MT-ND4", "title": "weight=0.1508", "to": "MT-CO3", "value": 1.206659197807312, "width": 3.6862531566254373}, {"color": "#8AA5CF", "ew": 0.14311571419239044, "from": "MT-ND4", "title": "weight=0.1431", "to": "MT-CO1", "value": 1.1449257135391235, "width": 3.5181262671818634}, {"color": "#8AA5CF", "ew": 0.11537516117095947, "from": "MT-ND4", "title": "weight=0.1154", "to": "MT-CO2", "value": 0.9230012893676758, "width": 2.913730394021526}, {"color": "#8AA5CF", "ew": 0.2735406458377838, "from": "MYL9", "title": "weight=0.2735", "to": "TAGLN", "value": 2.1883251667022705, "width": 6.3597527618950735}, {"color": "#8AA5CF", "ew": 0.1356826275587082, "from": "MYL9", "title": "weight=0.1357", "to": "CALD1", "value": 1.0854610204696655, "width": 3.356178274192318}, {"color": "#8AA5CF", "ew": 0.26078325510025024, "from": "TAGLN", "title": "weight=0.2608", "to": "CALD1", "value": 2.086266040802002, "width": 6.081801766898599}, {"color": "#8AA5CF", "ew": 0.263727068901062, "from": "MT-CO2", "title": "weight=0.2637", "to": "MT-CO3", "value": 2.109816551208496, "width": 6.145939958779221}, {"color": "#8AA5CF", "ew": 0.13896946609020233, "from": "MT-CO2", "title": "weight=0.1390", "to": "MT-CO1", "value": 1.1117557287216187, "width": 3.4277900997620794}, {"color": "#8AA5CF", "ew": 0.1754516214132309, "from": "MT-CO3", "title": "weight=0.1755", "to": "MT-CO1", "value": 1.4036129713058472, "width": 4.222643183772281}, {"color": "#8AA5CF", "ew": 0.2596176266670227, "from": "DNAJB1", "title": "weight=0.2596", "to": "HSPA1A", "value": 2.0769410133361816, "width": 6.05640569732}, {"color": "#8AA5CF", "ew": 0.1443891078233719, "from": "DNAJB1", "title": "weight=0.1444", "to": "HSPA1B", "value": 1.155112862586975, "width": 3.5458702654676677}, {"color": "#8AA5CF", "ew": 0.24140490591526031, "from": "HSPA1A", "title": "weight=0.2414", "to": "HSPA1B", "value": 1.9312392473220825, "width": 5.659596980028646}, {"color": "#8AA5CF", "ew": 0.2527998089790344, "from": "KRT18", "title": "weight=0.2528", "to": "KRT19", "value": 2.0223984718322754, "width": 5.907862844861499}, {"color": "#8AA5CF", "ew": 0.24634422361850739, "from": "KRT18", "title": "weight=0.2463", "to": "KRT8", "value": 1.970753788948059, "width": 5.767212110619735}, {"color": "#8AA5CF", "ew": 0.20988287031650543, "from": "KRT19", "title": "weight=0.2099", "to": "KRT8", "value": 1.6790629625320435, "width": 4.97281224957348}, {"color": "#8AA5CF", "ew": 0.1253078132867813, "from": "KRT19", "title": "weight=0.1253", "to": "CD24", "value": 1.0024625062942505, "width": 3.1301375414818593}, {"color": "#8AA5CF", "ew": 0.12384866178035736, "from": "KRT19", "title": "weight=0.1238", "to": "AZGP1", "value": 0.9907892942428589, "width": 3.098346353032335}, {"color": "#8AA5CF", "ew": 0.13958360254764557, "from": "KRT8", "title": "weight=0.1396", "to": "GATA3", "value": 1.1166688203811646, "width": 3.441170566263567}, {"color": "#8AA5CF", "ew": 0.1354496031999588, "from": "KRT8", "title": "weight=0.1354", "to": "KRT7", "value": 1.0835968255996704, "width": 3.351101267952927}, {"color": "#8AA5CF", "ew": 0.11748585850000381, "from": "KRT8", "title": "weight=0.1175", "to": "FXYD3", "value": 0.9398868680000305, "width": 2.9597171035935883}, {"color": "#8AA5CF", "ew": 0.22866190969944, "from": "ELF3", "title": "weight=0.2287", "to": "FXYD3", "value": 1.82929527759552, "width": 5.381959604934157}, {"color": "#8AA5CF", "ew": 0.22256720066070557, "from": "ELF3", "title": "weight=0.2226", "to": "TACSTD2", "value": 1.7805376052856445, "width": 5.249171445005322}, {"color": "#8AA5CF", "ew": 0.19948869943618774, "from": "ELF3", "title": "weight=0.1995", "to": "CLDN4", "value": 1.595909595489502, "width": 4.746349785752588}, {"color": "#8AA5CF", "ew": 0.13037031888961792, "from": "ELF3", "title": "weight=0.1304", "to": "CLDN3", "value": 1.0429625511169434, "width": 3.2404366221037098}, {"color": "#8AA5CF", "ew": 0.1654718518257141, "from": "FXYD3", "title": "weight=0.1655", "to": "TACSTD2", "value": 1.323774814605713, "width": 4.005209466819112}, {"color": "#8AA5CF", "ew": 0.1296500861644745, "from": "FXYD3", "title": "weight=0.1297", "to": "CLDN4", "value": 1.037200689315796, "width": 3.2247445886227832}, {"color": "#8AA5CF", "ew": 0.12220167368650436, "from": "FXYD3", "title": "weight=0.1222", "to": "AZGP1", "value": 0.9776133894920349, "width": 3.0624626845885254}, {"color": "#8AA5CF", "ew": 0.10353540629148483, "from": "FXYD3", "title": "weight=0.1035", "to": "KRT7", "value": 0.8282832503318787, "width": 2.6557723431183535}, {"color": "#8AA5CF", "ew": 0.13828045129776, "from": "TACSTD2", "title": "weight=0.1383", "to": "CLDN4", "value": 1.10624361038208, "width": 3.4127782253853556}, {"color": "#8AA5CF", "ew": 0.10820861160755157, "from": "TACSTD2", "title": "weight=0.1082", "to": "KRT7", "value": 0.8656688928604126, "width": 2.757589563751253}, {"color": "#8AA5CF", "ew": 0.2082074135541916, "from": "ERBIN", "title": "weight=0.2082", "to": "REV1", "value": 1.6656593084335327, "width": 4.936308321478797}, {"color": "#8AA5CF", "ew": 0.1076887845993042, "from": "ERBIN", "title": "weight=0.1077", "to": "EP300", "value": 0.8615102767944336, "width": 2.7462638595268536}, {"color": "#8AA5CF", "ew": 0.1952410340309143, "from": "JUNB", "title": "weight=0.1952", "to": "ZFP36", "value": 1.5619282722473145, "width": 4.6538039940544245}, {"color": "#8AA5CF", "ew": 0.19420874118804932, "from": "CD74", "title": "weight=0.1942", "to": "HLA-DRA", "value": 1.5536699295043945, "width": 4.631312966797739}, {"color": "#8AA5CF", "ew": 0.11186053603887558, "from": "HLA-DRA", "title": "weight=0.1119", "to": "HLA-DPB1", "value": 0.8948842883110046, "width": 2.8371556795990687}, {"color": "#8AA5CF", "ew": 0.14222271740436554, "from": "FOS", "title": "weight=0.1422", "to": "JUN", "value": 1.1377817392349243, "width": 3.498670145560541}, {"color": "#8AA5CF", "ew": 0.14133219420909882, "from": "ANKRD10", "title": "weight=0.1413", "to": "ARMCX3", "value": 1.1306575536727905, "width": 3.4792679172143015}, {"color": "#8AA5CF", "ew": 0.12749788165092468, "from": "ATP13A3", "title": "weight=0.1275", "to": "RAB21", "value": 1.0199830532073975, "width": 3.1778535434016724}, {"color": "#8AA5CF", "ew": 0.10454399883747101, "from": "ADAM17", "title": "weight=0.1045", "to": "IAH1", "value": 0.8363519906997681, "width": 2.6777470013749274}, {"color": "#8AA5CF", "ew": 0.10233184695243835, "from": "BMPR2", "title": "weight=0.1023", "to": "HIP1", "value": 0.8186547756195068, "width": 2.629549855878777}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  originalNodeArray = nodes.get();
+                  originalEdgeArray = edges.get();
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  options = {
+    "configure": {
+        "enabled": true,
+        "filter": [
+            "physics"
+        ]
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -80000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": false,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+                  // if this network requires displaying the configure window,
+                  // put it in its div
+                  options.configure["container"] = document.getElementById("config");
+                  
+
+                  network = new vis.Network(container, data, options);
+                  network.on("click", handleNetworkClick);
+                  network.on("deselectNode", function () {
+                      focusedNodeId = null;
+                      applyVisualState();
+                  });
+                  initializeNetworkControls();
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

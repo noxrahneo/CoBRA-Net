@@ -1,0 +1,22 @@
+{
+  "condition": "Normal__plus__ER_tumor",
+  "adjacency_file": "/triumvirate/home/alexarol/breast_cancer_analysis/CoBRA-Net/results/stages/07_network/network_prep/combined/Normal__plus__ER_tumor/Normal__plus__ER_tumor_adjacency_beta20_signed.npz",
+  "n_nodes": 42,
+  "n_edges": 43,
+  "min_weight": 0.1,
+  "max_edges_requested": 2500,
+  "global_min_weight": 0.2,
+  "global_max_edges": 800,
+  "network_type": "signed",
+  "layout": "spring",
+  "edges_table": "/triumvirate/home/alexarol/breast_cancer_analysis/CoBRA-Net/results/stages/07_network/network_viz/combined/Normal__plus__ER_tumor/Normal__plus__ER_tumor_network_edges.csv",
+  "nodes_table": "/triumvirate/home/alexarol/breast_cancer_analysis/CoBRA-Net/results/stages/07_network/network_viz/combined/Normal__plus__ER_tumor/Normal__plus__ER_tumor_network_nodes.csv",
+  "gexf_file": "/triumvirate/home/alexarol/breast_cancer_analysis/CoBRA-Net/results/stages/07_network/network_viz/combined/Normal__plus__ER_tumor/Normal__plus__ER_tumor_network_sparse.gexf",
+  "graphml_file": "/triumvirate/home/alexarol/breast_cancer_analysis/CoBRA-Net/results/stages/07_network/network_viz/combined/Normal__plus__ER_tumor/Normal__plus__ER_tumor_network_sparse.graphml",
+  "interactive_html_requested": true,
+  "interactive_html_generated": true,
+  "interactive_html_file": "/triumvirate/home/alexarol/breast_cancer_analysis/CoBRA-Net/results/stages/07_network/network_viz/combined/Normal__plus__ER_tumor/Normal__plus__ER_tumor_network_interactive.html",
+  "interactive_celltype_overlay": false,
+  "interactive_celltype_annotated_genes": 0,
+  "community_sizes_file": "/triumvirate/home/alexarol/breast_cancer_analysis/CoBRA-Net/results/stages/07_network/network_viz/combined/Normal__plus__ER_tumor/Normal__plus__ER_tumor_network_community_sizes.csv"
+}

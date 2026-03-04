@@ -34,8 +34,11 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--input-dir",
-        default="results/stages/04_annotation",
-        help="Root annotation output directory",
+        default="auto",
+        help=(
+            "Root annotation output directory, or 'auto' "
+            "to prefer 04_annotation_rdata"
+        ),
     )
     parser.add_argument(
         "--condition",
@@ -75,6 +78,22 @@ def parse_args() -> argparse.Namespace:
 def resolve_base(path_like: str) -> Path:
     path = Path(path_like)
     return path if path.is_absolute() else REPO_ROOT / path
+
+
+def resolve_annotation_root(input_dir_arg: str) -> Path:
+    if input_dir_arg.strip().lower() != "auto":
+        return resolve_base(input_dir_arg)
+
+    candidates = [
+        REPO_ROOT / "results/stages/04_annotation_rdata",
+        REPO_ROOT / "results/stages/04_annotation",
+        REPO_ROOT / "results/stages/04_annotation_minimal",
+    ]
+    for root in candidates:
+        if root.exists() and list_conditions(root):
+            return root
+
+    return candidates[0]
 
 
 def list_conditions(root: Path) -> list[str]:
@@ -253,7 +272,7 @@ def plot_condition_composition(
 
 def main() -> int:
     args = parse_args()
-    root = resolve_base(args.input_dir)
+    root = resolve_annotation_root(args.input_dir)
     out_dir = resolve_base(args.output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 

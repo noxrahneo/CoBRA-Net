@@ -1,0 +1,1253 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             html, body {
+                 width: 100%;
+                 height: 100%;
+             }
+
+             body {
+                 margin: 0;
+                 padding: 0;
+                 font-family: Inter, "Segoe UI", Arial, sans-serif;
+                 background: radial-gradient(circle at top left, #1f2937 0%, #0b1020 45%, #05070f 100%);
+                 color: #e5e7eb;
+                 overflow: hidden;
+             }
+
+             .app-shell {
+                 position: relative;
+                 width: 100vw;
+                 height: 100vh;
+             }
+
+             .graph-wrap {
+                 position: relative;
+                 width: 100%;
+                 height: 100%;
+             }
+
+             .graph-title {
+                 position: fixed;
+                 top: 12px;
+                 left: 12px;
+                 margin: 0;
+                 z-index: 10001;
+                 font-size: 15px;
+                 font-weight: 700;
+                 color: #f3f4f6;
+                 letter-spacing: 0.2px;
+                 background: rgba(17, 24, 39, 0.82);
+                 border: 1px solid rgba(229, 231, 235, 0.25);
+                 border-radius: 8px;
+                 padding: 6px 10px;
+                 backdrop-filter: blur(4px);
+             }
+
+             #mynetwork {
+                 width: 100%;
+                 height: 100%;
+                 background-color: #ffffff;
+                 border: none;
+                 border-radius: 0;
+                 box-shadow: none;
+                 position: relative;
+             }
+
+             .card,
+             .card-body {
+                 background: transparent;
+                 border: none;
+                 width: 100%;
+                 height: 100%;
+                 margin: 0;
+                 padding: 0;
+             }
+
+             #config {
+                 position: fixed;
+                 top: 56px;
+                 left: 12px;
+                 z-index: 10000;
+                 width: max-content;
+                 min-width: 460px;
+                 max-width: min(620px, calc(100vw - 24px));
+                 max-height: calc(100vh - 68px);
+                 overflow: auto;
+                 background: rgba(255, 255, 255, 0.96);
+                 color: #111827;
+                 border: 1px solid #d1d5db;
+                 border-radius: 10px;
+                 box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+                 padding: 8px;
+             }
+
+             #config .vis-configuration-wrapper {
+                 min-width: 440px;
+             }
+
+             .network-guide {
+                 position: fixed;
+                 top: 12px;
+                 right: 12px;
+                 z-index: 10001;
+                 background: rgba(17, 24, 39, 0.88);
+                 border: 1px solid rgba(229, 231, 235, 0.25);
+                 border-radius: 10px;
+                 padding: 10px 12px;
+                 font-size: 12px;
+                 line-height: 1.45;
+                 max-width: 280px;
+                 backdrop-filter: blur(4px);
+             }
+
+             .network-guide-title {
+                 font-weight: 700;
+                 margin-bottom: 6px;
+                 color: #f9fafb;
+             }
+
+             .network-controls {
+                 position: fixed;
+                 top: 164px;
+                 right: 12px;
+                 z-index: 10001;
+                 background: rgba(17, 24, 39, 0.88);
+                 border: 1px solid rgba(229, 231, 235, 0.25);
+                 border-radius: 10px;
+                 padding: 10px 12px;
+                 font-size: 12px;
+                 line-height: 1.45;
+                 width: 280px;
+                 backdrop-filter: blur(4px);
+             }
+
+             .network-controls-title {
+                 font-weight: 700;
+                 margin-bottom: 8px;
+                 color: #f9fafb;
+             }
+
+             .network-controls-row {
+                 margin-bottom: 8px;
+             }
+
+             .network-controls-label {
+                 display: flex;
+                 justify-content: space-between;
+                 margin-bottom: 2px;
+                 color: #e5e7eb;
+             }
+
+             .network-controls input[type="range"] {
+                 width: 100%;
+             }
+
+             .network-btn {
+                 width: 100%;
+                 border: 1px solid rgba(229, 231, 235, 0.4);
+                 border-radius: 8px;
+                 background: rgba(255, 255, 255, 0.1);
+                 color: #f9fafb;
+                 padding: 6px 8px;
+                 font-size: 12px;
+                 font-weight: 600;
+             }
+
+             .network-btn + .network-btn {
+                 margin-top: 6px;
+             }
+
+             .network-controls-note {
+                 color: #d1d5db;
+                 font-size: 11px;
+             }
+
+             .network-legend {
+                 position: fixed;
+                 right: 12px;
+                 bottom: 12px;
+                 z-index: 10001;
+                 background: rgba(17, 24, 39, 0.88);
+                 border: 1px solid rgba(229, 231, 235, 0.25);
+                 border-radius: 10px;
+                 padding: 10px 12px;
+                 font-size: 11px;
+                 line-height: 1.4;
+                 width: 280px;
+                 max-height: 230px;
+                 overflow: auto;
+                 color: #e5e7eb;
+                 backdrop-filter: blur(4px);
+             }
+
+             .network-legend-title {
+                 font-weight: 700;
+                 margin-bottom: 6px;
+                 color: #f9fafb;
+             }
+
+             .network-legend-subtitle {
+                 margin-bottom: 6px;
+                 color: #d1d5db;
+             }
+
+             .network-legend-row {
+                 display: flex;
+                 align-items: center;
+                 gap: 8px;
+                 margin-bottom: 4px;
+             }
+
+             .network-legend-button {
+                 width: 100%;
+                 display: flex;
+                 align-items: center;
+                 gap: 8px;
+                 background: rgba(255, 255, 255, 0.06);
+                 border: 1px solid rgba(229, 231, 235, 0.22);
+                 color: #e5e7eb;
+                 border-radius: 6px;
+                 padding: 4px 6px;
+                 text-align: left;
+                 font-size: 11px;
+                 cursor: pointer;
+             }
+
+             .network-legend-button:hover {
+                 border-color: rgba(229, 231, 235, 0.45);
+                 background: rgba(255, 255, 255, 0.1);
+             }
+
+             .network-legend-button.active {
+                 border-color: rgba(147, 197, 253, 0.9);
+                 background: rgba(59, 130, 246, 0.2);
+                 color: #f9fafb;
+             }
+
+             .network-legend-swatch {
+                 display: inline-block;
+                 width: 11px;
+                 height: 11px;
+                 border-radius: 2px;
+                 border: 1px solid rgba(229, 231, 235, 0.4);
+                 flex: 0 0 auto;
+                 box-sizing: border-box;
+             }
+        </style>
+    </head>
+
+
+    <body>
+
+<div class="network-guide">
+  <div class="network-guide-title">Network guide</div>
+  <div>• Mouse wheel: zoom</div>
+  <div>• Drag background: pan</div>
+    <div>• Click node: focus neighborhood</div>
+  <div>• Edge thickness: stronger co-expression</div>
+    <div>• Click legend rows: multi-filter view</div>
+  <div>• Node color: community (module-like group)</div>
+</div>
+
+<div class="network-controls">
+    <div class="network-controls-title">View controls</div>
+
+    <div class="network-controls-row">
+        <div class="network-controls-label">
+            <span>Genes shown</span>
+            <span id="genePctLabel">100%</span>
+        </div>
+        <input id="geneTopPct" type="range" min="5" max="100" step="1" value="100" />
+    </div>
+
+    <div class="network-controls-row">
+        <div class="network-controls-label">
+            <span>Connections shown</span>
+            <span id="edgePctLabel">100%</span>
+        </div>
+        <input id="edgeKeepPct" type="range" min="5" max="100" step="1" value="100" />
+    </div>
+
+    <div class="network-controls-row network-controls-note">
+        <div>Visible genes: <span id="visibleGeneCount">0</span></div>
+        <div>Visible edges: <span id="visibleEdgeCount">0</span></div>
+    </div>
+
+    <button id="saveViewBtn" class="network-btn" type="button">Save view (PNG, high-res)</button>
+    <button id="saveViewWhiteBtn" class="network-btn" type="button">Save view (PNG white bg, high-res)</button>
+</div>
+
+<div class="network-legend" id="communityLegend">
+    <div class="network-legend-title">Color legend</div>
+    <div class="network-legend-subtitle">Node colors = communities/modules</div>
+    <div id="communityLegendItems"></div>
+    <div class="network-legend-subtitle" style="margin-top:8px;">Node border = dominant cell type</div>
+    <div id="cellTypeLegendItems"></div>
+</div>
+
+        <div class="app-shell">
+            <div class="graph-wrap">
+                <h2 class="graph-title">Normal__plus__Normal_BRCA1_pre_neoplastic__plus__Triple_negative_BRCA1_tumor network (interactive)</h2>
+                <div id="mynetwork"></div>
+            </div>
+            <div id="config"></div>
+        </div>
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              var originalNodeArray = [];
+              var originalEdgeArray = [];
+              var controlsInitialized = false;
+              var TOP_BOLD_LABEL_PERCENT = 10;
+              var MAX_LEGEND_ITEMS = 12;
+              var focusedNodeId = null;
+              var activeCommunityFilters = new Set();
+              var activeCellTypeFilters = new Set();
+              var baseNodeStyles = new Map();
+              var baseEdgeColors = new Map();
+              var DIM_NODE_ALPHA = 0.18;
+              var DIM_EDGE_ALPHA = 0.08;
+
+              function extractMetric(text, metricName) {
+                  if (!text) {
+                      return 0.0;
+                  }
+                  var pattern = new RegExp(metricName + "=([0-9.]+)");
+                  var match = String(text).match(pattern);
+                  if (!match) {
+                      return 0.0;
+                  }
+                  var value = parseFloat(match[1]);
+                  return Number.isFinite(value) ? value : 0.0;
+              }
+
+              function nodeScore(node) {
+                  if (node && typeof node.wd === "number") {
+                      return node.wd;
+                  }
+                  return extractMetric(node ? node.title : "", "weighted_degree");
+              }
+
+              function edgeScore(edge) {
+                  if (edge && typeof edge.ew === "number") {
+                      return edge.ew;
+                  }
+                  return extractMetric(edge ? edge.title : "", "weight");
+              }
+
+              function updateControlLabels(genePct, edgePct, nGenes, nEdges) {
+                  document.getElementById("genePctLabel").textContent = genePct + "%";
+                  document.getElementById("edgePctLabel").textContent = edgePct + "%";
+                  document.getElementById("visibleGeneCount").textContent = String(nGenes);
+                  document.getElementById("visibleEdgeCount").textContent = String(nEdges);
+              }
+
+              function getNodeDisplayColor(node) {
+                  var renderedColor = getRenderedNodeColor(node, "background");
+                  if (renderedColor) {
+                      return renderedColor;
+                  }
+
+                  var groupColor = getGroupDisplayColor(node ? node.group : null);
+                  if (groupColor) {
+                      return groupColor;
+                  }
+
+                  if (!node || !node.color) {
+                      return "#97c2fc";
+                  }
+                  if (typeof node.color === "string") {
+                      return node.color;
+                  }
+                  if (node.color.background) {
+                      return node.color.background;
+                  }
+                  return "#97c2fc";
+              }
+
+              function normalizeNodeGroup(node) {
+                  return (node && node.group) ? node.group : "Ungrouped";
+              }
+
+              function normalizeNodeCellType(node) {
+                  return (node && node.cell_type) ? node.cell_type : "Unknown";
+              }
+
+              function getNodeLegendColor(node) {
+                  if (node && node.id && baseNodeStyles.has(node.id)) {
+                      return baseNodeStyles.get(node.id).fill;
+                  }
+
+                  var groupColor = getGroupDisplayColor(normalizeNodeGroup(node));
+                  if (groupColor) {
+                      return groupColor;
+                  }
+                  if (node && typeof node.color === "string") {
+                      return node.color;
+                  }
+                  if (node && node.color && typeof node.color === "object" && node.color.background) {
+                      return node.color.background;
+                  }
+                  return "#97c2fc";
+              }
+
+              function getNodeBorderColor(node) {
+                  var renderedBorder = getRenderedNodeColor(node, "border");
+                  if (renderedBorder) {
+                      return renderedBorder;
+                  }
+
+                  if (!node || !node.color) {
+                      return "#9ca3af";
+                  }
+                  if (typeof node.color === "object" && node.color.border) {
+                      return node.color.border;
+                  }
+                  if (typeof node.cell_color === "string" && node.cell_color) {
+                      return node.cell_color;
+                  }
+                  return "#9ca3af";
+              }
+
+              function getNodeLegendBorderColor(node) {
+                  if (normalizeNodeCellType(node) === "Unknown") {
+                      return "#9ca3af";
+                  }
+
+                  if (node && typeof node.cell_color === "string" && node.cell_color) {
+                      return node.cell_color;
+                  }
+
+                  if (node && node.id && baseNodeStyles.has(node.id)) {
+                      return baseNodeStyles.get(node.id).border;
+                  }
+
+                  if (node && node.color && typeof node.color === "object" && node.color.border) {
+                      return node.color.border;
+                  }
+                  return "#9ca3af";
+              }
+
+              function hexToRgba(hex, alpha) {
+                  if (typeof hex !== "string") {
+                      return "rgba(156, 163, 175, " + alpha + ")";
+                  }
+                  var value = hex.trim();
+                  if (!value.startsWith("#")) {
+                      return value;
+                  }
+                  var normalized = value.slice(1);
+                  if (normalized.length === 3) {
+                      normalized = normalized.split("").map(function (ch) { return ch + ch; }).join("");
+                  }
+                  if (normalized.length !== 6) {
+                      return value;
+                  }
+                  var r = parseInt(normalized.slice(0, 2), 16);
+                  var g = parseInt(normalized.slice(2, 4), 16);
+                  var b = parseInt(normalized.slice(4, 6), 16);
+                  if (![r, g, b].every(function (v) { return Number.isFinite(v); })) {
+                      return value;
+                  }
+                  return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+              }
+
+              function toAlphaColor(colorValue, alpha) {
+                  if (!colorValue) {
+                      return "rgba(156, 163, 175, " + alpha + ")";
+                  }
+                  if (typeof colorValue !== "string") {
+                      return colorValue;
+                  }
+                  if (colorValue.indexOf("rgba(") === 0) {
+                      return colorValue.replace(/rgba\(([^,]+),([^,]+),([^,]+),[^)]+\)/, "rgba($1,$2,$3," + alpha + ")");
+                  }
+                  if (colorValue.indexOf("rgb(") === 0) {
+                      return colorValue.replace(/rgb\(([^)]+)\)/, "rgba($1," + alpha + ")");
+                  }
+                  return hexToRgba(colorValue, alpha);
+              }
+
+              function buildAdjacencyMap(visibleEdges) {
+                  var adjacency = new Map();
+                  (visibleEdges || []).forEach(function (edge) {
+                      if (!adjacency.has(edge.from)) {
+                          adjacency.set(edge.from, new Set());
+                      }
+                      if (!adjacency.has(edge.to)) {
+                          adjacency.set(edge.to, new Set());
+                      }
+                      adjacency.get(edge.from).add(edge.to);
+                      adjacency.get(edge.to).add(edge.from);
+                  });
+                  return adjacency;
+              }
+
+              function captureBaseVisualStyles() {
+                  baseNodeStyles.clear();
+                  baseEdgeColors.clear();
+
+                  var visibleNodes = nodes ? nodes.get() : [];
+                  visibleNodes.forEach(function (node) {
+                      var cellType = normalizeNodeCellType(node);
+                      var fillColor = getRenderedNodeColor(node, "background")
+                          || getGroupDisplayColor(normalizeNodeGroup(node))
+                          || (node && typeof node.color === "string" ? node.color : null)
+                          || (node && node.color && typeof node.color === "object" ? node.color.background : null)
+                          || "#97c2fc";
+
+                      var borderColor = cellType === "Unknown"
+                          ? "#9ca3af"
+                          : ((node && typeof node.cell_color === "string" && node.cell_color)
+                              || getRenderedNodeColor(node, "border")
+                              || (node && node.color && typeof node.color === "object" ? node.color.border : null)
+                              || "#9ca3af");
+
+                      baseNodeStyles.set(node.id, {
+                          fill: fillColor,
+                          border: borderColor
+                      });
+                  });
+
+                  var visibleEdges = edges ? edges.get() : [];
+                  visibleEdges.forEach(function (edge) {
+                      var baseColor = (typeof edge.color === "string")
+                          ? edge.color
+                          : (edge.color && edge.color.color ? edge.color.color : "#8AA5CF");
+                      baseEdgeColors.set(edge.id, baseColor);
+                  });
+              }
+
+              function getFocusSet(adjacency) {
+                  if (!focusedNodeId) {
+                      return null;
+                  }
+                  var hasNode = nodes && nodes.get(focusedNodeId);
+                  if (!hasNode) {
+                      focusedNodeId = null;
+                      return null;
+                  }
+
+                  var focusSet = new Set();
+                  if (!adjacency || !adjacency.has(focusedNodeId)) {
+                      focusSet.add(focusedNodeId);
+                      return focusSet;
+                  }
+
+                  var queue = [focusedNodeId];
+                  while (queue.length) {
+                      var current = queue.shift();
+                      if (focusSet.has(current)) {
+                          continue;
+                      }
+                      focusSet.add(current);
+
+                      var neighbors = adjacency.get(current);
+                      if (!neighbors) {
+                          continue;
+                      }
+
+                      neighbors.forEach(function (neighborId) {
+                          if (!focusSet.has(neighborId)) {
+                              queue.push(neighborId);
+                          }
+                      });
+                  }
+                  return focusSet;
+              }
+
+              function nodePassesLegendFilters(node) {
+                  var group = normalizeNodeGroup(node);
+                  var cellType = normalizeNodeCellType(node);
+                  var groupOk = activeCommunityFilters.size === 0 || activeCommunityFilters.has(group);
+                  var cellTypeOk = activeCellTypeFilters.size === 0 || activeCellTypeFilters.has(cellType);
+                  return groupOk && cellTypeOk;
+              }
+
+              function applyVisualState() {
+                  if (!nodes || !edges) {
+                      return;
+                  }
+
+                  var visibleNodes = nodes.get();
+                  var visibleEdges = edges.get();
+                  var adjacency = buildAdjacencyMap(visibleEdges);
+                  var focusSet = getFocusSet(adjacency);
+                  var highlightedNodeIds = new Set();
+
+                  var nodeUpdates = visibleNodes.map(function (node) {
+                      var baseNodeStyle = baseNodeStyles.get(node.id) || {
+                          fill: getNodeLegendColor(node),
+                          border: getNodeLegendBorderColor(node)
+                      };
+                      var fillColor = baseNodeStyle.fill;
+                      var borderColor = baseNodeStyle.border;
+                      var isMatch = nodePassesLegendFilters(node);
+                      var inFocus = !focusSet || focusSet.has(node.id);
+                      var highlighted = isMatch && inFocus;
+
+                      if (highlighted) {
+                          highlightedNodeIds.add(node.id);
+                      }
+
+                      var nodeFont = (node && typeof node.font === "object" && node.font !== null)
+                          ? Object.assign({}, node.font)
+                          : {};
+
+                      if (highlighted) {
+                          nodeFont.color = "#222222";
+                      } else {
+                          nodeFont.color = "rgba(34, 34, 34, 0.35)";
+                      }
+
+                      return {
+                          id: node.id,
+                          color: {
+                              background: highlighted ? fillColor : toAlphaColor(fillColor, DIM_NODE_ALPHA),
+                              border: highlighted ? borderColor : toAlphaColor(borderColor, DIM_NODE_ALPHA)
+                          },
+                          font: nodeFont
+                      };
+                  });
+
+                  if (nodeUpdates.length) {
+                      nodes.update(nodeUpdates);
+                  }
+
+                  var edgeUpdates = visibleEdges.map(function (edge) {
+                      var keep = highlightedNodeIds.has(edge.from) && highlightedNodeIds.has(edge.to);
+                      var baseColor = baseEdgeColors.get(edge.id)
+                          || (typeof edge.color === "string"
+                              ? edge.color
+                              : (edge.color && edge.color.color ? edge.color.color : "#8AA5CF"));
+                      return {
+                          id: edge.id,
+                          color: keep
+                              ? baseColor
+                              : toAlphaColor(baseColor, DIM_EDGE_ALPHA)
+                      };
+                  });
+
+                  if (edgeUpdates.length) {
+                      edges.update(edgeUpdates);
+                  }
+              }
+
+              function getGroupDisplayColor(groupName) {
+                  if (!groupName || !options || !options.groups) {
+                      return null;
+                  }
+                  var groupConfig = options.groups[groupName];
+                  if (!groupConfig || !groupConfig.color) {
+                      return null;
+                  }
+                  if (typeof groupConfig.color === "string") {
+                      return groupConfig.color;
+                  }
+                  if (groupConfig.color.background) {
+                      return groupConfig.color.background;
+                  }
+                  return null;
+              }
+
+              function getRenderedNodeColor(node, channel) {
+                  if (!network || !network.body || !network.body.nodes || !node || !node.id) {
+                      return null;
+                  }
+
+                  var renderedNode = network.body.nodes[node.id];
+                  if (!renderedNode || !renderedNode.options) {
+                      return null;
+                  }
+
+                  var renderedColor = renderedNode.options.color;
+                  if (!renderedColor) {
+                      return null;
+                  }
+
+                  if (typeof renderedColor === "string") {
+                      return renderedColor;
+                  }
+
+                  if (channel === "border") {
+                      return renderedColor.border || null;
+                  }
+                  return renderedColor.background || renderedColor.border || null;
+              }
+
+              function applyNodeLabelStyles(nodesToStyle) {
+                  if (!nodesToStyle || !nodesToStyle.length) {
+                      return [];
+                  }
+
+                  var sorted = nodesToStyle.slice().sort(function (a, b) {
+                      return nodeScore(b) - nodeScore(a);
+                  });
+                  var boldCount = Math.max(1, Math.round(sorted.length * TOP_BOLD_LABEL_PERCENT / 100));
+                  var boldIds = new Set(sorted.slice(0, boldCount).map(function (node) { return node.id; }));
+
+                  return nodesToStyle.map(function (node) {
+                      var styledNode = Object.assign({}, node);
+                      var nodeFont = (node && typeof node.font === "object" && node.font !== null)
+                          ? Object.assign({}, node.font)
+                          : {};
+
+                      var isBold = boldIds.has(node.id);
+                      nodeFont.color = nodeFont.color || "#222222";
+                      nodeFont.size = isBold ? 18 : 14;
+                      nodeFont.face = isBold ? "Arial Black" : "Arial";
+                      nodeFont.strokeColor = "#ffffff";
+                      nodeFont.strokeWidth = isBold ? 5 : 4;
+
+                      styledNode.font = nodeFont;
+                      return styledNode;
+                  });
+              }
+
+              function buildCommunityLegendItems(visibleNodes) {
+                  var byGroup = new Map();
+                  (visibleNodes || []).forEach(function (node) {
+                      var group = normalizeNodeGroup(node);
+                      if (!byGroup.has(group)) {
+                          byGroup.set(group, {
+                              group: group,
+                              count: 0,
+                              color: getNodeLegendColor(node)
+                          });
+                      }
+                      byGroup.get(group).count += 1;
+                  });
+
+                  return Array.from(byGroup.values()).sort(function (a, b) {
+                      return b.count - a.count;
+                  });
+              }
+
+              function buildCellTypeLegendItems(visibleNodes) {
+                  var byCellType = new Map();
+                  (visibleNodes || []).forEach(function (node) {
+                      var cellType = normalizeNodeCellType(node);
+                      if (!byCellType.has(cellType)) {
+                          byCellType.set(cellType, {
+                              cellType: cellType,
+                              count: 0,
+                              color: getNodeLegendBorderColor(node)
+                          });
+                      }
+                      byCellType.get(cellType).count += 1;
+                  });
+
+                  return Array.from(byCellType.values()).sort(function (a, b) {
+                      return b.count - a.count;
+                  });
+              }
+
+              function renderCommunityLegend(visibleNodes) {
+                  var host = document.getElementById("communityLegendItems");
+                  if (!host) {
+                      return;
+                  }
+
+                  var items = buildCommunityLegendItems(visibleNodes);
+                  if (!items.length) {
+                      host.innerHTML = "<div>No visible communities</div>";
+                      return;
+                  }
+
+                  var shown = items.slice(0, MAX_LEGEND_ITEMS);
+                  var remainder = items.length - shown.length;
+                  var html = shown.map(function (item) {
+                      var isActive = activeCommunityFilters.has(item.group);
+                      return '<div class="network-legend-row"><button class="network-legend-button ' + (isActive ? 'active' : '') + '" data-legend-type="community" data-legend-value="' + item.group + '"><span class="network-legend-swatch" style="background:' + item.color + ';"></span><span>' + item.group + ' · ' + item.count + ' genes</span></button></div>';
+                  }).join("");
+
+                  if (remainder > 0) {
+                      html += '<div class="network-legend-row"><span>+' + remainder + ' more communities</span></div>';
+                  }
+
+                  host.innerHTML = html;
+              }
+
+              function renderCellTypeLegend(visibleNodes) {
+                  var host = document.getElementById("cellTypeLegendItems");
+                  if (!host) {
+                      return;
+                  }
+
+                  var items = buildCellTypeLegendItems(visibleNodes);
+                  if (!items.length) {
+                      host.innerHTML = "<div>No visible cell-type annotation</div>";
+                      return;
+                  }
+
+                  var shown = items.slice(0, MAX_LEGEND_ITEMS);
+                  var remainder = items.length - shown.length;
+                  var html = shown.map(function (item) {
+                      var isActive = activeCellTypeFilters.has(item.cellType);
+                      return '<div class="network-legend-row"><button class="network-legend-button ' + (isActive ? 'active' : '') + '" data-legend-type="cell_type" data-legend-value="' + item.cellType + '"><span class="network-legend-swatch" style="background:' + item.color + ';"></span><span>' + item.cellType + ' · ' + item.count + ' genes</span></button></div>';
+                  }).join("");
+
+                  if (remainder > 0) {
+                      html += '<div class="network-legend-row"><span>+' + remainder + ' more cell types</span></div>';
+                  }
+
+                  host.innerHTML = html;
+              }
+
+              function handleLegendClick(event) {
+                  var target = event.target.closest(".network-legend-button");
+                  if (!target) {
+                      return;
+                  }
+
+                  var legendType = target.getAttribute("data-legend-type");
+                  var legendValue = target.getAttribute("data-legend-value");
+                  if (!legendType || !legendValue) {
+                      return;
+                  }
+
+                  var legendSet = legendType === "community" ? activeCommunityFilters : activeCellTypeFilters;
+                  if (legendSet.has(legendValue)) {
+                      legendSet.delete(legendValue);
+                  } else {
+                      legendSet.add(legendValue);
+                  }
+
+                  var visibleNodes = nodes.get();
+                  renderCommunityLegend(visibleNodes);
+                  renderCellTypeLegend(visibleNodes);
+                  applyVisualState();
+              }
+
+              function bindLegendInteractions() {
+                  var communityHost = document.getElementById("communityLegendItems");
+                  var cellTypeHost = document.getElementById("cellTypeLegendItems");
+                  if (communityHost) {
+                      communityHost.addEventListener("click", handleLegendClick);
+                  }
+                  if (cellTypeHost) {
+                      cellTypeHost.addEventListener("click", handleLegendClick);
+                  }
+              }
+
+              function handleNetworkClick(params) {
+                  if (params && params.nodes && params.nodes.length) {
+                      focusedNodeId = params.nodes[0];
+                  } else {
+                      focusedNodeId = null;
+                  }
+                  applyVisualState();
+              }
+
+              function applyNetworkFilter() {
+                  if (!originalNodeArray.length) {
+                      return;
+                  }
+
+                  var genePct = parseInt(document.getElementById("geneTopPct").value || "100", 10);
+                  var edgePct = parseInt(document.getElementById("edgeKeepPct").value || "100", 10);
+
+                  var sortedNodes = originalNodeArray.slice().sort(function (a, b) {
+                      return nodeScore(b) - nodeScore(a);
+                  });
+                  var keepNodesCount = Math.max(1, Math.round(sortedNodes.length * genePct / 100));
+                  var keptNodes = sortedNodes.slice(0, keepNodesCount);
+                  var keepNodeIds = new Set(keptNodes.map(function (node) { return node.id; }));
+
+                  var candidateEdges = originalEdgeArray.filter(function (edge) {
+                      return keepNodeIds.has(edge.from) && keepNodeIds.has(edge.to);
+                  });
+                  var sortedEdges = candidateEdges.slice().sort(function (a, b) {
+                      return edgeScore(b) - edgeScore(a);
+                  });
+
+                  var keptEdges = [];
+                  if (sortedEdges.length > 0) {
+                      var keepEdgesCount = Math.max(1, Math.round(sortedEdges.length * edgePct / 100));
+                      keptEdges = sortedEdges.slice(0, keepEdgesCount);
+                  }
+
+                  var styledNodes = applyNodeLabelStyles(keptNodes);
+
+                  nodes.clear();
+                  nodes.add(styledNodes);
+                  edges.clear();
+                  edges.add(keptEdges);
+
+                  updateControlLabels(genePct, edgePct, styledNodes.length, keptEdges.length);
+                  renderCommunityLegend(styledNodes);
+                  renderCellTypeLegend(styledNodes);
+                  captureBaseVisualStyles();
+                  applyVisualState();
+              }
+
+              function getVisibleCounts() {
+                  var geneCount = parseInt(document.getElementById("visibleGeneCount").textContent || "0", 10);
+                  var edgeCount = parseInt(document.getElementById("visibleEdgeCount").textContent || "0", 10);
+                  if (!Number.isFinite(geneCount) || geneCount <= 0) {
+                      geneCount = nodes && typeof nodes.length === "number" ? nodes.length : 0;
+                  }
+                  if (!Number.isFinite(edgeCount) || edgeCount < 0) {
+                      edgeCount = edges && typeof edges.length === "number" ? edges.length : 0;
+                  }
+                  return { genes: geneCount, edges: edgeCount };
+              }
+
+              function detectSolverName() {
+                  var physics = options && options.physics ? options.physics : {};
+                  if (physics.solver) {
+                      return String(physics.solver);
+                  }
+                  if (physics.barnesHut) {
+                      return "barnesHut";
+                  }
+                  if (physics.forceAtlas2Based) {
+                      return "forceAtlas2Based";
+                  }
+                  if (physics.repulsion) {
+                      return "repulsion";
+                  }
+                  if (physics.hierarchicalRepulsion) {
+                      return "hierarchicalRepulsion";
+                  }
+                  return "unknownSolver";
+              }
+
+              function sanitizeFilenamePart(value) {
+                  return String(value || "")
+                      .toLowerCase()
+                      .replace(/[^a-z0-9]+/g, "_")
+                      .replace(/^_+|_+$/g, "");
+              }
+
+              function buildExportFilename(backgroundMode) {
+                  var titleText = (document.querySelector(".graph-title").textContent || "network_view").trim();
+                  var counts = getVisibleCounts();
+                  var solver = sanitizeFilenamePart(detectSolverName() || "unknownSolver");
+                  var background = backgroundMode === "white" ? "whitebg" : "transparent";
+                  var baseTitle = sanitizeFilenamePart(titleText) || "network_view";
+                  return [
+                      baseTitle,
+                      "visible_genes_" + counts.genes,
+                      "visible_connections_" + counts.edges,
+                      "solver_" + solver,
+                      background
+                  ].join("_") + ".png";
+              }
+
+              function saveCurrentViewPng(backgroundMode) {
+                  var canvas = document.querySelector("#mynetwork canvas");
+                  if (!canvas) {
+                      return;
+                  }
+
+                  var exportScale = 6;
+                  var exportCanvas = document.createElement("canvas");
+                  exportCanvas.width = canvas.width * exportScale;
+                  exportCanvas.height = canvas.height * exportScale;
+                  var ctx = exportCanvas.getContext("2d");
+                  if (!ctx) {
+                      return;
+                  }
+
+                  if (backgroundMode === "white") {
+                      ctx.fillStyle = "#ffffff";
+                      ctx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+                  }
+
+                  ctx.setTransform(exportScale, 0, 0, exportScale, 0, 0);
+                  ctx.imageSmoothingEnabled = true;
+                  ctx.drawImage(canvas, 0, 0);
+
+                  var visibleNodes = nodes.get();
+                  drawExportLabelOverlay(ctx, exportScale, visibleNodes);
+                  drawExportLegendOverlay(
+                      ctx,
+                      exportCanvas,
+                      exportScale,
+                      buildCommunityLegendItems(visibleNodes),
+                      buildCellTypeLegendItems(visibleNodes)
+                  );
+
+                  var filename = buildExportFilename(backgroundMode);
+                  var link = document.createElement("a");
+                  link.href = exportCanvas.toDataURL("image/png");
+                  link.download = filename;
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+              }
+
+              function drawExportLabelOverlay(ctx, exportScale, visibleNodes) {
+                  if (!network || !visibleNodes || !visibleNodes.length) {
+                      return;
+                  }
+
+                  var nodeIds = visibleNodes.map(function (node) { return node.id; });
+                  var positions = network.getPositions(nodeIds);
+
+                  ctx.textAlign = "center";
+                  ctx.textBaseline = "middle";
+
+                  visibleNodes.forEach(function (node) {
+                      var label = (node && node.label) ? String(node.label) : "";
+                      if (!label) {
+                          return;
+                      }
+
+                      var canvasPos = positions[node.id];
+                      if (!canvasPos) {
+                          return;
+                      }
+
+                      var domPos = network.canvasToDOM(canvasPos);
+                      var x = domPos.x * exportScale;
+                      var y = domPos.y * exportScale;
+                      var nodeFont = (node && typeof node.font === "object" && node.font !== null)
+                          ? node.font
+                          : {};
+                      var fontSize = Number(nodeFont.size || 14) * exportScale;
+                      var fontFace = nodeFont.face || "Arial";
+
+                      ctx.font = fontSize + "px " + fontFace;
+                      ctx.strokeStyle = nodeFont.strokeColor || "#ffffff";
+                      ctx.lineWidth = Number(nodeFont.strokeWidth || 3) * exportScale * 0.45;
+                      ctx.fillStyle = nodeFont.color || "#111111";
+                      ctx.strokeText(label, x, y);
+                      ctx.fillText(label, x, y);
+                  });
+              }
+
+              function drawExportLegendOverlay(ctx, exportCanvas, exportScale, communityItems, cellTypeItems) {
+                  var legendItems = communityItems || [];
+                  var ctItems = cellTypeItems || [];
+                  if (!legendItems.length && !ctItems.length) {
+                      return;
+                  }
+
+                  var items = legendItems.slice(0, MAX_LEGEND_ITEMS);
+                  var ctShown = ctItems.slice(0, MAX_LEGEND_ITEMS);
+                  var boxPadding = 8 * exportScale;
+                  var rowHeight = 16 * exportScale;
+                  var titleHeight = 24 * exportScale;
+                  var sectionGap = 10 * exportScale;
+                  var section2Header = ctShown.length ? 22 * exportScale : 0;
+                  var boxWidth = 240 * exportScale;
+                  var boxHeight = titleHeight + (items.length * rowHeight) + sectionGap + section2Header + (ctShown.length * rowHeight) + boxPadding;
+                  var boxX = exportCanvas.width - boxWidth - (18 * exportScale);
+                  var boxY = 18 * exportScale;
+
+                  ctx.save();
+                  ctx.fillStyle = "rgba(255, 255, 255, 0.94)";
+                  ctx.strokeStyle = "rgba(31, 41, 55, 0.6)";
+                  ctx.lineWidth = 1.2 * exportScale;
+                  ctx.fillRect(boxX, boxY, boxWidth, boxHeight);
+                  ctx.strokeRect(boxX, boxY, boxWidth, boxHeight);
+
+                  ctx.fillStyle = "#111827";
+                  ctx.font = (12 * exportScale) + "px Arial Black";
+                  ctx.textAlign = "left";
+                  ctx.textBaseline = "top";
+                  ctx.fillText("Node colors = communities/modules", boxX + boxPadding, boxY + (5 * exportScale));
+
+                  ctx.font = (11 * exportScale) + "px Arial";
+                  items.forEach(function (item, idx) {
+                      var rowY = boxY + titleHeight + (idx * rowHeight);
+                      var swatchSize = 10 * exportScale;
+                      ctx.fillStyle = item.color;
+                      ctx.fillRect(boxX + boxPadding, rowY + (2 * exportScale), swatchSize, swatchSize);
+                      ctx.strokeStyle = "rgba(31, 41, 55, 0.6)";
+                      ctx.strokeRect(boxX + boxPadding, rowY + (2 * exportScale), swatchSize, swatchSize);
+
+                      ctx.fillStyle = "#111827";
+                      ctx.fillText(item.group + " · " + item.count + " genes", boxX + boxPadding + swatchSize + (6 * exportScale), rowY);
+                  });
+
+                  if (ctShown.length) {
+                      var section2Y = boxY + titleHeight + (items.length * rowHeight) + sectionGap;
+                      ctx.fillStyle = "#111827";
+                      ctx.font = (12 * exportScale) + "px Arial Black";
+                      ctx.fillText("Node border = dominant cell type", boxX + boxPadding, section2Y);
+
+                      ctx.font = (11 * exportScale) + "px Arial";
+                      ctShown.forEach(function (item, idx) {
+                          var rowY = section2Y + section2Header + (idx * rowHeight);
+                          var swatchSize = 10 * exportScale;
+                          ctx.fillStyle = item.color;
+                          ctx.fillRect(boxX + boxPadding, rowY + (2 * exportScale), swatchSize, swatchSize);
+                          ctx.strokeStyle = "rgba(31, 41, 55, 0.6)";
+                          ctx.strokeRect(boxX + boxPadding, rowY + (2 * exportScale), swatchSize, swatchSize);
+
+                          ctx.fillStyle = "#111827";
+                          ctx.fillText(item.cellType + " · " + item.count + " genes", boxX + boxPadding + swatchSize + (6 * exportScale), rowY);
+                      });
+                  }
+                  ctx.restore();
+              }
+
+              function initializeNetworkControls() {
+                  if (controlsInitialized) {
+                      return;
+                  }
+                  controlsInitialized = true;
+
+                  var geneSlider = document.getElementById("geneTopPct");
+                  var edgeSlider = document.getElementById("edgeKeepPct");
+                  var saveBtn = document.getElementById("saveViewBtn");
+                  var saveWhiteBtn = document.getElementById("saveViewWhiteBtn");
+
+                  geneSlider.addEventListener("input", applyNetworkFilter);
+                  edgeSlider.addEventListener("input", applyNetworkFilter);
+                  saveBtn.addEventListener("click", function () { saveCurrentViewPng("transparent"); });
+                  saveWhiteBtn.addEventListener("click", function () { saveCurrentViewPng("white"); });
+                  bindLegendInteractions();
+
+                  applyNetworkFilter();
+              }
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "KRT14", "label": "KRT14", "original_label": "KRT14", "shape": "dot", "size": 27.118397944554772, "title": "KRT14\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=1.3985", "wd": 1.3985354900360107}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "KRT5", "label": "KRT5", "original_label": "KRT5", "shape": "dot", "size": 29.048898956046177, "title": "KRT5\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=1.5563", "wd": 1.5562531799077988}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "KRT17", "label": "KRT17", "original_label": "KRT17", "shape": "dot", "size": 33.2721373419885, "title": "KRT17\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=1.9013", "wd": 1.901282474398613}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "CLDN4", "label": "CLDN4", "original_label": "CLDN4", "shape": "dot", "size": 35.65358460905387, "title": "CLDN4\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=2.0958", "wd": 2.095841482281685}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "ELF3", "label": "ELF3", "original_label": "ELF3", "shape": "dot", "size": 39.87980613450799, "title": "ELF3\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=2.4411", "wd": 2.441114492714405}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C7", "id": "MT-CO2", "label": "MT-CO2", "original_label": "MT-CO2", "shape": "dot", "size": 18.48944507038909, "title": "MT-CO2\u003cbr\u003ecommunity=C7\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.6936", "wd": 0.693569004535675}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C7", "id": "MT-CO3", "label": "MT-CO3", "original_label": "MT-CO3", "shape": "dot", "size": 20.0227468605628, "title": "MT-CO3\u003cbr\u003ecommunity=C7\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.8188", "wd": 0.8188363909721375}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "C1R", "label": "C1R", "original_label": "C1R", "shape": "dot", "size": 18.40175147525008, "title": "C1R\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.6864", "wd": 0.6864046305418015}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "C1S", "label": "C1S", "original_label": "C1S", "shape": "dot", "size": 18.011490417575146, "title": "C1S\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.6545", "wd": 0.6545211598277092}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C7", "id": "MT-ND4", "label": "MT-ND4", "original_label": "MT-ND4", "shape": "dot", "size": 19.393469398639166, "title": "MT-ND4\u003cbr\u003ecommunity=C7\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.7674", "wd": 0.7674258053302765}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "KRT7", "label": "KRT7", "original_label": "KRT7", "shape": "dot", "size": 45.0, "title": "KRT7\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=2.8594", "wd": 2.859423078596592}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "KRT8", "label": "KRT8", "original_label": "KRT8", "shape": "dot", "size": 34.33524760951677, "title": "KRT8\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=1.9881", "wd": 1.9881362468004227}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "CD24", "label": "CD24", "original_label": "CD24", "shape": "dot", "size": 26.94283064053717, "title": "CD24\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=1.3842", "wd": 1.3841920271515846}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "KRT19", "label": "KRT19", "original_label": "KRT19", "shape": "dot", "size": 27.300513910553455, "title": "KRT19\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=1.4134", "wd": 1.4134139642119408}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "SFN", "label": "SFN", "original_label": "SFN", "shape": "dot", "size": 29.029758474132574, "title": "SFN\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=1.5547", "wd": 1.5546894446015358}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C6", "id": "CD74", "label": "CD74", "original_label": "CD74", "shape": "dot", "size": 15.307360585536179, "title": "CD74\u003cbr\u003ecommunity=C6\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.4336", "wd": 0.43359969556331635}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C6", "id": "HLA-DRA", "label": "HLA-DRA", "original_label": "HLA-DRA", "shape": "dot", "size": 16.78452142466156, "title": "HLA-DRA\u003cbr\u003ecommunity=C6\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.5543", "wd": 0.5542804896831512}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "KRT18", "label": "KRT18", "original_label": "KRT18", "shape": "dot", "size": 24.544862429308093, "title": "KRT18\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=1.1883", "wd": 1.1882832944393158}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C5", "id": "ADAMTS4", "label": "ADAMTS4", "original_label": "ADAMTS4", "shape": "dot", "size": 16.555980891491693, "title": "ADAMTS4\u003cbr\u003ecommunity=C5\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.5356", "wd": 0.5356092303991318}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C5", "id": "LAMA4", "label": "LAMA4", "original_label": "LAMA4", "shape": "dot", "size": 20.701230301781074, "title": "LAMA4\u003cbr\u003ecommunity=C5\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.8743", "wd": 0.8742669969797134}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "S100A14", "label": "S100A14", "original_label": "S100A14", "shape": "dot", "size": 27.59296700624536, "title": "S100A14\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=1.4373", "wd": 1.4373067393898964}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C6", "id": "HLA-DRB1", "label": "HLA-DRB1", "original_label": "HLA-DRB1", "shape": "dot", "size": 18.079733370381135, "title": "HLA-DRB1\u003cbr\u003ecommunity=C6\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.6601", "wd": 0.6600964590907097}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "MAL2", "label": "MAL2", "original_label": "MAL2", "shape": "dot", "size": 29.44731145999249, "title": "MAL2\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=1.5888", "wd": 1.5888026058673859}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C8", "id": "HSPA1A", "label": "HSPA1A", "original_label": "HSPA1A", "shape": "dot", "size": 14.405881013635257, "title": "HSPA1A\u003cbr\u003ecommunity=C8\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.3600", "wd": 0.35995079576969147}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C8", "id": "HSPA1B", "label": "HSPA1B", "original_label": "HSPA1B", "shape": "dot", "size": 13.092801146570324, "title": "HSPA1B\u003cbr\u003ecommunity=C8\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2527", "wd": 0.25267505645751953}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "MYL9", "label": "MYL9", "original_label": "MYL9", "shape": "dot", "size": 16.731243506899688, "title": "MYL9\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.5499", "wd": 0.5499278008937836}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "TAGLN", "label": "TAGLN", "original_label": "TAGLN", "shape": "dot", "size": 16.683218161768476, "title": "TAGLN\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.5460", "wd": 0.5460042357444763}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "AZGP1", "label": "AZGP1", "original_label": "AZGP1", "shape": "dot", "size": 19.69607662299305, "title": "AZGP1\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.7921", "wd": 0.7921481505036354}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "SLPI", "label": "SLPI", "original_label": "SLPI", "shape": "dot", "size": 17.730228267307467, "title": "SLPI\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.6315", "wd": 0.6315426602959633}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C9", "id": "DENND4A", "label": "DENND4A", "original_label": "DENND4A", "shape": "dot", "size": 12.816115253240739, "title": "DENND4A\u003cbr\u003ecommunity=C9\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2301", "wd": 0.23007042706012726}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C9", "id": "ZBTB1", "label": "ZBTB1", "original_label": "ZBTB1", "shape": "dot", "size": 14.434084545334647, "title": "ZBTB1\u003cbr\u003ecommunity=C9\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.3623", "wd": 0.36225496232509613}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C14", "id": "HSP90AA1", "label": "HSP90AA1", "original_label": "HSP90AA1", "shape": "dot", "size": 12.814738363498783, "title": "HSP90AA1\u003cbr\u003ecommunity=C14\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2300", "wd": 0.2299579381942749}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C14", "id": "HSPH1", "label": "HSPH1", "original_label": "HSPH1", "shape": "dot", "size": 12.814738363498783, "title": "HSPH1\u003cbr\u003ecommunity=C14\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2300", "wd": 0.2299579381942749}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "PALLD", "label": "PALLD", "original_label": "PALLD", "shape": "dot", "size": 15.756285463369363, "title": "PALLD\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.4703", "wd": 0.4702758714556694}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "TPM1", "label": "TPM1", "original_label": "TPM1", "shape": "dot", "size": 16.226686829921032, "title": "TPM1\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.5087", "wd": 0.5087066292762756}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "SPARC", "label": "SPARC", "original_label": "SPARC", "shape": "dot", "size": 15.207308178365752, "title": "SPARC\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.4254", "wd": 0.4254256337881088}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "SPARCL1", "label": "SPARCL1", "original_label": "SPARCL1", "shape": "dot", "size": 13.943843855559761, "title": "SPARCL1\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.3222", "wd": 0.3222033753991127}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "S100A2", "label": "S100A2", "original_label": "S100A2", "shape": "dot", "size": 22.17735231781395, "title": "S100A2\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.9949", "wd": 0.9948629215359688}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "KRT16", "label": "KRT16", "original_label": "KRT16", "shape": "dot", "size": 20.149145393592477, "title": "KRT16\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.8292", "wd": 0.8291628733277321}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "LHFPL6", "label": "LHFPL6", "original_label": "LHFPL6", "shape": "dot", "size": 17.96626791582248, "title": "LHFPL6\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.6508", "wd": 0.6508265808224678}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "COL6A1", "label": "COL6A1", "original_label": "COL6A1", "shape": "dot", "size": 13.886554189238566, "title": "COL6A1\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.3175", "wd": 0.31752293556928635}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "COL6A2", "label": "COL6A2", "original_label": "COL6A2", "shape": "dot", "size": 12.568883017758559, "title": "COL6A2\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2099", "wd": 0.20987209677696228}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C5", "id": "COL18A1", "label": "COL18A1", "original_label": "COL18A1", "shape": "dot", "size": 17.25417570678045, "title": "COL18A1\u003cbr\u003ecommunity=C5\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.5927", "wd": 0.5926502123475075}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C5", "id": "IGFBP7", "label": "IGFBP7", "original_label": "IGFBP7", "shape": "dot", "size": 13.83894825832932, "title": "IGFBP7\u003cbr\u003ecommunity=C5\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.3136", "wd": 0.31363363564014435}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "SFRP1", "label": "SFRP1", "original_label": "SFRP1", "shape": "dot", "size": 12.263687171380202, "title": "SFRP1\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1849", "wd": 0.18493826687335968}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "SOX9", "label": "SOX9", "original_label": "SOX9", "shape": "dot", "size": 16.60823567201585, "title": "SOX9\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.5399", "wd": 0.5398783311247826}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "SH3PXD2A", "label": "SH3PXD2A", "original_label": "SH3PXD2A", "shape": "dot", "size": 12.234128637178099, "title": "SH3PXD2A\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1825", "wd": 0.18252339959144592}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "TPM2", "label": "TPM2", "original_label": "TPM2", "shape": "dot", "size": 15.758688773434917, "title": "TPM2\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.4705", "wd": 0.47047221660614014}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "CALD1", "label": "CALD1", "original_label": "CALD1", "shape": "dot", "size": 17.466244633271735, "title": "CALD1\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.6100", "wd": 0.609975777566433}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "WFDC2", "label": "WFDC2", "original_label": "WFDC2", "shape": "dot", "size": 18.79034445170432, "title": "WFDC2\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.7182", "wd": 0.7181518226861954}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "AEBP1", "label": "AEBP1", "original_label": "AEBP1", "shape": "dot", "size": 15.947184778475695, "title": "AEBP1\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.4859", "wd": 0.48587192595005035}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C10", "id": "CREBRF", "label": "CREBRF", "original_label": "CREBRF", "shape": "dot", "size": 13.42491775003485, "title": "CREBRF\u003cbr\u003ecommunity=C10\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2798", "wd": 0.27980825304985046}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C10", "id": "SLC38A2", "label": "SLC38A2", "original_label": "SLC38A2", "shape": "dot", "size": 12.136614602578714, "title": "SLC38A2\u003cbr\u003ecommunity=C10\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1746", "wd": 0.17455671727657318}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C15", "id": "IRF7", "label": "IRF7", "original_label": "IRF7", "shape": "dot", "size": 12.12060189834957, "title": "IRF7\u003cbr\u003ecommunity=C15\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1732", "wd": 0.1732485145330429}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C15", "id": "ISG15", "label": "ISG15", "original_label": "ISG15", "shape": "dot", "size": 12.12060189834957, "title": "ISG15\u003cbr\u003ecommunity=C15\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1732", "wd": 0.1732485145330429}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "TACSTD2", "label": "TACSTD2", "original_label": "TACSTD2", "shape": "dot", "size": 16.666889186932288, "title": "TACSTD2\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.5447", "wd": 0.5446701943874359}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "SERPINF1", "label": "SERPINF1", "original_label": "SERPINF1", "shape": "dot", "size": 11.972867958097684, "title": "SERPINF1\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1612", "wd": 0.16117897629737854}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "SERPING1", "label": "SERPING1", "original_label": "SERPING1", "shape": "dot", "size": 13.612927858364465, "title": "SERPING1\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2952", "wd": 0.29516826570034027}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C16", "id": "CDC42SE2", "label": "CDC42SE2", "original_label": "CDC42SE2", "shape": "dot", "size": 11.853778212628583, "title": "CDC42SE2\u003cbr\u003ecommunity=C16\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1514", "wd": 0.15144960582256317}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C16", "id": "EPB41", "label": "EPB41", "original_label": "EPB41", "shape": "dot", "size": 11.853778212628583, "title": "EPB41\u003cbr\u003ecommunity=C16\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1514", "wd": 0.15144960582256317}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C17", "id": "BAG3", "label": "BAG3", "original_label": "BAG3", "shape": "dot", "size": 11.840984938898215, "title": "BAG3\u003cbr\u003ecommunity=C17\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1504", "wd": 0.1504044234752655}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C17", "id": "KLF9", "label": "KLF9", "original_label": "KLF9", "shape": "dot", "size": 11.840984938898215, "title": "KLF9\u003cbr\u003ecommunity=C17\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1504", "wd": 0.1504044234752655}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "RBMS3", "label": "RBMS3", "original_label": "RBMS3", "shape": "dot", "size": 11.830073967742624, "title": "RBMS3\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1495", "wd": 0.14951302111148834}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C6", "id": "HLA-DPB1", "label": "HLA-DPB1", "original_label": "HLA-DPB1", "shape": "dot", "size": 13.08772075355503, "title": "HLA-DPB1\u003cbr\u003ecommunity=C6\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2523", "wd": 0.2522599995136261}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C5", "id": "DPYSL3", "label": "DPYSL3", "original_label": "DPYSL3", "shape": "dot", "size": 13.089127373463622, "title": "DPYSL3\u003cbr\u003ecommunity=C5\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2524", "wd": 0.25237491726875305}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C18", "id": "BGN", "label": "BGN", "original_label": "BGN", "shape": "dot", "size": 11.783719348540187, "title": "BGN\u003cbr\u003ecommunity=C18\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1457", "wd": 0.14572595059871674}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C18", "id": "FXYD1", "label": "FXYD1", "original_label": "FXYD1", "shape": "dot", "size": 11.783719348540187, "title": "FXYD1\u003cbr\u003ecommunity=C18\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1457", "wd": 0.14572595059871674}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "CCDC80", "label": "CCDC80", "original_label": "CCDC80", "shape": "dot", "size": 13.346802557968946, "title": "CCDC80\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2734", "wd": 0.2734264135360718}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "IGFBP6", "label": "IGFBP6", "original_label": "IGFBP6", "shape": "dot", "size": 12.995745284845729, "title": "IGFBP6\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2447", "wd": 0.24474580585956573}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "SDC4", "label": "SDC4", "original_label": "SDC4", "shape": "dot", "size": 15.732592344496682, "title": "SDC4\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.4683", "wd": 0.4683401957154274}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C11", "id": "CYBRD1", "label": "CYBRD1", "original_label": "CYBRD1", "shape": "dot", "size": 13.118015154979801, "title": "CYBRD1\u003cbr\u003ecommunity=C11\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2547", "wd": 0.25473498553037643}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C11", "id": "NFIA", "label": "NFIA", "original_label": "NFIA", "shape": "dot", "size": 11.68492582241347, "title": "NFIA\u003cbr\u003ecommunity=C11\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1377", "wd": 0.13765473663806915}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "DST", "label": "DST", "original_label": "DST", "shape": "dot", "size": 11.656397082817683, "title": "DST\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1353", "wd": 0.13532400131225586}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "FBXO2", "label": "FBXO2", "original_label": "FBXO2", "shape": "dot", "size": 11.629423613963672, "title": "FBXO2\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1331", "wd": 0.1331203281879425}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "MGST1", "label": "MGST1", "original_label": "MGST1", "shape": "dot", "size": 14.245042727265282, "title": "MGST1\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.3468", "wd": 0.3468106612563133}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C9", "id": "UHRF2", "label": "UHRF2", "original_label": "UHRF2", "shape": "dot", "size": 11.617969292093907, "title": "UHRF2\u003cbr\u003ecommunity=C9\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1322", "wd": 0.13218453526496887}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C19", "id": "C3", "label": "C3", "original_label": "C3", "shape": "dot", "size": 11.602413666377592, "title": "C3\u003cbr\u003ecommunity=C19\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1309", "wd": 0.13091367483139038}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C19", "id": "LGALS3BP", "label": "LGALS3BP", "original_label": "LGALS3BP", "shape": "dot", "size": 11.602413666377592, "title": "LGALS3BP\u003cbr\u003ecommunity=C19\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1309", "wd": 0.13091367483139038}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C20", "id": "GNPTAB", "label": "GNPTAB", "original_label": "GNPTAB", "shape": "dot", "size": 11.538014842357068, "title": "GNPTAB\u003cbr\u003ecommunity=C20\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1257", "wd": 0.12565243244171143}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C20", "id": "SC5D", "label": "SC5D", "original_label": "SC5D", "shape": "dot", "size": 11.538014842357068, "title": "SC5D\u003cbr\u003ecommunity=C20\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1257", "wd": 0.12565243244171143}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C12", "id": "ABCA1", "label": "ABCA1", "original_label": "ABCA1", "shape": "dot", "size": 11.518969934721492, "title": "ABCA1\u003cbr\u003ecommunity=C12\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1241", "wd": 0.12409650534391403}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C12", "id": "FN1", "label": "FN1", "original_label": "FN1", "shape": "dot", "size": 12.858890396858875, "title": "FN1\u003cbr\u003ecommunity=C12\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2336", "wd": 0.2335650622844696}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C3", "id": "EFNA1", "label": "EFNA1", "original_label": "EFNA1", "shape": "dot", "size": 11.502002034893112, "title": "EFNA1\u003cbr\u003ecommunity=C3\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1227", "wd": 0.12271026521921158}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C21", "id": "EPM2AIP1", "label": "EPM2AIP1", "original_label": "EPM2AIP1", "shape": "dot", "size": 11.477067544768113, "title": "EPM2AIP1\u003cbr\u003ecommunity=C21\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1207", "wd": 0.12067317217588425}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C21", "id": "OGT", "label": "OGT", "original_label": "OGT", "shape": "dot", "size": 11.477067544768113, "title": "OGT\u003cbr\u003ecommunity=C21\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1207", "wd": 0.12067317217588425}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C4", "id": "LIMA1", "label": "LIMA1", "original_label": "LIMA1", "shape": "dot", "size": 11.475611769768058, "title": "LIMA1\u003cbr\u003ecommunity=C4\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1206", "wd": 0.12055423855781555}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C1", "id": "KRT23", "label": "KRT23", "original_label": "KRT23", "shape": "dot", "size": 12.687388191546248, "title": "KRT23\u003cbr\u003ecommunity=C1\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2196", "wd": 0.21955370903015137}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C22", "id": "CSRNP1", "label": "CSRNP1", "original_label": "CSRNP1", "shape": "dot", "size": 11.459081614724509, "title": "CSRNP1\u003cbr\u003ecommunity=C22\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1192", "wd": 0.11920376121997833}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C22", "id": "DUSP1", "label": "DUSP1", "original_label": "DUSP1", "shape": "dot", "size": 11.459081614724509, "title": "DUSP1\u003cbr\u003ecommunity=C22\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1192", "wd": 0.11920376121997833}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C11", "id": "GSN", "label": "GSN", "original_label": "GSN", "shape": "dot", "size": 11.433089332566333, "title": "GSN\u003cbr\u003ecommunity=C11\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1171", "wd": 0.11708024889230728}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C6", "id": "RNASE1", "label": "RNASE1", "original_label": "RNASE1", "shape": "dot", "size": 12.705901239268254, "title": "RNASE1\u003cbr\u003ecommunity=C6\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2211", "wd": 0.2210661843419075}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C7", "id": "MT-ND3", "label": "MT-ND3", "original_label": "MT-ND3", "shape": "dot", "size": 11.409885119900212, "title": "MT-ND3\u003cbr\u003ecommunity=C7\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1152", "wd": 0.11518451571464539}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C12", "id": "TIMP2", "label": "TIMP2", "original_label": "TIMP2", "shape": "dot", "size": 11.339920462137384, "title": "TIMP2\u003cbr\u003ecommunity=C12\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1095", "wd": 0.10946855694055557}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C23", "id": "DOT1L", "label": "DOT1L", "original_label": "DOT1L", "shape": "dot", "size": 11.333012667039078, "title": "DOT1L\u003cbr\u003ecommunity=C23\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1089", "wd": 0.10890420526266098}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C23", "id": "ZBED5", "label": "ZBED5", "original_label": "ZBED5", "shape": "dot", "size": 11.333012667039078, "title": "ZBED5\u003cbr\u003ecommunity=C23\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1089", "wd": 0.10890420526266098}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C13", "id": "FOS", "label": "FOS", "original_label": "FOS", "shape": "dot", "size": 12.554970120544152, "title": "FOS\u003cbr\u003ecommunity=C13\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.2087", "wd": 0.20873544365167618}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C13", "id": "FOSB", "label": "FOSB", "original_label": "FOSB", "shape": "dot", "size": 11.320923524034477, "title": "FOSB\u003cbr\u003ecommunity=C13\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1079", "wd": 0.10791654884815216}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C24", "id": "CSGALNACT2", "label": "CSGALNACT2", "original_label": "CSGALNACT2", "shape": "dot", "size": 11.320360383608158, "title": "CSGALNACT2\u003cbr\u003ecommunity=C24\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1079", "wd": 0.10787054151296616}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C24", "id": "PIKFYVE", "label": "PIKFYVE", "original_label": "PIKFYVE", "shape": "dot", "size": 11.320360383608158, "title": "PIKFYVE\u003cbr\u003ecommunity=C24\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1079", "wd": 0.10787054151296616}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C8", "id": "DNAJB1", "label": "DNAJB1", "original_label": "DNAJB1", "shape": "dot", "size": 11.313079867064934, "title": "DNAJB1\u003cbr\u003ecommunity=C8\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1073", "wd": 0.10727573931217194}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C2", "id": "SPRY1", "label": "SPRY1", "original_label": "SPRY1", "shape": "dot", "size": 11.310176251189047, "title": "SPRY1\u003cbr\u003ecommunity=C2\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1070", "wd": 0.10703852027654648}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C5", "id": "TCF4", "label": "TCF4", "original_label": "TCF4", "shape": "dot", "size": 11.293674093572362, "title": "TCF4\u003cbr\u003ecommunity=C5\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1057", "wd": 0.10569033026695251}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C10", "id": "INO80D", "label": "INO80D", "original_label": "INO80D", "shape": "dot", "size": 11.288303147456137, "title": "INO80D\u003cbr\u003ecommunity=C10\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1053", "wd": 0.10525153577327728}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C25", "id": "GTF2B", "label": "GTF2B", "original_label": "GTF2B", "shape": "dot", "size": 11.265195603430001, "title": "GTF2B\u003cbr\u003ecommunity=C25\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1034", "wd": 0.10336370021104813}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C25", "id": "NAF1", "label": "NAF1", "original_label": "NAF1", "shape": "dot", "size": 11.265195603430001, "title": "NAF1\u003cbr\u003ecommunity=C25\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1034", "wd": 0.10336370021104813}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C26", "id": "MAST4", "label": "MAST4", "original_label": "MAST4", "shape": "dot", "size": 11.24027014179119, "title": "MAST4\u003cbr\u003ecommunity=C26\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1013", "wd": 0.10132734477519989}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C26", "id": "NEDD9", "label": "NEDD9", "original_label": "NEDD9", "shape": "dot", "size": 11.24027014179119, "title": "NEDD9\u003cbr\u003ecommunity=C26\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1013", "wd": 0.10132734477519989}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C13", "id": "ATF3", "label": "ATF3", "original_label": "ATF3", "shape": "dot", "size": 11.234046596509675, "title": "ATF3\u003cbr\u003ecommunity=C13\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1008", "wd": 0.10081889480352402}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C27", "id": "HEXIM1", "label": "HEXIM1", "original_label": "HEXIM1", "shape": "dot", "size": 11.224941960969325, "title": "HEXIM1\u003cbr\u003ecommunity=C27\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1001", "wd": 0.10007506608963013}, {"borderWidth": 4, "borderWidthSelected": 6, "cell_color": "#9ca3af", "cell_type": "Unknown", "font": {"color": "#222222"}, "group": "C27", "id": "JUNB", "label": "JUNB", "original_label": "JUNB", "shape": "dot", "size": 11.224941960969325, "title": "JUNB\u003cbr\u003ecommunity=C27\u003cbr\u003ecell_type=Unknown\u003cbr\u003eweighted_degree=0.1001", "wd": 0.10007506608963013}]);
+                  edges = new vis.DataSet([{"color": "#8AA5CF", "ew": 0.5016916394233704, "from": "KRT14", "title": "weight=0.5017", "to": "KRT5", "value": 4.013533115386963, "width": 6.4}, {"color": "#8AA5CF", "ew": 0.4753914177417755, "from": "KRT14", "title": "weight=0.4754", "to": "KRT17", "value": 3.803131341934204, "width": 6.085461511236382}, {"color": "#8AA5CF", "ew": 0.16760598123073578, "from": "KRT14", "title": "weight=0.1676", "to": "S100A2", "value": 1.3408478498458862, "width": 2.4044900260651403}, {"color": "#8AA5CF", "ew": 0.14934073388576508, "from": "KRT14", "title": "weight=0.1493", "to": "SFN", "value": 1.1947258710861206, "width": 2.1860461145903836}, {"color": "#8AA5CF", "ew": 0.10450571775436401, "from": "KRT14", "title": "weight=0.1045", "to": "KRT7", "value": 0.8360457420349121, "width": 1.649840055630345}, {"color": "#8AA5CF", "ew": 0.42786332964897156, "from": "KRT5", "title": "weight=0.4279", "to": "KRT17", "value": 3.4229066371917725, "width": 5.5170475570301925}, {"color": "#8AA5CF", "ew": 0.21488741040229797, "from": "KRT5", "title": "weight=0.2149", "to": "S100A2", "value": 1.7190992832183838, "width": 2.969954053640797}, {"color": "#8AA5CF", "ew": 0.16916221380233765, "from": "KRT5", "title": "weight=0.1692", "to": "SFN", "value": 1.3532977104187012, "width": 2.4231018479411106}, {"color": "#8AA5CF", "ew": 0.1331203281879425, "from": "KRT5", "title": "weight=0.1331", "to": "FBXO2", "value": 1.06496262550354, "width": 1.992057563577664}, {"color": "#8AA5CF", "ew": 0.10952825844287872, "from": "KRT5", "title": "weight=0.1095", "to": "KRT16", "value": 0.8762260675430298, "width": 1.7099073195889885}, {"color": "#8AA5CF", "ew": 0.28206107020378113, "from": "KRT17", "title": "weight=0.2821", "to": "SFN", "value": 2.256488561630249, "width": 3.773319960380131}, {"color": "#8AA5CF", "ew": 0.2732752561569214, "from": "KRT17", "title": "weight=0.2733", "to": "KRT7", "value": 2.186202049255371, "width": 3.668245687382982}, {"color": "#8AA5CF", "ew": 0.18174070119857788, "from": "KRT17", "title": "weight=0.1817", "to": "S100A2", "value": 1.453925609588623, "width": 2.573534740273511}, {"color": "#8AA5CF", "ew": 0.13175828754901886, "from": "KRT17", "title": "weight=0.1318", "to": "KRT16", "value": 1.0540663003921509, "width": 1.975768187412387}, {"color": "#8AA5CF", "ew": 0.12919241189956665, "from": "KRT17", "title": "weight=0.1292", "to": "KRT8", "value": 1.0335392951965332, "width": 1.9450815012351805}, {"color": "#8AA5CF", "ew": 0.4506235122680664, "from": "CLDN4", "title": "weight=0.4506", "to": "ELF3", "value": 3.6049880981445312, "width": 5.789248815698821}, {"color": "#8AA5CF", "ew": 0.3175548315048218, "from": "CLDN4", "title": "weight=0.3176", "to": "CD24", "value": 2.540438652038574, "width": 4.19780893143617}, {"color": "#8AA5CF", "ew": 0.25553837418556213, "from": "CLDN4", "title": "weight=0.2555", "to": "MAL2", "value": 2.044306993484497, "width": 3.4561207814338357}, {"color": "#8AA5CF", "ew": 0.23847663402557373, "from": "CLDN4", "title": "weight=0.2385", "to": "KRT19", "value": 1.9078130722045898, "width": 3.2520702593290784}, {"color": "#8AA5CF", "ew": 0.16258604824543, "from": "CLDN4", "title": "weight=0.1626", "to": "KRT7", "value": 1.30068838596344, "width": 2.344453949030942}, {"color": "#8AA5CF", "ew": 0.14308443665504456, "from": "CLDN4", "title": "weight=0.1431", "to": "KRT8", "value": 1.1446754932403564, "width": 2.1112236929381756}, {"color": "#8AA5CF", "ew": 0.1416788548231125, "from": "CLDN4", "title": "weight=0.1417", "to": "S100A14", "value": 1.1334308385849, "width": 2.09441358424016}, {"color": "#8AA5CF", "ew": 0.14141644537448883, "from": "CLDN4", "title": "weight=0.1414", "to": "KRT18", "value": 1.1313315629959106, "width": 2.0912752885859778}, {"color": "#8AA5CF", "ew": 0.1267455518245697, "from": "CLDN4", "title": "weight=0.1267", "to": "AZGP1", "value": 1.0139644145965576, "width": 1.9158181862896577}, {"color": "#8AA5CF", "ew": 0.11813679337501526, "from": "CLDN4", "title": "weight=0.1181", "to": "WFDC2", "value": 0.9450943470001221, "width": 1.8128614163568466}, {"color": "#8AA5CF", "ew": 0.2730964720249176, "from": "ELF3", "title": "weight=0.2731", "to": "KRT7", "value": 2.184771776199341, "width": 3.6661075118430113}, {"color": "#8AA5CF", "ew": 0.2284175157546997, "from": "ELF3", "title": "weight=0.2284", "to": "KRT19", "value": 1.8273401260375977, "width": 3.1317678566527767}, {"color": "#8AA5CF", "ew": 0.21972250938415527, "from": "ELF3", "title": "weight=0.2197", "to": "KRT8", "value": 1.7577800750732422, "width": 3.027779601470312}, {"color": "#8AA5CF", "ew": 0.21159523725509644, "from": "ELF3", "title": "weight=0.2116", "to": "S100A14", "value": 1.6927618980407715, "width": 2.930581185267083}, {"color": "#8AA5CF", "ew": 0.20028521120548248, "from": "ELF3", "title": "weight=0.2003", "to": "MAL2", "value": 1.6022816896438599, "width": 2.795318504039865}, {"color": "#8AA5CF", "ew": 0.19471777975559235, "from": "ELF3", "title": "weight=0.1947", "to": "KRT18", "value": 1.5577422380447388, "width": 2.7287345985601266}, {"color": "#8AA5CF", "ew": 0.176502525806427, "from": "ELF3", "title": "weight=0.1765", "to": "WFDC2", "value": 1.412020206451416, "width": 2.5108885849797358}, {"color": "#8AA5CF", "ew": 0.14853885769844055, "from": "ELF3", "title": "weight=0.1485", "to": "CD24", "value": 1.1883108615875244, "width": 2.176456046217953}, {"color": "#8AA5CF", "ew": 0.11768167465925217, "from": "ELF3", "title": "weight=0.1177", "to": "SOX9", "value": 0.9414533972740173, "width": 1.807418406986156}, {"color": "#8AA5CF", "ew": 0.11485496163368225, "from": "ELF3", "title": "weight=0.1149", "to": "SDC4", "value": 0.918839693069458, "width": 1.773612226414933}, {"color": "#8AA5CF", "ew": 0.10507823526859283, "from": "ELF3", "title": "weight=0.1051", "to": "MGST1", "value": 0.8406258821487427, "width": 1.6566871003395631}, {"color": "#8AA5CF", "ew": 0.4300820529460907, "from": "MT-CO2", "title": "weight=0.4301", "to": "MT-CO3", "value": 3.4406564235687256, "width": 5.543582461614243}, {"color": "#8AA5CF", "ew": 0.26348695158958435, "from": "MT-CO2", "title": "weight=0.2635", "to": "MT-ND4", "value": 2.107895612716675, "width": 3.551182091363075}, {"color": "#8AA5CF", "ew": 0.38875433802604675, "from": "MT-CO3", "title": "weight=0.3888", "to": "MT-ND4", "value": 3.110034704208374, "width": 5.049322103189158}, {"color": "#8AA5CF", "ew": 0.4063994884490967, "from": "C1R", "title": "weight=0.4064", "to": "C1S", "value": 3.2511959075927734, "width": 5.260349942241816}, {"color": "#8AA5CF", "ew": 0.17469646036624908, "from": "C1R", "title": "weight=0.1747", "to": "AEBP1", "value": 1.3975716829299927, "width": 2.489288877530908}, {"color": "#8AA5CF", "ew": 0.10530868172645569, "from": "C1R", "title": "weight=0.1053", "to": "IGFBP6", "value": 0.8424694538116455, "width": 1.6594431334055444}, {"color": "#8AA5CF", "ew": 0.14047083258628845, "from": "C1S", "title": "weight=0.1405", "to": "AEBP1", "value": 1.1237666606903076, "width": 2.079966196938121}, {"color": "#8AA5CF", "ew": 0.10765083879232407, "from": "C1S", "title": "weight=0.1077", "to": "COL6A1", "value": 0.8612067103385925, "width": 1.687454248781839}, {"color": "#8AA5CF", "ew": 0.11518451571464539, "from": "MT-ND4", "title": "weight=0.1152", "to": "MT-ND3", "value": 0.9214761257171631, "width": 1.7775535408208327}, {"color": "#8AA5CF", "ew": 0.3799187242984772, "from": "KRT7", "title": "weight=0.3799", "to": "KRT8", "value": 3.0393497943878174, "width": 4.943652249040602}, {"color": "#8AA5CF", "ew": 0.330895334482193, "from": "KRT7", "title": "weight=0.3309", "to": "SFN", "value": 2.647162675857544, "width": 4.3573551777244806}, {"color": "#8AA5CF", "ew": 0.2757358253002167, "from": "KRT7", "title": "weight=0.2757", "to": "S100A14", "value": 2.2058866024017334, "width": 3.697672956445589}, {"color": "#8AA5CF", "ew": 0.1761954128742218, "from": "KRT7", "title": "weight=0.1762", "to": "KRT18", "value": 1.4095633029937744, "width": 2.5072156563350623}, {"color": "#8AA5CF", "ew": 0.1517682820558548, "from": "KRT7", "title": "weight=0.1518", "to": "WFDC2", "value": 1.2141462564468384, "width": 2.2150784680840143}, {"color": "#8AA5CF", "ew": 0.13875269889831543, "from": "KRT7", "title": "weight=0.1388", "to": "SDC4", "value": 1.1100215911865234, "width": 2.0594181125815894}, {"color": "#8AA5CF", "ew": 0.13852590322494507, "from": "KRT7", "title": "weight=0.1385", "to": "MAL2", "value": 1.1082072257995605, "width": 2.0567057412098317}, {"color": "#8AA5CF", "ew": 0.13134680688381195, "from": "KRT7", "title": "weight=0.1313", "to": "KRT16", "value": 1.0507744550704956, "width": 1.9708470689459139}, {"color": "#8AA5CF", "ew": 0.1122509092092514, "from": "KRT7", "title": "weight=0.1123", "to": "TACSTD2", "value": 0.8980072736740112, "width": 1.742468963663847}, {"color": "#8AA5CF", "ew": 0.10862977057695389, "from": "KRT7", "title": "weight=0.1086", "to": "MGST1", "value": 0.8690381646156311, "width": 1.6991618202186078}, {"color": "#8AA5CF", "ew": 0.10193991661071777, "from": "KRT7", "title": "weight=0.1019", "to": "SOX9", "value": 0.8155193328857422, "width": 1.6191542605081222}, {"color": "#8AA5CF", "ew": 0.27995216846466064, "from": "KRT8", "title": "weight=0.2800", "to": "KRT18", "value": 2.239617347717285, "width": 3.7480984708427205}, {"color": "#8AA5CF", "ew": 0.21101397275924683, "from": "KRT8", "title": "weight=0.2110", "to": "KRT16", "value": 1.6881117820739746, "width": 2.9236295307027254}, {"color": "#8AA5CF", "ew": 0.15675154328346252, "from": "KRT8", "title": "weight=0.1568", "to": "S100A14", "value": 1.2540123462677002, "width": 2.2746759678550132}, {"color": "#8AA5CF", "ew": 0.13531847298145294, "from": "KRT8", "title": "weight=0.1353", "to": "SOX9", "value": 1.0825477838516235, "width": 2.0183463587750916}, {"color": "#8AA5CF", "ew": 0.11622565239667892, "from": "KRT8", "title": "weight=0.1162", "to": "SFN", "value": 0.9298052191734314, "width": 1.7900050540638701}, {"color": "#8AA5CF", "ew": 0.11164664477109909, "from": "KRT8", "title": "weight=0.1116", "to": "SDC4", "value": 0.8931731581687927, "width": 1.7352422404258814}, {"color": "#8AA5CF", "ew": 0.10530970990657806, "from": "KRT8", "title": "weight=0.1053", "to": "WFDC2", "value": 0.8424776792526245, "width": 1.6594554299643258}, {"color": "#8AA5CF", "ew": 0.3610883057117462, "from": "CD24", "title": "weight=0.3611", "to": "KRT19", "value": 2.8887064456939697, "width": 4.7184491508780635}, {"color": "#8AA5CF", "ew": 0.16031919419765472, "from": "CD24", "title": "weight=0.1603", "to": "SLPI", "value": 1.2825535535812378, "width": 2.31734342292713}, {"color": "#8AA5CF", "ew": 0.15130457282066345, "from": "CD24", "title": "weight=0.1513", "to": "KRT18", "value": 1.2104365825653076, "width": 2.209532720073651}, {"color": "#8AA5CF", "ew": 0.14458830654621124, "from": "CD24", "title": "weight=0.1446", "to": "MAL2", "value": 1.15670645236969, "width": 2.1292092813712835}, {"color": "#8AA5CF", "ew": 0.10079795867204666, "from": "CD24", "title": "weight=0.1008", "to": "AZGP1", "value": 0.8063836693763733, "width": 1.6054969716605307}, {"color": "#8AA5CF", "ew": 0.20429493486881256, "from": "KRT19", "title": "weight=0.2043", "to": "MAL2", "value": 1.6343594789505005, "width": 2.8432729447549474}, {"color": "#8AA5CF", "ew": 0.14731228351593018, "from": "KRT19", "title": "weight=0.1473", "to": "AZGP1", "value": 1.1784982681274414, "width": 2.16178678622486}, {"color": "#8AA5CF", "ew": 0.12198664993047714, "from": "KRT19", "title": "weight=0.1220", "to": "KRT18", "value": 0.9758931994438171, "width": 1.858903920392435}, {"color": "#8AA5CF", "ew": 0.11183764040470123, "from": "KRT19", "title": "weight=0.1118", "to": "SLPI", "value": 0.8947011232376099, "width": 1.7375264598777544}, {"color": "#8AA5CF", "ew": 0.19524352252483368, "from": "SFN", "title": "weight=0.1952", "to": "S100A2", "value": 1.5619481801986694, "width": 2.7350222389502945}, {"color": "#8AA5CF", "ew": 0.1622491478919983, "from": "SFN", "title": "weight=0.1622", "to": "TACSTD2", "value": 1.2979931831359863, "width": 2.340424776603605}, {"color": "#8AA5CF", "ew": 0.14951176941394806, "from": "SFN", "title": "weight=0.1495", "to": "S100A14", "value": 1.1960941553115845, "width": 2.1880916204120022}, {"color": "#8AA5CF", "ew": 0.29485398530960083, "from": "CD74", "title": "weight=0.2949", "to": "HLA-DRA", "value": 2.3588318824768066, "width": 3.92631730895692}, {"color": "#8AA5CF", "ew": 0.13874571025371552, "from": "CD74", "title": "weight=0.1387", "to": "HLA-DRB1", "value": 1.1099656820297241, "width": 2.059334531624076}, {"color": "#8AA5CF", "ew": 0.2594265043735504, "from": "HLA-DRA", "title": "weight=0.2594", "to": "HLA-DRB1", "value": 2.0754120349884033, "width": 3.5026210204147827}, {"color": "#8AA5CF", "ew": 0.12271026521921158, "from": "KRT18", "title": "weight=0.1227", "to": "EFNA1", "value": 0.9816821217536926, "width": 1.867558024609513}, {"color": "#8AA5CF", "ew": 0.2787535488605499, "from": "ADAMTS4", "title": "weight=0.2788", "to": "LAMA4", "value": 2.2300283908843994, "width": 3.733763534679682}, {"color": "#8AA5CF", "ew": 0.1311260163784027, "from": "ADAMTS4", "title": "weight=0.1311", "to": "COL18A1", "value": 1.0490081310272217, "width": 1.9682065166058789}, {"color": "#8AA5CF", "ew": 0.12572966516017914, "from": "ADAMTS4", "title": "weight=0.1257", "to": "IGFBP7", "value": 1.005837321281433, "width": 1.9036686515807495}, {"color": "#8AA5CF", "ew": 0.19536013901233673, "from": "LAMA4", "title": "weight=0.1954", "to": "COL18A1", "value": 1.5628811120986938, "width": 2.7364169182114884}, {"color": "#8AA5CF", "ew": 0.1879039704799652, "from": "LAMA4", "title": "weight=0.1879", "to": "IGFBP7", "value": 1.5032317638397217, "width": 2.6472445906725075}, {"color": "#8AA5CF", "ew": 0.10655900835990906, "from": "LAMA4", "title": "weight=0.1066", "to": "DPYSL3", "value": 0.8524720668792725, "width": 1.6743964617275844}, {"color": "#8AA5CF", "ew": 0.10569033026695251, "from": "LAMA4", "title": "weight=0.1057", "to": "TCF4", "value": 0.8455226421356201, "width": 1.6640074734563632}, {"color": "#8AA5CF", "ew": 0.16643451154232025, "from": "S100A14", "title": "weight=0.1664", "to": "WFDC2", "value": 1.331476092338562, "width": 2.3904797903383264}, {"color": "#8AA5CF", "ew": 0.11947043240070343, "from": "S100A14", "title": "weight=0.1195", "to": "KRT23", "value": 0.9557634592056274, "width": 1.8288111223621653}, {"color": "#8AA5CF", "ew": 0.1130426749587059, "from": "S100A14", "title": "weight=0.1130", "to": "MAL2", "value": 0.9043413996696472, "width": 1.7519381158749288}, {"color": "#8AA5CF", "ew": 0.10308589041233063, "from": "S100A14", "title": "weight=0.1031", "to": "SDC4", "value": 0.824687123298645, "width": 1.6328595772193597}, {"color": "#8AA5CF", "ew": 0.14655902981758118, "from": "HLA-DRB1", "title": "weight=0.1466", "to": "HLA-DPB1", "value": 1.1724722385406494, "width": 2.1527782203350867}, {"color": "#8AA5CF", "ew": 0.11536521464586258, "from": "HLA-DRB1", "title": "weight=0.1154", "to": "RNASE1", "value": 0.9229217171669006, "width": 1.7797146164738957}, {"color": "#8AA5CF", "ew": 0.17862389981746674, "from": "MAL2", "title": "weight=0.1786", "to": "AZGP1", "value": 1.4289911985397339, "width": 2.536259237121493}, {"color": "#8AA5CF", "ew": 0.1331026554107666, "from": "MAL2", "title": "weight=0.1331", "to": "MGST1", "value": 1.0648212432861328, "width": 1.9918462053354231}, {"color": "#8AA5CF", "ew": 0.1207173690199852, "from": "MAL2", "title": "weight=0.1207", "to": "SLPI", "value": 0.9657389521598816, "width": 1.8437239076824268}, {"color": "#8AA5CF", "ew": 0.10008327662944794, "from": "MAL2", "title": "weight=0.1001", "to": "KRT23", "value": 0.8006662130355835, "width": 1.5969497049360526}, {"color": "#8AA5CF", "ew": 0.25267505645751953, "from": "HSPA1A", "title": "weight=0.2527", "to": "HSPA1B", "value": 2.0214004516601562, "width": 3.4218768255488987}, {"color": "#8AA5CF", "ew": 0.10727573931217194, "from": "HSPA1A", "title": "weight=0.1073", "to": "DNAJB1", "value": 0.8582059144973755, "width": 1.6829682324641269}, {"color": "#8AA5CF", "ew": 0.24399499595165253, "from": "MYL9", "title": "weight=0.2440", "to": "TAGLN", "value": 1.9519599676132202, "width": 3.3180673159962546}, {"color": "#8AA5CF", "ew": 0.18163537979125977, "from": "MYL9", "title": "weight=0.1816", "to": "CALD1", "value": 1.4530830383300781, "width": 2.5722751449479144}, {"color": "#8AA5CF", "ew": 0.12429742515087128, "from": "MYL9", "title": "weight=0.1243", "to": "TPM2", "value": 0.9943794012069702, "width": 1.8865397234094043}, {"color": "#8AA5CF", "ew": 0.16365139186382294, "from": "TAGLN", "title": "weight=0.1637", "to": "TPM2", "value": 1.3092111349105835, "width": 2.3571949660383305}, {"color": "#8AA5CF", "ew": 0.13835784792900085, "from": "TAGLN", "title": "weight=0.1384", "to": "CALD1", "value": 1.1068627834320068, "width": 2.054695877587579}, {"color": "#8AA5CF", "ew": 0.23866845667362213, "from": "AZGP1", "title": "weight=0.2387", "to": "SLPI", "value": 1.909347653388977, "width": 3.254364369491275}, {"color": "#8AA5CF", "ew": 0.23007042706012726, "from": "DENND4A", "title": "weight=0.2301", "to": "ZBTB1", "value": 1.840563416481018, "width": 3.151535911476182}, {"color": "#8AA5CF", "ew": 0.13218453526496887, "from": "ZBTB1", "title": "weight=0.1322", "to": "UHRF2", "value": 1.057476282119751, "width": 1.9808659129767188}, {"color": "#8AA5CF", "ew": 0.2299579381942749, "from": "HSP90AA1", "title": "weight=0.2300", "to": "HSPH1", "value": 1.8396635055541992, "width": 3.1501905966611097}, {"color": "#8AA5CF", "ew": 0.21656085550785065, "from": "PALLD", "title": "weight=0.2166", "to": "TPM1", "value": 1.7324868440628052, "width": 2.989967683217835}, {"color": "#8AA5CF", "ew": 0.13532400131225586, "from": "PALLD", "title": "weight=0.1353", "to": "DST", "value": 1.0825920104980469, "width": 2.0184124750549155}, {"color": "#8AA5CF", "ew": 0.1183910146355629, "from": "PALLD", "title": "weight=0.1184", "to": "CALD1", "value": 0.9471281170845032, "width": 1.8159017850682706}, {"color": "#8AA5CF", "ew": 0.17159153521060944, "from": "TPM1", "title": "weight=0.1716", "to": "CALD1", "value": 1.3727322816848755, "width": 2.452155408543364}, {"color": "#8AA5CF", "ew": 0.12055423855781555, "from": "TPM1", "title": "weight=0.1206", "to": "LIMA1", "value": 0.9644339084625244, "width": 1.8417729427946266}, {"color": "#8AA5CF", "ew": 0.21516485512256622, "from": "SPARC", "title": "weight=0.2152", "to": "SPARCL1", "value": 1.7213188409805298, "width": 2.973272164190781}, {"color": "#8AA5CF", "ew": 0.2102607786655426, "from": "SPARC", "title": "weight=0.2103", "to": "LHFPL6", "value": 1.6820862293243408, "width": 2.914621677656939}, {"color": "#8AA5CF", "ew": 0.10703852027654648, "from": "SPARCL1", "title": "weight=0.1070", "to": "SPRY1", "value": 0.8563081622123718, "width": 1.6801312025000863}, {"color": "#8AA5CF", "ew": 0.13001994788646698, "from": "S100A2", "title": "weight=0.1300", "to": "TACSTD2", "value": 1.0401595830917358, "width": 1.9549784489441535}, {"color": "#8AA5CF", "ew": 0.10536535829305649, "from": "S100A2", "title": "weight=0.1054", "to": "KRT16", "value": 0.8429228663444519, "width": 1.6601209589319885}, {"color": "#8AA5CF", "ew": 0.14015018939971924, "from": "KRT16", "title": "weight=0.1402", "to": "TACSTD2", "value": 1.121201515197754, "width": 2.076131452708326}, {"color": "#8AA5CF", "ew": 0.17070463299751282, "from": "LHFPL6", "title": "weight=0.1707", "to": "AEBP1", "value": 1.3656370639801025, "width": 2.441548468223019}, {"color": "#8AA5CF", "ew": 0.14951302111148834, "from": "LHFPL6", "title": "weight=0.1495", "to": "RBMS3", "value": 1.1961041688919067, "width": 2.188106590135736}, {"color": "#8AA5CF", "ew": 0.12034814804792404, "from": "LHFPL6", "title": "weight=0.1203", "to": "COL18A1", "value": 0.9627851843833923, "width": 1.8393081956029644}, {"color": "#8AA5CF", "ew": 0.20987209677696228, "from": "COL6A1", "title": "weight=0.2099", "to": "COL6A2", "value": 1.6789767742156982, "width": 2.909973222015616}, {"color": "#8AA5CF", "ew": 0.145815908908844, "from": "COL18A1", "title": "weight=0.1458", "to": "DPYSL3", "value": 1.166527271270752, "width": 2.1438908379231574}, {"color": "#8AA5CF", "ew": 0.18493826687335968, "from": "SFRP1", "title": "weight=0.1849", "to": "SOX9", "value": 1.4795061349868774, "width": 2.6117761470283494}, {"color": "#8AA5CF", "ew": 0.18252339959144592, "from": "SH3PXD2A", "title": "weight=0.1825", "to": "TPM2", "value": 1.4601871967315674, "width": 2.5828954510930218}, {"color": "#8AA5CF", "ew": 0.17455671727657318, "from": "CREBRF", "title": "weight=0.1746", "to": "SLC38A2", "value": 1.3964537382125854, "width": 2.487617614802633}, {"color": "#8AA5CF", "ew": 0.10525153577327728, "from": "CREBRF", "title": "weight=0.1053", "to": "INO80D", "value": 0.8420122861862183, "width": 1.6587596942327}, {"color": "#8AA5CF", "ew": 0.1732485145330429, "from": "IRF7", "title": "weight=0.1732", "to": "ISG15", "value": 1.3859881162643433, "width": 2.4719721149689042}, {"color": "#8AA5CF", "ew": 0.16117897629737854, "from": "SERPINF1", "title": "weight=0.1612", "to": "SERPING1", "value": 1.2894318103790283, "width": 2.3276260192332434}, {"color": "#8AA5CF", "ew": 0.13398928940296173, "from": "SERPING1", "title": "weight=0.1340", "to": "CCDC80", "value": 1.0719143152236938, "width": 2.002449937857825}, {"color": "#8AA5CF", "ew": 0.15144960582256317, "from": "CDC42SE2", "title": "weight=0.1514", "to": "EPB41", "value": 1.2115968465805054, "width": 2.2112672477058006}, {"color": "#8AA5CF", "ew": 0.1504044234752655, "from": "BAG3", "title": "weight=0.1504", "to": "KLF9", "value": 1.203235387802124, "width": 2.198767350177124}, {"color": "#8AA5CF", "ew": 0.10570096969604492, "from": "HLA-DPB1", "title": "weight=0.1057", "to": "RNASE1", "value": 0.8456077575683594, "width": 1.6641347161080997}, {"color": "#8AA5CF", "ew": 0.14572595059871674, "from": "BGN", "title": "weight=0.1457", "to": "FXYD1", "value": 1.1658076047897339, "width": 2.1428149781352928}, {"color": "#8AA5CF", "ew": 0.13943712413311005, "from": "CCDC80", "title": "weight=0.1394", "to": "IGFBP6", "value": 1.1154969930648804, "width": 2.067603521877004}, {"color": "#8AA5CF", "ew": 0.13765473663806915, "from": "CYBRD1", "title": "weight=0.1377", "to": "NFIA", "value": 1.1012378931045532, "width": 2.04628699170214}, {"color": "#8AA5CF", "ew": 0.11708024889230728, "from": "CYBRD1", "title": "weight=0.1171", "to": "GSN", "value": 0.9366419911384583, "width": 1.800225632943087}, {"color": "#8AA5CF", "ew": 0.13091367483139038, "from": "C3", "title": "weight=0.1309", "to": "LGALS3BP", "value": 1.047309398651123, "width": 1.9656670099010465}, {"color": "#8AA5CF", "ew": 0.12565243244171143, "from": "GNPTAB", "title": "weight=0.1257", "to": "SC5D", "value": 1.0052194595336914, "width": 1.9027449839841775}, {"color": "#8AA5CF", "ew": 0.12409650534391403, "from": "ABCA1", "title": "weight=0.1241", "to": "FN1", "value": 0.9927720427513123, "width": 1.8841368154336426}, {"color": "#8AA5CF", "ew": 0.10946855694055557, "from": "FN1", "title": "weight=0.1095", "to": "TIMP2", "value": 0.8757484555244446, "width": 1.7091933172301879}, {"color": "#8AA5CF", "ew": 0.12067317217588425, "from": "EPM2AIP1", "title": "weight=0.1207", "to": "OGT", "value": 0.965385377407074, "width": 1.8431953338658276}, {"color": "#8AA5CF", "ew": 0.11920376121997833, "from": "CSRNP1", "title": "weight=0.1192", "to": "DUSP1", "value": 0.9536300897598267, "width": 1.8256218583628896}, {"color": "#8AA5CF", "ew": 0.10890420526266098, "from": "DOT1L", "title": "weight=0.1089", "to": "ZBED5", "value": 0.8712336421012878, "width": 1.702443932147232}, {"color": "#8AA5CF", "ew": 0.10791654884815216, "from": "FOS", "title": "weight=0.1079", "to": "FOSB", "value": 0.8633323907852173, "width": 1.690632018171819}, {"color": "#8AA5CF", "ew": 0.10081889480352402, "from": "FOS", "title": "weight=0.1008", "to": "ATF3", "value": 0.8065511584281921, "width": 1.6057473581110773}, {"color": "#8AA5CF", "ew": 0.10787054151296616, "from": "CSGALNACT2", "title": "weight=0.1079", "to": "PIKFYVE", "value": 0.8629643321037292, "width": 1.690081791719105}, {"color": "#8AA5CF", "ew": 0.10336370021104813, "from": "GTF2B", "title": "weight=0.1034", "to": "NAF1", "value": 0.826909601688385, "width": 1.6361820539387661}, {"color": "#8AA5CF", "ew": 0.10132734477519989, "from": "MAST4", "title": "weight=0.1013", "to": "NEDD9", "value": 0.8106187582015991, "width": 1.6118281846394238}, {"color": "#8AA5CF", "ew": 0.10007506608963013, "from": "HEXIM1", "title": "weight=0.1001", "to": "JUNB", "value": 0.800600528717041, "width": 1.596851510676799}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  originalNodeArray = nodes.get();
+                  originalEdgeArray = edges.get();
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  options = {
+    "configure": {
+        "enabled": true,
+        "filter": [
+            "physics"
+        ]
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -80000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": false,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+                  // if this network requires displaying the configure window,
+                  // put it in its div
+                  options.configure["container"] = document.getElementById("config");
+                  
+
+                  network = new vis.Network(container, data, options);
+                  network.on("click", handleNetworkClick);
+                  network.on("deselectNode", function () {
+                      focusedNodeId = null;
+                      applyVisualState();
+                  });
+                  initializeNetworkControls();
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
